@@ -1,3 +1,5 @@
+import { keyframes } from 'framer-motion';
+
 /**@type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -10,6 +12,59 @@ export default {
         colors: {
           background: "var(--background)",
           foreground: "var(--foreground)",
+        },
+        animation: {
+          'float-around': 'floatAround 30s ease-in-out infinite',
+          'fade-in': 'fadeIn 0.5s ease-out forwards',
+          'slide-up': 'slideUp 0.5s ease-out forwards',
+          'scale-in': 'scaleIn 0.5s ease-out forwards',
+        },
+        keyframes: {
+          floatAround: {
+            '0%': { 
+              transform: 'translate(0, 0) scale(1)'
+            },
+            '25%': { 
+              transform: 'translate(5%, 10%) scale(1.05)'
+            },
+            '50%': { 
+              transform: 'translate(-5%, 5%) scale(0.95)'
+            },
+            '75%': { 
+              transform: 'translate(-10%, -5%) scale(1.02)'
+            },
+            '100%': { 
+              transform: 'translate(0, 0) scale(1)'
+            }
+          },
+          fadeIn: {
+            '0%': {
+              opacity: '0',
+            },
+            '100%': {
+              opacity: '1',
+            },
+          },
+          slideUp: {
+            '0%': {
+              opacity: '0',
+              transform: 'translateY(20px)',
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'translateY(0)',
+            },
+          },
+          scaleIn: {
+            '0%': {
+              opacity: '0',
+              transform: 'scale(0.9)',
+            },
+            '100%': {
+              opacity: '1',
+              transform: 'scale(1)',
+            },
+          },
         },
         screens: {
           xs: "414px", // iPhone XR/Pro starts here
@@ -24,7 +79,7 @@ export default {
         inter: ['var(--font-inter)'],
         sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'], 
       },
-    },
     plugins: [],
+    }
   };
   
