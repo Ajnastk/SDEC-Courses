@@ -1,106 +1,110 @@
 "use client"
 import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { X } from 'lucide-react';
 
-const Navbar = () => {
+export default function StaggeredMenuDemo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Menu items with staggered delay for animations
+  const menuItems = [
+    { name: "Courses", href: "#", delay: "delay-100" },
+    { name: "Contact", href: "#", delay: "delay-200" },
+    { name: "Reviews", href: "#", delay: "delay-300" },
+    { name: "Join Now", href: "#", delay: "delay-400" }
+  ];
+
   return (
-    <>
+    <div className="relative"> 
       {/* Desktop Navbar */}
-      <nav className="flex justify-between items-center px-8 py-4 bg-emerald-200">
-        <Link href="/" className="flex items-center text-2xl font-bold text-black">
-          <div className="mr-2 text-green-800"> 
+      <nav className="flex Lg:justify-around sm:justify-between md:justify-between justify-between px-8 py-4 bg-[#fffefe] z-30 relative">
+        <a href="#" className="flex items-center text-2xl text-black font-light">
+          <div className="mr-2 text-green-800">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.5 12.5L12 16.5L4.5 12.5M19.5 8.5L12 12.5L4.5 8.5L12 4.5L19.5 8.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
           CourseSite
-        </Link>
+        </a>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-black">
-          <Link href="/courses" className="text-lg">
-            Courses
-          </Link>
-          <Link href="/reviews" className="text-lg">
-            Reviews
-          </Link>
-          <Link href="/contact" className="text-lg">
-            Contact
-          </Link>
+          <a href="#" className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Courses</a>
+          <a href="#" className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Reviews</a>
+          <a href="#" className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Contact</a>
         </div>
         
-        <Link href="/join" className="hidden md:block text-lg text-black">
-          Join Now
-        </Link>
+        <a href="#" className="hidden md:block text-lg text-black rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Join Now</a>
         
-        {/* Mobile Menu Button */}
-
+        {/* Mobile Menu Button with Animation */}
         <button 
-          className="block md:hidden" 
+          className="block md:hidden relative z-50 focus:outline-none"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" color='black' strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <div className="relative w-6 h-6">
+            {/* Three line icon transforms to X */}
+            <span 
+              className={`absolute h-0.5 w-6 bg-black transform transition duration-300 ease-in-out ${
+                mobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''
+              }`} 
+              style={{top: '30%'}}
+            />
+            <span 
+              className={`absolute h-0.5 w-6 bg-black transform transition duration-300 ease-in-out ${
+                mobileMenuOpen ? 'opacity-0' : 'opacity-100'
+              }`} 
+              style={{top: '60%'}}
+            />
+            <span 
+              className={`absolute h-0.5 w-6 bg-black transform transition duration-300 ease-in-out ${
+                mobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''
+              }`} 
+              style={{top: '90%'}}
+            />
+          </div>
         </button>
       </nav>
       
-      {/* Mobile Menu Overlay */}
-      {/* Mobile Sidebar Menu - Only shows on small screens (below md breakpoint) */}
-      <div
-        className={`lg:hidden fixed inset-0 bg-white shadow-xl z-50 flex flex-col w-full rounded-b-3xl sm:max-h-[610px] max-h-[590px] p-4 transition-transform duration-300 ease-in-out transform ${
-          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+      {/* Mobile Menu - Container that slides down */}
+      <div 
+        className={`absolute left-0 right-0 bg-[#fffefe] shadow-lg z-20 transform transition-all duration-300 ease-in-out overflow-hidden ${
+          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
+        
       >
-        {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-50 p-4">
-          <div className="flex justify-between items-center mb-6">
-            <Link href="/" className="flex items-center text-2xl font-bold text-black">
-              <div className="mr-2">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.5 12.5L12 16.5L4.5 12.5M19.5 8.5L12 12.5L4.5 8.5L12 4.5L19.5 8.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              CourseSite
-            </Link>
-            <button 
-            className='text-black'
-              onClick={toggleMobileMenu}
-              aria-label="Close menu"
-            >
-              <X size={24} />
-            </button>
-          </div>
-          
+        <div className="p-4">
           <div className="flex flex-col text-black">
-            <Link href="/courses" className="py-4 border-b border-gray-100 text-lg">
-              Courses
-            </Link>
-            <Link href="/contact" className="py-4 border-b border-gray-100 text-lg">
-              Contact
-            </Link>
-            <Link href="/reviews" className="py-4 border-b border-gray-100 text-lg">
-              Reviews
-            </Link>
-            <Link href="/join" className="py-4 border-b border-gray-100 text-lg">
-              Join Now
-            </Link>
+            {menuItems.map((item, index) => (
+              <a
+                key={index}
+                href={item.href}
+                className={`py-4 border-b-[0.2px] border-b-gray-400  text-lg transform transition-all duration-500 ${item.delay} ${
+                  mobileMenuOpen
+                    ? 'translate-y-0 opacity-100'
+                    : '-translate-y-8 opacity-0'
+                }`}
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent navigation in demo
+                }}
+              >
+                {item.name}
+              </a>
+            ))}
           </div>
         </div>
-      )}
       </div>
       
-    </>
+      {/* Backdrop overlay when menu is open */}
+      <div 
+        className={`absolute inset-0 bg-black z-10 transition-opacity duration-300 ${
+          mobileMenuOpen ? 'opacity-30' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={toggleMobileMenu}
+      />
+    </div>
   );
-};
+}
 
-export default Navbar;

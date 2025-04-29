@@ -1,5 +1,5 @@
 import { Users, Calendar, Mail } from "lucide-react";
-import contents from "@/contents";
+import contents from "@/Contents";
 
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
