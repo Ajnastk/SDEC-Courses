@@ -7,6 +7,7 @@ const icons = {
   Users,
 };
 
+
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
   return (
