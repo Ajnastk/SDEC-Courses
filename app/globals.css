@@ -24,3 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animation styles for word by word animation */
+.word-animation-container .word {
+  display: inline-block;
+  margin-right: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Text animation for paragraph */
+.text-animation {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+/* Buttons animation */
+.buttons-animation {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: 2s;
+}
+
+/* Cards animation */
+.cards-animation {
+  opacity: 0;
+  animation: scaleIn 0.7s ease-out forwards;
+  animation-delay: 2.5s;
+}
