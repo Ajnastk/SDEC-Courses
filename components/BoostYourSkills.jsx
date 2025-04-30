@@ -7,11 +7,10 @@ const icons = {
   Users,
 };
 
-
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
   return (
-    <div className="bg-white py-16 px-4 w-full mx-auto relative overflow-hidden">
+    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white  py-16 px-4 w-full mx-auto relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-16 left-16 opacity-10">
         <div className="text-purple-300 text-8xl">✳</div>
@@ -42,16 +41,20 @@ export default function BoostYourSkills() {
           return (
             <div
               key={index}
-              className={`bg-white md:h-[370px] w-[370px] backdrop-blur-sm p-8 text-center transition-transform relative rounded-3xl md:flex md:flex-col justify-center items-center md:gap-5`}
+              className={`md:h-[370px] w-[370px] p-8 text-center transition-transform relative rounded-3xl md:flex md:flex-col justify-center items-center md:gap-5`}
               style={{
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                // backgroundColor: "rgba(255, 255, 255, 0.1)", // optional fallback
+                border: "3px solid white",
                 boxShadow:
                   "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                border: "1px solid rgba(255,255,255,0.2)",
                 transform:
                   index === 0
-                    ? "perspective(180px) rotateY(3deg) rotateX(0deg) rotate(-0deg) translateX(60px)"
+                    ? "perspective(180px) rotateY(2.7deg) rotateX(0deg) rotate(-0deg) translateX(60px)"
                     : index === 2
-                    ? "perspective(180px) rotateY(-3deg) rotateX(0deg) rotate(-0deg) translateX(-60px)"
+                    ? "perspective(180px) rotateY(-2.7deg) rotateX(0deg) rotate(-0deg) translateX(-60px)"
                     : "none",
               }}
             >
@@ -61,8 +64,9 @@ export default function BoostYourSkills() {
                     boxShadow:
                       "0 5px 30px rgba(0,0,0,0.1), -20px 0px 30px rgba(0,0,0,0.02)",
                     border: "1px solid rgba(255,255,255,0.2)",
+                    backgroundColor: "white",
                   }}
-                  className="bg-white md:w-[120px] md:h-[120px] flex justify-center items-center rounded-2xl p-4"
+                  className="md:w-[120px] md:h-[120px] flex justify-center items-center rounded-2xl p-4"
                 >
                   <div
                     className={`bg-gradient-to-b ${card.gradientFrom} ${card.gradientTo} w-20 h-20 rounded-xl flex items-center justify-center`}
