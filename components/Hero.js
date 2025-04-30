@@ -101,12 +101,12 @@ export const Hero = () => {
           </motion.button>
 
           <motion.button
-            className="relative overflow-hidden group px-3 py-1  bg-white/60 backdrop-blur-sm text-gray-800 rounded-full font-medium hover:bg-white/70 transition cursor-pointer border-4 border-orange-100"
+            className="relative overflow-hidden group px-3  py-6 md:py-1  bg-white/60 backdrop-blur-sm text-gray-800 rounded-full font-medium hover:bg-white/70 transition cursor-pointer border-4 border-orange-100"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 3 }}
           >
-            <span className="block relative md:h-11 w-36">
+            <span className="block relative md:h-11 w-46">
               <span className="absolute  inset-0 flex items-center justify-center transition-all duration-300 transform group-hover:translate-y-full">
                 Start Learning Now
               </span>
