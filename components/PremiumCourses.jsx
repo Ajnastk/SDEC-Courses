@@ -17,7 +17,7 @@ export default function PremiumCourses() {
             <div className="sm:text-xl text-lg text-black text-center lg:text-start">{subheading}</div>
             <div className="flex items-center text-black mt-2">
               {[1, 2, 3, 4, 5].map((star) => (
-                <span key={star} className="text-yellow-400 text-lg">
+                <span key={star} className="text-lg">
                   ⭐
                 </span>
               ))}

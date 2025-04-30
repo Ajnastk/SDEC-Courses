@@ -1,5 +1,9 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import { Users, Calendar, Rocket, Mail } from "lucide-react";
 import contents from "@/Contents";
+import React from "react";
 
 const icons = {
   Calendar,
@@ -9,9 +13,62 @@ const icons = {
 
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
+  const [windowWidth, setWindowWidth] = useState(0);
+  const sliderRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    const wrapper = wrapperRef.current;
+
+    if (!slider || !wrapper) return;
+
+    const cloneCount = 2;
+    const totalWidth = slider.scrollWidth / cloneCount;
+    let position = 0;
+    const speed = 0.4;
+    let requestId;
+
+    const animate = () => {
+      position -= speed;
+      if (position <= -totalWidth) position = 0;
+      slider.style.transform = `translateX(${position}px)`;
+      requestId = requestAnimationFrame(animate);
+    };
+
+    const handleHover = () => cancelAnimationFrame(requestId);
+    const handleHoverEnd = () => (requestId = requestAnimationFrame(animate));
+
+    requestId = requestAnimationFrame(animate);
+    wrapper.addEventListener("mouseenter", handleHover);
+    wrapper.addEventListener("mouseleave", handleHoverEnd);
+
+    return () => {
+      cancelAnimationFrame(requestId);
+      wrapper.removeEventListener("mouseenter", handleHover);
+      wrapper.removeEventListener("mouseleave", handleHoverEnd);
+    };
+  }, []);
+
+  const isLargeScreen = windowWidth >= 1024;
+  const companies = [
+    { name: "Techlify", icon: "💻" },
+    { name: "Blockly", icon: "🧱" },
+    { name: "Camera", icon: "📷" },
+    { name: "Cloudly", icon: "☁️" },
+    { name: "Startup", icon: "🚀" },
+  ];
+
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white  py-16 px-4 w-full mx-auto relative overflow-hidden">
-      {/* Decorative elements */}
+    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white py-16 flex flex-col px-4 w-full mx-auto relative overflow-hidden">
+      {/* Decorative Elements */}
       <div className="absolute top-16 left-16 opacity-10">
         <div className="text-purple-300 text-8xl">✳</div>
       </div>
@@ -35,57 +92,87 @@ export default function BoostYourSkills() {
         <p className="text-black max-w-xl mx-auto">{data.description}</p>
       </div>
 
-      <div className="flex px-22 flex-col md:flex-row justify-between gap-0 mt-16">
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-center gap-6 lg:gap-14 mt-16">
         {data.cards.map((card, index) => {
           const Icon = icons[card.icon];
           return (
             <div
               key={index}
-              className={`md:h-[370px] w-[370px] p-8 text-center transition-transform relative rounded-3xl md:flex md:flex-col justify-center items-center md:gap-5`}
+              className="px-8 text-center sm:h-[370px] h-[320px] lg:w-[370px] transition-transform relative rounded-3xl flex flex-col justify-center items-center gap-5"
               style={{
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                // backgroundColor: "rgba(255, 255, 255, 0.1)", // optional fallback
                 border: "3px solid white",
                 boxShadow:
                   "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                transform:
-                  index === 0
-                    ? "perspective(180px) rotateY(2.7deg) rotateX(0deg) rotate(-0deg) translateX(60px)"
-                    : index === 2
-                    ? "perspective(180px) rotateY(-2.7deg) rotateX(0deg) rotate(-0deg) translateX(-60px)"
-                    : "none",
+                ...(isLargeScreen && {
+                  transform:
+                    index === 0
+                      ? "perspective(180px) rotateY(3deg) translateX(20px)"
+                      : index === 2
+                      ? "perspective(180px) rotateY(-3deg) translateX(-20px)"
+                      : "none",
+                }),
               }}
             >
-              <div className="flex justify-center mb-6">
+              <div
+                className="md:w-[120px] md:h-[120px] h-[90px] w-[90px] flex justify-center items-center rounded-2xl p-4 bg-white"
+                style={{
+                  boxShadow:
+                    "0 5px 30px rgba(0,0,0,0.1), -20px 0px 30px rgba(0,0,0,0.02)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                }}
+              >
                 <div
-                  style={{
-                    boxShadow:
-                      "0 5px 30px rgba(0,0,0,0.1), -20px 0px 30px rgba(0,0,0,0.02)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    backgroundColor: "white",
-                  }}
-                  className="md:w-[120px] md:h-[120px] flex justify-center items-center rounded-2xl p-4"
+                  className={`bg-gradient-to-b ${card.gradientFrom} ${card.gradientTo} md:w-20 md:h-20 w-14 h-14 rounded-xl flex items-center justify-center`}
                 >
-                  <div
-                    className={`bg-gradient-to-b ${card.gradientFrom} ${card.gradientTo} w-20 h-20 rounded-xl flex items-center justify-center`}
-                  >
-                    <Icon className="text-white w-10 h-10" />
-                  </div>
+                  <Icon className="text-white md:w-10 md:h-10 w-8 h-8" />
                 </div>
               </div>
-              <div>
-                <h3 className="text-5xl font-extrabold text-black mb-1">
-                  {card.value}
-                </h3>
-                <p className="text-gray-600 text-xs tracking-widest uppercase">
-                  {card.label}
-                </p>
-              </div>
+              <h3 className="text-5xl font-extrabold text-black mb-1">
+                {card.value}
+              </h3>
+              <p className="text-gray-600 text-xs tracking-widest uppercase">
+                {card.label}
+              </p>
             </div>
           );
         })}
+      </div>
+
+      {/* Infinite Scrolling Companies */}
+      <div className="mt-10 w-[90%] md:ml-[50px] sm:ml-[30px] ml-[10px] lg:ml-[70px] flex flex-col items-center justify-center">
+        <div className="flex flex-row items-center gap-20 justify-center w-full mb-[-20px]">
+          <div className="hidden md:block flex-1 max-w-[310px] border-t border-gray-400"></div>
+          <div className="text-center mx-4">
+            <h3 className="text-gray-500 mt-5 text-sm font-light mb-6">
+              Adopted by renowned enterprises such as
+            </h3>
+          </div>
+          <div className="hidden md:block flex-1 max-w-[310px] border-t border-gray-400"></div>
+        </div>
+
+        <div className="relative overflow-hidden w-full py-8" ref={wrapperRef}>
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+          <div className="flex" ref={sliderRef}>
+            {[...Array(4)].map((_, cloneIndex) => (
+              <React.Fragment key={`clone-${cloneIndex}`}>
+                {companies.map((company, index) => (
+                  <div
+                    key={`${company.name}-${index}-${cloneIndex}`}
+                    className="flex items-center gap-3 min-w-max px-8 mx-4"
+                  >
+                    <span className="text-2xl">{company.icon}</span>
+                    <span className="text-gray-600 font-medium text-lg whitespace-nowrap">
+                      {company.name}
+                    </span>
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
