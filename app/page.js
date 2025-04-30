@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { FAQHub } from "@/components/Faq";
 import PremiumCourses from "@/components/PremiumCourses";
 import { CourseTopics } from "@/components/CourseTopics";
+import { WhyCourseSite } from "@/components/WhyCourseSite";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <FAQHub />
       <CourseTopics />
       <PremiumCourses/>
+      <WhyCourseSite />
     </div>
   );
 }
