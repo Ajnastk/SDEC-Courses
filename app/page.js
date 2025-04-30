@@ -4,16 +4,14 @@ import { FAQHub } from "@/components/Faq";
 import PremiumCourses from "@/components/PremiumCourses";
 import { CourseTopics } from "@/components/CourseTopics";
 
-
 export default function Home() {
   return (
     <div className="bg-[#fffefe]">
       <Hero />
-      <BoostYourSkills/>
+      <BoostYourSkills />
       <FAQHub />
       <CourseTopics />
       <PremiumCourses/>
-
     </div>
   );
 }

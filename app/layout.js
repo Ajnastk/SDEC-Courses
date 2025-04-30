@@ -1,8 +1,6 @@
-
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 
 // Import Inter from Google Fonts
 import { Inter } from "next/font/google";
@@ -28,12 +26,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-     <body
-  className={`${poppins.variable} ${inter.variable} font-poppins antialiased`}
->
-        <Navbar/>
+      <body
+        className={`${poppins.variable} ${inter.variable} font-poppins antialiased`}
+      >
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
