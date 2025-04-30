@@ -15,13 +15,7 @@ export const WhyCourseSite = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative">
-            <span className="text-purple-100 absolute -left-16 top-1/2 transform -translate-y-1/2 opacity-80">
-              ★
-            </span>
             But Why CourseSite ?
-            <span className="text-purple-100 absolute -right-16 top-1/2 transform -translate-y-1/2 opacity-80">
-              ★
-            </span>
           </h2>
 
           <p className="text-gray-700 max-w-2xl mx-auto">
@@ -98,7 +92,7 @@ export const WhyCourseSite = () => {
             <div className="mb-6">
               <div className="relative w-full h-50 rounded-3xl overflow-hidden">
                 <Image
-                  src="/images/Rasha.jpg"
+                  src= "/images/Rasha.jpg"
                   alt="Ajnas"
                   fill
                   className="object-cover"
