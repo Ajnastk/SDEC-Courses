@@ -1,8 +1,8 @@
 import BoostYourSkills from "@/components/BoostYourSkills";
 import { Hero } from "@/components/Hero";
 import { FAQHub } from "@/components/Faq";
-
 import PremiumCourses from "@/components/PremiumCourses";
+import { CourseTopics } from "@/components/CourseTopics";
 
 export default function Home() {
   return (
@@ -10,7 +10,8 @@ export default function Home() {
       <Hero />
       <BoostYourSkills />
       <FAQHub />
-      <PremiumCourses />
+      <CourseTopics />
+      <PremiumCourses/>
     </div>
   );
 }
