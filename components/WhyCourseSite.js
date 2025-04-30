@@ -144,7 +144,14 @@ export const WhyCourseSite = () => {
                 </div>
               </div>
 
-               
+              {/* Signature */}
+              {/* <div className="text-right">
+                <Image
+                  src={null}
+                  alt="Signature"
+                  className="h-10 inline-block opacity-70"
+                />
+              </div> */}
             </div>
           </div>
 
