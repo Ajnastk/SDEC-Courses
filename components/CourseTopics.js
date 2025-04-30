@@ -12,17 +12,17 @@ export const CourseTopics = () => {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white px-4 relative ">
-      <div className="max-w-6xl mx-auto text-center mb-14">
+    <div className="py-16 w-full bg-gradient-to-r from-white via-[#f6e7ff] to-white px-4 relative ">
+      <div className="max-w-7xl mx-auto text-center mb-14">
         {/* Top star icon with "Featured Topics" */}
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="text-black h-7 font-medium w-[170px] text-md flex items-center gap-3 bg-white border-2 border-gray-200  rounded-full mb-4">
-            <div className="text-purple-500 h-7 w-7 bg-gray-300 rounded-full">
+          <div className="text-black h-7 font-medium w-[180px] text-md flex items-center gap-3 bg-white border-2 border-gray-200  rounded-full mb-4">
+            <div className="flex text-purple-500 h-6 w-6 items-center justify-center bg-gray-300 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-7 h-7"
+                className="w-4 h-4"
               >
                 <path
                   fillRule="evenodd"
