@@ -1,11 +1,12 @@
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
 
 // Import Inter from Google Fonts
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
 >
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
