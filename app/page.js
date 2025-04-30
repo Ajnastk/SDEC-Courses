@@ -5,6 +5,7 @@ import PremiumCourses from "@/components/PremiumCourses";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { CourseTopics } from "@/components/CourseTopics";
+import { WhyCourseSite } from "@/components/WhyCourseSite";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FAQHub />
       <CourseTopics />
       <PremiumCourses/>
+      <WhyCourseSite />
     </div>
   );
 }

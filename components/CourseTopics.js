@@ -12,7 +12,7 @@ export const CourseTopics = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-b from-white to-purple-50 py-16 px-4 relative ">
+    <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white px-4 relative ">
       <div className="max-w-6xl mx-auto text-center mb-14">
         {/* Top star icon with "Featured Topics" */}
         <div className="flex items-center justify-center gap-2 mb-4">

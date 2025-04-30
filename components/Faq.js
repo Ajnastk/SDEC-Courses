@@ -42,7 +42,7 @@ export const FAQHub = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row w-full max-w-7xl text-black mx-auto p-4 gap-8 mt-6">
+    <div className="flex flex-col md:flex-row max-w-7xl text-black mx-auto p-4 gap-8 py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white">
       {/* Left Side */}
       <div className="w-full md:w-1/2">
         <div className="text-black font-medium w-[110px] text-sm flex items-center gap-3 bg-purple-50 border-2 border-gray-200  rounded-full mb-4">
