@@ -127,7 +127,7 @@ export const Hero = () => {
           {/* Card 1 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">
             {/* Badge */}
-            <div className="absolute top-4 right-4 bg-black text-white rounded-4xl p-1 text-xs">
+            <div className="absolute top-4 right-4 bg-black text-white rounded-4xl w-[24px] p-1 text-xs">
               ✔
             </div>
 
@@ -147,7 +147,7 @@ export const Hero = () => {
 
           {/* Card 2 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">
-            <div className="absolute top-4 right-4 bg-black text-white rounded-full p-1 text-xs">
+            <div className="absolute top-4 right-4 bg-black w-[24px] text-white rounded-full p-1 text-xs">
               ✔
             </div>
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 mx-auto">
@@ -163,7 +163,7 @@ export const Hero = () => {
 
           {/* Card 3 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">
-            <div className="absolute top-4 right-4 bg-black text-white rounded-full p-1 text-xs">
+            <div className="absolute top-4 right-4 bg-black text-white rounded-full w-[24px] p-1 text-xs">
               ✔
             </div>
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 mx-auto">

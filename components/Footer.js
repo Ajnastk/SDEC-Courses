@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import "../app/globals.css"
-import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -62,7 +61,7 @@ const Footer = () => {
           <Link href="/contact" className="hover:underline">Contact</Link>
           <Link href="/reviews" className="hover:underline">Reviews</Link>
           <Link href="/newsletter" className="hover:underline">Join Our news Letter</Link>
-          <Link href="/notify" className="border border-black rounded-full my-[-8px] px-4 py-2 hover:bg-gray-100">
+          <Link href="/notify" className="border border-black rounded-full my-[-8px] px-4 py-2 hover:bg-black hover:text-white">
             Notify Me
           </Link>
         </nav>
