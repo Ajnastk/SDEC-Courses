@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HeroBackground } from "./HeroBackground";
+import StaggeredMenuDemo from "./Navbar";
 
 export const Hero = () => {
   const headlineWords = [
@@ -38,8 +39,9 @@ export const Hero = () => {
     <div className="relative min-h-screen  overflow-hidden text-black">
       {/* Background with floating color orbs */}
       <HeroBackground />
+      
       <main className="relative container max-w-5xl mx-auto px-4 py-20 text-center z-10">
-        {/* Trusted badge */}
+                {/* Trusted badge */}
         <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-full px-4 py-2 mb-10">
           <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
           <p className="text-sm text-gray-800">
