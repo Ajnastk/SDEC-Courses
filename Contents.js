@@ -1,3 +1,7 @@
+import Calendar from "./public/Images/Calendar.png"
+import Mail from "./public/Images/Mail.png"
+import Users from "./public/Images/Users.png"
+
 const contents = {
   BoostyourSkillsData: {
     title: "Boost Your Skills",
@@ -9,21 +13,21 @@ const contents = {
         label: "Hours of Content",
         gradientFrom: "from-red-300",
         gradientTo: "to-red-400",
-        icon: "Calendar",
+        icon: Calendar,
       },
       {
         value: "15+",
         label: "Courses",
         gradientFrom: "from-blue-300",
         gradientTo: "to-blue-400",
-        icon: "Mail",
+        icon: Mail,
       },
       {
         value: "20k+",
         label: "Students",
         gradientFrom: "from-purple-300",
         gradientTo: "to-purple-400",
-        icon: "Users",
+        icon: Users,
       },
     ],
   },
