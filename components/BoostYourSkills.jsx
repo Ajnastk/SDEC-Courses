@@ -4,12 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Users, Calendar, Rocket, Mail } from "lucide-react";
 import contents from "@/Contents";
 import React from "react";
-
-const icons = {
-  Calendar,
-  Mail,
-  Users,
-};
+import Image from "next/image";
 
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
@@ -95,7 +90,6 @@ export default function BoostYourSkills() {
       {/* Responsive Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-center gap-6 lg:gap-14 mt-16">
         {data.cards.map((card, index) => {
-          const Icon = icons[card.icon];
           return (
             <div
               key={index}
@@ -123,9 +117,15 @@ export default function BoostYourSkills() {
                 }}
               >
                 <div
-                  className={`bg-gradient-to-b ${card.gradientFrom} ${card.gradientTo} md:w-20 md:h-20 w-14 h-14 rounded-xl flex items-center justify-center`}
+                  className={`md:w-20 md:h-20 w-14 h-14 rounded-xl flex items-center justify-center`}
                 >
-                  <Icon className="text-white md:w-10 md:h-10 w-8 h-8" />
+                  <Image
+                    width={70}
+                    height={50}
+                    priority
+                    src={card.icon}
+                    className="text-white"
+                  />
                 </div>
               </div>
               <h3 className="text-5xl font-extrabold text-black mb-1">
