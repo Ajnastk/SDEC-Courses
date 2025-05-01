@@ -61,7 +61,7 @@ export default function FeaturedCourses() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ">
           {courses.map((course) => (
-            <div key={course.id} className="bg-white rounded-[22px] shadow-lg overflow-hidden p-6">
+            <div key={course.id} className="bg-white rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[-20px] hover:[transform:perspective(180px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]">
               <div className="relative w-full h-50">
                 <Image 
                   src={course.image} 

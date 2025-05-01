@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
       
 
         {/* Grid that changes from 3 columns to 2 columns based on screen size */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-15">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
