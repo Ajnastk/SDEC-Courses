@@ -9,18 +9,18 @@ export default function PremiumCourses() {
     contents.PremimuCoursesData;
 
   return (
-    <div id="join" className="bg-gradient-to-l from-white via-[#f7eafe] to-white min-h-screen flex flex-col items-center py-16 px-2">
-      <div className="max-w-7xl w-full">
-        <div className="flex lg:flex-row flex-col items-center justify-between mb-10 px-8 lg:gap-0 gap-6">
-          <h1 className="md:text-5xl sm:text-3xl text-2xl font-semibold sm:font-normal text-black">{heading}</h1>
+    <div id="join" className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex lg:flex-row flex-col items-center justify-between mb-10  lg:gap-0 gap-6">
+          <h1 className="md:text-4xl sm:text-3xl text-2xl font-semibold sm:font-normal text-black">{heading}</h1>
           <div className="text-right">
-            <div className="sm:text-xl text-lg text-black text-center lg:text-start">{subheading}</div>
+            <div className="sm:text-xl text-lg text-black text-center">{subheading}</div>
             <div className="flex items-center text-black mt-2">
-              {[1, 2, 3, 4, 5].map((star) => (
+              {/* {[1, 2, 3, 4, 5].map((star) => (
                 <span key={star} className="text-lg">
                   ⭐
                 </span>
-              ))}
+              ))} */}
               <span className="ml-2">{rating}/5</span>
               <span className="mx-2">•</span>
               <span>{reviews.toLocaleString()} Reviews</span>
@@ -28,11 +28,11 @@ export default function PremiumCourses() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:ml-[30px] md:mr-[20px] lg:grid-cols-3 gap-6 lg:gap-8 px-4 sm:px-6 lg:px-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className="relative bg-white rounded-3xl w-full sm:px-5 px-4 md:px-0 h-auto sm:h-[500px] md:max-w-[380px] md:h-[480px] shadow-md overflow-visible"
+              className="relative bg-white rounded-3xl lg:px-0 md:px-0 sm:px-6 px-6 shadow-md "
             >
               {plan.isPopular && (
                 <div className="absolute top-1 md:-left-8 -left-6 z-10 rotate-[-20deg]">
@@ -43,7 +43,7 @@ export default function PremiumCourses() {
               )}
 
               <div>
-                <div className="py-4 md:px-6">
+                <div className="py-7 md:px-6">
                   <h3 className="text-lg sm:text-xl md:text-md p-3 text-black mb-2 text-center">
                     {plan.name}
                   </h3>
@@ -54,7 +54,7 @@ export default function PremiumCourses() {
                       boxShadow: "inset 1px 1px 2px 1px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <div className="flex textce items-baseline">
+                    <div className="flex text-center items-baseline">
                       <span className="md:text-2xl text-lg font-semibold text-black">
                         ${plan.price}
                       </span>
