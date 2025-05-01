@@ -36,12 +36,12 @@ export const CourseTopics = () => {
         </div>
 
         {/* Large heading */}
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+        <h2 className="text-4xl md:text-4xl  text-gray-900 mb-4">
           Courses Topics
         </h2>
 
         {/* Description text */}
-        <p className="text-black font-medium mb-12 max-w-2xl mx-auto">
+        <p className="text-black mb-12 max-w-2xl mx-auto">
           Explore the key topics covered in our courses, designed to equip you
           with the skills needed for real-world success.
         </p>
