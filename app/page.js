@@ -21,7 +21,6 @@ export default function Home() {
       <FAQHub />
       <CourseTopics />
       <CommunityCard />
-
       <WhyCourseSite />
       <FAQHub />
       <CourseTopics />

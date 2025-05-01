@@ -2,6 +2,7 @@ import Calendar from "./public/Images/Calendar.png";
 import Mail from "./public/Images/Mail.png";
 import Users from "./public/Images/Users.png";
 import Earth from "./public/Images/earth.png";
+import Flower from "./public/Images/flower.svg"
 
 const contents = {
   BoostyourSkillsData: {
@@ -95,6 +96,7 @@ const contents = {
       { label: "Get template", style: "secondary" },
     ],
     image: Earth,
+    Flower:Flower
   },
 };
 
