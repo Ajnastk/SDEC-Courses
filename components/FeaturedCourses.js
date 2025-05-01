@@ -37,12 +37,7 @@ export default function FeaturedCourses() {
     <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
       <div className="max-w-7xl mx-auto px-4">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2">
-          <div className="text-purple-100 text-5xl">✺</div>
-        </div>
-        <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2">
-          <div className="text-purple-100 text-5xl">✺</div>
-        </div>
+     
 
         {/* Header */}
         <div className="text-center mb-12">
