@@ -122,6 +122,7 @@ export default function BoostYourSkills() {
                   <Image
                     width={70}
                     height={50}
+                    alt="icon"
                     priority
                     src={card.icon}
                     className="text-white"

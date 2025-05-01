@@ -15,16 +15,13 @@ export default function Home() {
       <Hero />
       <BoostYourSkills />
       <FeaturedCourses />
-      <BenefitsSection />
       <TestimonialsSection />
+      <BenefitsSection />
       <PremiumCourses />
-      <FAQHub />
-      <CourseTopics />
-      <CommunityCard />
-
       <WhyCourseSite />
       <FAQHub />
       <CourseTopics />
+      <CommunityCard />
     </div>
   );
 }
