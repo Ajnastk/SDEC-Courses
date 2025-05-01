@@ -6,17 +6,19 @@ import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { CourseTopics } from "@/components/CourseTopics";
 import { WhyCourseSite } from "@/components/WhyCourseSite";
+import CommunityCard from "@/components/CommunityCard";
 
 export default function Home() {
   return (
     <div className="bg-[#fffefe]">
       <Hero />
-      <BoostYourSkills/>
-      <BenefitsSection/>
-      <TestimonialsSection/>
+      <BoostYourSkills />
+      <BenefitsSection />
+      <TestimonialsSection />
+      <PremiumCourses />
       <FAQHub />
       <CourseTopics />
-      <PremiumCourses/>
+      <CommunityCard />
       <WhyCourseSite />
     </div>
   );

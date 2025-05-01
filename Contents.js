@@ -1,6 +1,7 @@
-import Calendar from "./public/Images/Calendar.png"
-import Mail from "./public/Images/Mail.png"
-import Users from "./public/Images/Users.png"
+import Calendar from "./public/Images/Calendar.png";
+import Mail from "./public/Images/Mail.png";
+import Users from "./public/Images/Users.png";
+import Earth from "./public/Images/earth.png";
 
 const contents = {
   BoostyourSkillsData: {
@@ -31,6 +32,7 @@ const contents = {
       },
     ],
   },
+
   PremimuCoursesData: {
     heading: "Join Our Premium Courses",
     subheading: "Trusted by 70k+ students",
@@ -77,6 +79,22 @@ const contents = {
         ],
       },
     ],
+  },
+
+  CommunityCard: {
+    badgeIcon: "rocket", // identifier
+    badgeText: "Community",
+    title: "Join our community where creativity thrives.",
+    description:
+      "Unlock the amazing benefits of joining our community, growing your skills, and building connections.",
+    learnHeading: "Start Learning Now",
+    learnDesc: "This one is slightly better, it has more contrast",
+    designNote: "Do you think this design is better?",
+    buttons: [
+      { label: "Try Demo", style: "primary" },
+      { label: "Get template", style: "secondary" },
+    ],
+    image: Earth,
   },
 };
 
