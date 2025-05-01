@@ -107,7 +107,7 @@ export default function StaggeredMenuDemo() {
               <path d="M19.5 12.5L12 16.5L4.5 12.5M19.5 8.5L12 12.5L4.5 8.5L12 4.5L19.5 8.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
-          CourseSite
+          SDEC
         </Link>
         
         {/* Desktop Menu */}
