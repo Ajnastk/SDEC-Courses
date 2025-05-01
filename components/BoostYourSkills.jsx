@@ -64,12 +64,12 @@ export default function BoostYourSkills() {
     <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
       <div className="max-w-7xl mx-auto px-4">
       {/* Decorative Elements */}
-      <div className="absolute top-16 left-16 opacity-10">
+      {/* <div className="absolute top-16 left-16 opacity-10">
         <div className="text-purple-300 text-8xl">✳</div>
       </div>
       <div className="absolute bottom-16 right-16 opacity-10">
         <div className="text-purple-300 text-8xl">✳</div>
-      </div>
+      </div> */}
 
       <div className="text-center mb-12">
         <div className="flex items-center justify-center mb-2">
@@ -153,8 +153,8 @@ export default function BoostYourSkills() {
         </div>
 
         <div className="relative overflow-hidden w-full py-8" ref={wrapperRef}>
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#fcfbff] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#fcfbff] to-transparent z-10"></div>
 
           <div className="flex" ref={sliderRef}>
             {[...Array(4)].map((_, cloneIndex) => (

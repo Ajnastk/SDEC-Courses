@@ -1,9 +1,6 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HeroBackground } from "./HeroBackground";
-import StaggeredMenuDemo from "./Navbar";
 import Now from "./Now";
 
 export const Hero = () => {
