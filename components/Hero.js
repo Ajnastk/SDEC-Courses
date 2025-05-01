@@ -51,7 +51,7 @@ export const Hero = () => {
         </div>
 
         {/* Animated headline */}
-        <h1 className="md:text-7xl text-6xl font-bold mb-6 leading-tight">
+        <h1 className="md:text-7xl text-5xl font-bold mb-6 leading-tight">
           {headlineWords.map((word, index) => (
             <motion.span
               key={index}
