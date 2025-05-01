@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HeroBackground } from "./HeroBackground";
 import StaggeredMenuDemo from "./Navbar";
+import Now from "./Now";
 
 export const Hero = () => {
   const headlineWords = [
@@ -92,7 +93,7 @@ export const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           <motion.button
-            className="px-6 py-1 bg-white/30 backdrop-blur-sm text-gray-800 rounded-full font-medium hover:bg-white/40 transition cursor-pointer"
+            className="px-6  bg-white/30  py-5 backdrop-blur-sm text-gray-800 rounded-full font-medium hover:bg-white/40 transition cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 2.8 }}
@@ -101,18 +102,13 @@ export const Hero = () => {
           </motion.button>
 
           <motion.button
-            className="relative overflow-hidden group px-3 md:py-1 py-6 bg-white/60 backdrop-blur-sm text-gray-800 rounded-full font-medium hover:bg-white/70 transition cursor-pointer border-4 border-orange-100"
+            className="relative overflow-hidden group px-3 md:py-1 py-2 bg-white/60 backdrop-blur-sm rounded-full font-medium hover:bg-white/70 transition cursor-pointer border-4 border-orange-100"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 3 }}
           >
             <span className="block relative md:h-11 w-46">
-              <span className="absolute  inset-0 flex items-center justify-center transition-all duration-300 transform group-hover:translate-y-full">
-                Start Learning Now
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 transform -translate-y-full group-hover:translate-y-0">
-                Start Learning Now
-              </span>
+            <Now className="text-gray-800" />
             </span>
           </motion.button>
         </div>

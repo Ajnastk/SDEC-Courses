@@ -9,7 +9,7 @@ export default function PremiumCourses() {
     contents.PremimuCoursesData;
 
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white min-h-screen flex flex-col items-center py-16 px-2">
+    <div id="join" className="bg-gradient-to-l from-white via-[#f7eafe] to-white min-h-screen flex flex-col items-center py-16 px-2">
       <div className="max-w-7xl w-full">
         <div className="flex lg:flex-row flex-col items-center justify-between mb-10 px-8 lg:gap-0 gap-6">
           <h1 className="md:text-5xl sm:text-3xl text-2xl font-semibold sm:font-normal text-black">{heading}</h1>

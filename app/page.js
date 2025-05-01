@@ -6,12 +6,14 @@ import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { CourseTopics } from "@/components/CourseTopics";
 import { WhyCourseSite } from "@/components/WhyCourseSite";
+import FeaturedCourses from "@/components/FeaturedCourses";
 
 export default function Home() {
   return (
     <div className="bg-[#fffefe]">
       <Hero />
       <BoostYourSkills/>
+      <FeaturedCourses/>
       <BenefitsSection/>
       <TestimonialsSection/>
       <PremiumCourses/>

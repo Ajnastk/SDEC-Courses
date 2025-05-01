@@ -67,7 +67,7 @@ const BenefitsSection = () => {
           </svg>
         </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-2">
