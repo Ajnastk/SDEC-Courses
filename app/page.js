@@ -14,10 +14,10 @@ export default function Home() {
       <BoostYourSkills/>
       <BenefitsSection/>
       <TestimonialsSection/>
-      <FAQHub />
-      <CourseTopics />
       <PremiumCourses/>
       <WhyCourseSite />
+      <FAQHub />
+      <CourseTopics />
     </div>
   );
 }

@@ -4,41 +4,48 @@ import Image from "next/image";
 export const WhyCourseSite = () => {
   return (
     <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center gap-2 mb-4 bg-purple-100 rounded-full px-4 py-1">
-            <div className="w-4 h-4 rounded-full bg-purple-300 flex items-center justify-center text-xs">
-              <span className="text-purple-700">i</span>
-            </div>
-            <span className="text-sm text-gray-700 font-medium">About Me</span>
-          </div>
+        <div className="text-black inline-flex  w-[110px] text-sm  items-center gap-2 bg-purple-50 border-2 border-gray-200  rounded-full mb-5">
+          <span className="h-6 w-6 bg-purple-300 rounded-full flex items-center justify-center">
+            <span className="text-purple-600">i</span>
+          </span>
+          About me
+        </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative">
+          <h2 className="text-4xl  text-black mb-4 relative">
             But Why CourseSite ?
           </h2>
 
-          <p className="text-gray-700 max-w-2xl mx-auto">
+          <p className="text-black max-w-2xl mx-auto">
             Explore the incredible advantages of enrolling in our courses and
             enhancing your skills for the ultimate career success.
           </p>
         </div>
 
         {/* Main Grid Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex flex-col">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
           {/* Left Column */}
-          <div className="space-y-10">
+          <div className="space-y-8 flex flex-col justify-center items-center">
             {/* Certificate Section */}
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="text-gray-400">
+            <div className="px-4">
+              <div className="flex flex-col  gap-3 mb-3">
+                <div className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
+                style={{
+                  boxShadow:
+                    "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-8 h-8"
                   >
                     <path
                       strokeLinecap="round"
@@ -47,7 +54,7 @@ export const WhyCourseSite = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-2xl  text-black">
                   Certificate of Completion
                 </h3>
               </div>
@@ -58,16 +65,21 @@ export const WhyCourseSite = () => {
             </div>
 
             {/* Networking Section */}
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="text-gray-400">
+            <div className="px-4">
+              <div className="flex flex-col  gap-3 mb-3">
+                <div className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
+                  style={{
+                    boxShadow:
+                      "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                  }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-8 h-8"
                   >
                     <path
                       strokeLinecap="round"
@@ -76,7 +88,7 @@ export const WhyCourseSite = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-2xl  text-black">
                   Networking Opportunities
                 </h3>
               </div>
@@ -88,18 +100,28 @@ export const WhyCourseSite = () => {
           </div>
 
           {/* Middle Column - Profile Card */}
-          <div className="bg-white rounded-3xl shadow-sm p-6 transform transition duration-300 hover:shadow-md">
+          <div className="bg-white rounded-3xl p-6 w-full max-w-md mx-auto md:mx-0 h-auto md:h-[575px]"
+           style={{
+            boxShadow:
+              "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+            border: "1px solid rgba(255,255,255,0.2)",
+          }}>
             <div className="mb-6">
-              <div className="relative w-full h-50 rounded-3xl overflow-hidden">
+              <div className="relative w-full h-[222px] rounded-3xl overflow-hidden mb-7"
+              style={{
+                boxShadow:
+                  "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+                border: "1px solid rgba(255,255,255,0.2)",
+              }}>
                 <Image
                   src= "/images/Rasha.jpg"
                   alt="Ajnas"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
 
-              <h3 className="font-bold text-gray-900 mb-1">
+              <h3 className=" text-black font-semibold mb-1">
                 I started my journey:
               </h3>
               <p className="text-gray-600 text-sm mb-4">
@@ -107,7 +129,7 @@ export const WhyCourseSite = () => {
                 transitioned into a full-time instructor and mentor in 2018.
               </p>
 
-              <h3 className="font-bold text-gray-900 mb-1">
+              <h3 className="font-semibold text-black mb-1">
                 Through hands-on:
               </h3>
               <p className="text-gray-600 text-sm mb-6">
@@ -119,13 +141,13 @@ export const WhyCourseSite = () => {
             {/* Social Media Icons */}
             <div className="flex items-center justify-between">
               <div className="flex gap-3">
-                <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-gray-400">
+                <div className="w-8 h-8 rounded bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition-colors">
                   <Linkedin size={16} />
                 </div>
-                <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-gray-400">
+                <div className="w-8 h-8 rounded bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition-colors">
                   <Twitter size={16} />
                 </div>
-                <div className="w-8 h-8 rounded border border-gray-200 flex items-center justify-center text-gray-400">
+                <div className="w-8 h-8 rounded bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -156,18 +178,23 @@ export const WhyCourseSite = () => {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-10">
+          <div className="space-y-8 flex flex-col justify-center items-center">
             {/* Curriculum Section */}
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="text-gray-400">
+            <div className="px-4">
+              <div className="flex flex-col  gap-3 mb-3">
+              <div className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
+                style={{
+                  boxShadow:
+                    "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-8 h-8"
                   >
                     <path
                       strokeLinecap="round"
@@ -176,7 +203,7 @@ export const WhyCourseSite = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-2xl text-black">
                   Comprehensive Curriculum
                 </h3>
               </div>
@@ -187,16 +214,21 @@ export const WhyCourseSite = () => {
             </div>
 
             {/* Expert Guidance Section */}
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="text-gray-400">
+            <div className="px-4">
+              <div className="flex flex-col  gap-3 mb-3">
+              <div className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
+                style={{
+                  boxShadow:
+                    "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="w-8 h-8"
                   >
                     <path
                       strokeLinecap="round"
@@ -205,7 +237,7 @@ export const WhyCourseSite = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-2xl text-black">
                   Expert Guidance
                 </h3>
               </div>
@@ -215,6 +247,8 @@ export const WhyCourseSite = () => {
               </p>
             </div>
           </div>
+        </div>
+        </div>
         </div>
       </div>
     </div>

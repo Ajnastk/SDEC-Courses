@@ -51,12 +51,12 @@ export const FAQHub = () => {
           </span>
           Faq Hub
         </div>
-        <h1 className=" text-3xl md:text-5xl font-semibold mb-8">
+        <h1 className=" text-3xl md:text-4xl  mb-8">
           Frequently Asked Questions!
         </h1>
 
         <div
-          className="bg-white p-6 rounded-4xl w-[380px] md:w-[400px]"
+          className="bg-white p-6  rounded-4xl w-[380px] md:w-[400px]"
           style={{
             boxShadow:
               "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
@@ -126,39 +126,67 @@ export const FAQHub = () => {
       {/* Right Side - Accordion */}
       <div className="w-full md:w-2/3 space-y-4 flex flex-col justify-center">
         {faqQuestions.map((faq) => (
-          <div
-            key={faq.id}
-            className="bg-white rounded-lg overflow-hidden"
-            style={{
-                boxShadow:
-                  "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                border: "1px solid rgba(255,255,255,0.2)",
-              }}
-          >
-            <div
-              className="flex justify-between items-center p-4 cursor-pointer"
-              onClick={() => toggleQuestion(faq.id)}
-            >
-              <h3 className="font-semibold">{faq.question}</h3>
-              <button className="text-black">
-                {openQuestion === faq.id && faq.answer ? (
-                  faq.id === faq.id ? (
-                    <X size={18} />
-                  ) : (
-                    <ChevronUp size={18} />
-                  )
-                ) : (
-                  <Plus size={18} />
-                )}
-              </button>
-            </div>
+           <div key={faq.id} className="mb-4 flex">
+           <button
+             onClick={() => toggleQuestion(faq.id)}
+             className="w-full flex flex-col bg-white rounded-xl shadow-xl text-left py-6 px-6 transition-all duration-300"
+           >
+             <div className="flex justify-between items-center">
+                 <span className="text-md font-medium text-gray-700">
+                   {faq.question}
+                 </span>
+                 <div
+                   className={`text-black transition-transform duration-500 ${
+                     openQuestion === faq.id ? 'rotate-180' : 'rotate-0'
+                   }`}
+                 >
+                   {openQuestion === faq.id ? <X size={20} /> : <Plus size={20} />}
+                 </div>
+             </div>
+       
+             {/* Animated Answer Section */}
+             <div
+               className={`overflow-hidden transition-all duration-500 ${
+                 openQuestion === faq.id ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 opacity-0'
+               }`}
+             >
+               <p className="text-gray-600 text-sm">{faq.answer}</p>
+             </div>
+           </button>
+         </div>
+          // <div
+          //   key={faq.id}
+          //   className="bg-white rounded-lg overflow-hidden"
+          //   style={{
+          //       boxShadow:
+          //         "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
+          //       border: "1px solid rgba(255,255,255,0.2)",
+          //     }}
+          // >
+          //   <div
+          //     className="flex justify-between items-center p-4 py-6 cursor-pointer"
+          //     onClick={() => toggleQuestion(faq.id)}
+          //   >
+          //     <h3 className="font-semibold">{faq.question}</h3>
+          //     <button className="text-black">
+          //       {openQuestion === faq.id && faq.answer ? (
+          //         faq.id === faq.id ? (
+          //           <X size={18} />
+          //         ) : (
+          //           <ChevronUp size={18} />
+          //         )
+          //       ) : (
+          //         <Plus size={18} />
+          //       )}
+          //     </button>
+          //   </div>
 
-            {openQuestion === faq.id && faq.answer && (
-              <div className=" text-sm p-4 pt-0 text-gray-800 border-t border-gray-100">
-                <p>{faq.answer}</p>
-              </div>
-            )}
-          </div>
+          //   {openQuestion === faq.id && faq.answer && (
+          //     <div className=" text-sm p-4 pt-0 text-gray-800 border-t border-gray-100">
+          //       <p>{faq.answer}</p>
+          //     </div>
+          //   )}
+          // </div>
         ))}
       </div>
     </div>
