@@ -14,7 +14,7 @@ const Footer = () => {
           <Link href="/">
             <div className="flex items-center">
               <div className="transform rotate-45 w-6 h-6 bg-white mr-2"></div>
-              <span className="text-xl font-medium text-black">CourseSite</span>
+              <span className="text-xl font-medium text-black">SDEC</span>
             </div>
           </Link>
         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
       {/* Bottom Bar with Copyright*/}
       <div className="mt-8 pt-[20px] border-t  border-gray-200">
         <div className="text-center pb-10">
-          <p className="text-gray-600 ">CourseSite © 2025. Designed by FrameBase</p>
+          <p className="text-gray-600 ">SDEC © 2025. Designed by SDEC</p>
         </div>
       </div>
     </div>
