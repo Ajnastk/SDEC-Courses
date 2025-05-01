@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from "next/link";
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -10,49 +10,17 @@ export default function StaggeredMenuDemo() {
   const router = useRouter();
   const isHomePage = pathname === '/' || pathname === '/#';
 
-  // Menu items with staggered delay for animations
-  const navLinks = [
+  // Move navLinks into useMemo to prevent recreation on every render
+  const navLinks = useMemo(() => [
     { name: "Courses", type: "link", id: "courses", path: "/courses", delay: "delay-200" },
     { name: "Reviews", type:  "link", id: "reviews", path: "/reviews", delay: "delay-300" },
     { name: "Contact", type:  "link", id: "contact", path: "/contact", delay: "delay-400" },
     { name: "Join Now", type: isHomePage ? "scroll" : "link", id: "join", path: "/#join", delay: "delay-500" }
-  ];
+  ], [isHomePage]); // Only recompute when isHomePage changes
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  // Set up intersection observer for scroll sections on homepage
-  useEffect(() => {
-    // Only set up intersection observer on homepage
-    if (!isHomePage) return;
-    
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const section = entry.target.id;
-          const isTop = window.scrollY < 100;
-          setActiveLink(isTop ? "home" : section);
-        }
-      });
-    }, observerOptions);
-
-    // Only observe on homepage
-    navLinks.forEach((link) => {
-      if (link.type === "scroll") {
-        const section = document.getElementById(link.id);
-        if (section) observer.observe(section);
-      }
-    });
-
-    return () => observer.disconnect();
-  }, [isHomePage, navLinks]);
+  const toggleMobileMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev);
+  }, []);
 
   // Handle link click
   const handleLinkClick = useCallback((linkId) => {
@@ -96,6 +64,38 @@ export default function StaggeredMenuDemo() {
     // Scroll to the join/pricing section
     scrollToSection("join");
   }, [handleLinkClick, scrollToSection]);
+
+  // Set up intersection observer for scroll sections on homepage
+  useEffect(() => {
+    // Only set up intersection observer on homepage
+    if (!isHomePage) return;
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = entry.target.id;
+          const isTop = window.scrollY < 100;
+          setActiveLink(isTop ? "home" : section);
+        }
+      });
+    }, observerOptions);
+
+    // Only observe on homepage
+    navLinks.forEach((link) => {
+      if (link.type === "scroll") {
+        const section = document.getElementById(link.id);
+        if (section) observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [isHomePage, navLinks]); // Now navLinks is memoized and won't cause unnecessary re-renders
 
   return (
     <div className="relative"> 
