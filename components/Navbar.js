@@ -1,42 +1,161 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import Link from "next/link";
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function StaggeredMenuDemo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === '/' || pathname === '/#';
+
+  // Menu items with staggered delay for animations
+  const navLinks = [
+    { name: "Courses", type: "link", id: "courses", path: "/courses", delay: "delay-200" },
+    { name: "Reviews", type:  "link", id: "reviews", path: "/reviews", delay: "delay-300" },
+    { name: "Contact", type:  "link", id: "contact", path: "/contact", delay: "delay-400" },
+    { name: "Join Now", type: isHomePage ? "scroll" : "link", id: "join", path: "/#join", delay: "delay-500" }
+  ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Menu items with staggered delay for animations
-  const menuItems = [
-    { name: "Courses", href: "#", delay: "delay-100" },
-    { name: "Contact", href: "#", delay: "delay-200" },
-    { name: "Reviews", href: "#", delay: "delay-300" },
-    { name: "Join Now", href: "#", delay: "delay-400" }
-  ];
+  // Set up intersection observer for scroll sections on homepage
+  useEffect(() => {
+    // Only set up intersection observer on homepage
+    if (!isHomePage) return;
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = entry.target.id;
+          const isTop = window.scrollY < 100;
+          setActiveLink(isTop ? "home" : section);
+        }
+      });
+    }, observerOptions);
+
+    // Only observe on homepage
+    navLinks.forEach((link) => {
+      if (link.type === "scroll") {
+        const section = document.getElementById(link.id);
+        if (section) observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [isHomePage, navLinks]);
+
+  // Handle link click
+  const handleLinkClick = useCallback((linkId) => {
+    setActiveLink(linkId);
+    setMobileMenuOpen(false);
+  }, []);
+
+  // Improved scroll to section function
+  const scrollToSection = useCallback((id) => {
+    // Close mobile menu first if it's open
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+    
+    // If we're not on the home page, navigate to home page first with the hash
+    if (!isHomePage) {
+      router.push(`/#${id}`);
+      return;
+    }
+    
+    // If we're already on the home page, scroll smoothly
+    const section = document.getElementById(id);
+    if (section) {
+      // Add a small delay to ensure DOM updates are complete
+      setTimeout(() => {
+        section.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "start" 
+        });
+      }, 100);
+    }
+  }, [isHomePage, mobileMenuOpen, router]);
+
+  // Handle "Join Now" click specially
+  const handleJoinNowClick = useCallback((e) => {
+    e.preventDefault();
+    
+    // Set active link
+    handleLinkClick("join");
+    
+    // Scroll to the join/pricing section
+    scrollToSection("join");
+  }, [handleLinkClick, scrollToSection]);
 
   return (
     <div className="relative"> 
       {/* Desktop Navbar */}
-      <nav className="flex Lg:justify-around sm:justify-between md:justify-between justify-between px-8 py-4 bg-[#fffefe] z-30 relative">
-        <a href="#" className="flex items-center text-2xl text-black font-light">
+      <nav className="flex Lg:justify-around sm:justify-between md:justify-between justify-between px-8 py-5 bg-[#fffefe] z-30 relative">
+        <Link href="#" className="flex items-center text-2xl text-black font-light">
           <div className="mr-2 text-green-800">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.5 12.5L12 16.5L4.5 12.5M19.5 8.5L12 12.5L4.5 8.5L12 4.5L19.5 8.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
           CourseSite
-        </a>
+        </Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-black">
-          <a href="#" className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Courses</a>
-          <a href="#" className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Reviews</a>
-          <a href="#" className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Contact</a>
+          {navLinks.slice(0, 3).map((item) => {
+            const isActive = item.type === "scroll" 
+              ? activeLink === item.id 
+              : pathname === item.path;
+              
+            return (
+              item.type === "scroll" ? (
+                <Link
+                  key={item.name}
+                  href={`#${item.id}`} 
+                  onClick={(e) => { 
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                    handleLinkClick(item.id);
+                  }}
+                  className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <Link 
+                  key={item.name}
+                  href={item.path}
+                  onClick={() => handleLinkClick(item.id)}
+                  className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100"
+                >
+                  {item.name}
+                </Link>
+              )
+            );
+          })}
         </div>
         
-        <a href="#" className="hidden md:block text-lg text-black rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100">Join Now</a>
+        {/* Join Now button for desktop - Modified for smooth scrolling */}
+        {navLinks.slice(-1).map((item) => (
+          <Link
+            key={item.name}
+            href={`#${item.id}`} 
+            className="hidden md:block text-lg text-black rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100"
+            onClick={handleJoinNowClick}
+          >
+            {item.name}
+          </Link>
+        ))}
         
         {/* Mobile Menu Button with Animation */}
         <button 
@@ -77,21 +196,38 @@ export default function StaggeredMenuDemo() {
       >
         <div className="p-4">
           <div className="flex flex-col text-black">
-            {menuItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className={`py-4 border-b-[0.2px] border-b-gray-400  text-lg transform transition-all duration-500 ${item.delay} ${
-                  mobileMenuOpen
-                    ? 'translate-y-0 opacity-100'
-                    : '-translate-y-8 opacity-0'
-                }`}
-                onClick={(e) => {
-                  e.preventDefault(); // Prevent navigation in demo
-                }}
-              >
-                {item.name}
-              </a>
+            {navLinks.map((item, index) => (
+              item.type === "scroll" ? (
+                <Link
+                  key={index}
+                  href={`#${item.id}`}
+                  className={`py-4 border-b-[0.2px] border-b-gray-400 text-lg transform transition-all duration-500 ${item.delay} ${
+                    mobileMenuOpen
+                      ? 'translate-y-0 opacity-100'
+                      : '-translate-y-8 opacity-0'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                    handleLinkClick(item.id);
+                  }}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <Link
+                  key={index}
+                  href={item.path}
+                  className={`py-4 border-b-[0.2px] border-b-gray-400 text-lg transform transition-all duration-500 ${item.delay} ${
+                    mobileMenuOpen
+                      ? 'translate-y-0 opacity-100'
+                      : '-translate-y-8 opacity-0'
+                  }`}
+                  onClick={() => handleLinkClick(item.id)}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
         </div>
@@ -107,4 +243,3 @@ export default function StaggeredMenuDemo() {
     </div>
   );
 }
-

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Now from "./Now";
 export default function TestimonialsSection() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -52,8 +53,8 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-white via-[#f6e7ff] to-white py-16 p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-r from-white via-[#f6e7ff] to-white py-16">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-black font-medium w-32 items-center text-sm flex gap-2 bg-purple-50 border-2 border-gray-200 rounded-full mb-4">
           <span className="h-6 w-6 bg-purple-300 rounded-full flex items-center justify-center">
             <span className="text-purple-600"></span>
@@ -70,15 +71,9 @@ export default function TestimonialsSection() {
         </p>
         {/* CTA Button */}
         <button className="relative overflow-hidden w-52 group py-2 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition cursor-pointer mb-12">
-          <span className="block relative h-10 w-full">
-            <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 transform group-hover:translate-y-full">
-              Start Learning Now
-            </span>
-            <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 transform -translate-y-full group-hover:translate-y-0">
-              Start Learning Now
-            </span>
-          </span>
+        <Now/>
         </button>
+      
 
         {/* Grid that changes from 3 columns to 2 columns based on screen size */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-20">
