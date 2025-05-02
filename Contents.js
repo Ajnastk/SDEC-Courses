@@ -90,10 +90,6 @@ const contents = {
     learnHeading: "Start Learning Now",
     learnDesc: "This one is slightly better, it has more contrast",
     designNote: "Do you think this design is better?",
-    buttons: [
-      { label: "Try Demo", style: "primary" },
-      { label: "Get template", style: "secondary" },
-    ],
     image: Earth,
   },
 };
