@@ -36,7 +36,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white relative overflow-hidden">
+    <div id="benefits" className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute left-1/6 top-1/6 opacity-5">
           <svg
