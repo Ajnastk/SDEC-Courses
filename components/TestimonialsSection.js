@@ -65,15 +65,15 @@ export default function TestimonialsSection() {
           Our Students feedback
         </h2>
 
-        <p className="text-gray-700 mb-8 max-w-lg">
+        <p className="text-gray-700 max-w-lg">
           Explore the incredible advantages of enrolling in our courses and
           enhancing your skills.
         </p>
-        {/* CTA Button */}
-        <button className="relative overflow-hidden w-52 group py-2 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition cursor-pointer mb-12">
-        <Now/>
-        </button>
-      
+        {/* CTA BUTTON */}
+        <div className="mb-12">
+        <Now />
+        </div>
+        
 
         {/* Grid that changes from 3 columns to 2 columns based on screen size */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-15">

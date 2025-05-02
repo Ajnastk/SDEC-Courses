@@ -20,14 +20,16 @@ const Footer = () => {
         </div>
         
         {/* Headline */}
-        <h2 className="text-4xl  font-poppins text-center mb-8 text-black">
+        <h2 className="text-4xl  font-poppins text-center text-black">
           Boost your Learning & Knowledge with<br />
           CourseSite Now
         </h2>
         
         {/* CTA Button */}
-        
-    <Now/>
+        <div className='my-4'>
+        <Now/>
+        </div>
+    
         
         {/* Path Text with Avatar */}
         <div className="flex items-center mb-12">
@@ -57,7 +59,7 @@ const Footer = () => {
       </div>
       
       {/* Bottom Bar with Copyright*/}
-      <div className="mt-8 pt-[20px] border-t  border-gray-200">
+      <div className="mt-8 pt-[20px] border-t  border-gray-400 mx-[24px]">
         <div className="text-center pb-10">
           <p className="text-gray-600 ">SDEC © 2025. Designed by SDEC</p>
         </div>
