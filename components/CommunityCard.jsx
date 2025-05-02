@@ -154,7 +154,7 @@ export default function CommunityCard() {
               }}
               className="relative max-w-[170px] h-[50px] md:h-auto md:w-[230px] bg-gradient-to-b top-[100px] from-gray-100 to-white p-2 md:p-4 rounded-xl shadow-md mb-3 border-3 border-white"
             >
-              <p className="-md:text-md text-xs text-gray-700">
+              <p className="md:text-md text-[0.7rem] text-gray-700">
                 This one is slightly better, it has more contrast
               </p>
               <div className="flex justify-center items-center absolute md:-bottom-16 -bottom-12 -left-9  md:w-14 md:h-14 w-10 h-10 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
@@ -169,7 +169,7 @@ export default function CommunityCard() {
               }}
               className="relative md:w-[160px] w-[120px] h-[50px] md:h-auto bg-gradient-to-b left-[30px] top-[150px] from-gray-100 to-white p-2 md:p-4 rounded-xl shadow-md ml-8 border-3 border-white"
             >
-              <p className="md:text-sm text-xs text-gray-700">
+              <p className="md:text-sm text-[0.7rem] text-gray-700">
                 Do you think this design is better?
               </p>
               <div className="flex justify-center items-center absolute md:-bottom-16 -bottom-12 -left-9 md:w-14 md:h-14 h-10 w-10 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
