@@ -18,8 +18,8 @@ export default function CommunityCard() {
 
   return (
     <div className="relative pt-[80px] bg-gradient-to-l from-white via-[#f7eafe] to-white flex flex-col rounded-b-[4rem] shadow-[0_60px_80px_-20px_rgba(150,100,250,0.3)]">
-      <div className="flex justify-center gap-6 mb-6 md:mr-40">
-        <div className="flex gap-4">
+      <div className="md:flex justify-center gap-6 mr-40 mb-[120px] hidden">
+        <div className="flex gap-4 ">
           <div className="flex justify-end p-1">
            <Image
            width={1}
@@ -93,9 +93,9 @@ export default function CommunityCard() {
         </div>
       </div>
 
-      <div className=" relative w-full flex md:flex-row flex-col ">
-        <div className="md:w-[50%] w-full xl:pl-40 md:pl-16 z-10">
-          <div className="flex items-center justify-start mb-2">
+      <div className="relative w-full flex lg:flex-row flex-col items-center md:gap-2 gap-[120px]">
+        <div className="lg:w-[50%] w-[80%] xl:pl-40 md:pl-16 z-10 mb-[50px]">
+          <div className="flex items-center lg:justify-start justify-center mb-2">
             <div className="border-2 px-0 py-0 rounded-full flex items-center">
               <div className="text-black font-medium w-[140px] h-[30px] text-sm flex items-center gap-4">
                 <span className="h-6 w-6 bg-purple-300 rounded-full flex items-center justify-center">
@@ -109,20 +109,20 @@ export default function CommunityCard() {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6">
-            <h1 className="text-md md:text-4xl md:font-semibold text-gray-900">
+          <div className="space-y-6 flex flex-col items-center lg:items-start">
+            <h1 className="text-2xl md:text-4xl font-semibold text-center lg:text-start text-gray-900">
               {title}
             </h1>
 
-            <p className="text-md text-gray-700 md:w-[80%]">{description}</p>
+            <p className="text-md text-gray-700 text-center lg:text-start w-[80%] md:w-[80%]">{description}</p>
 
             <button
               className={`relative overflow-hidden w-[200px] h-[45px] py-1 px-4 rounded-full text-md transition-colors cursor-pointer group bg-gradient-to-br from-[#7f7e80] to-black text-white `}
             >
-              <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
+              <span className="absolute text-center md:text-start inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
                 {learnHeading}
               </span>
-              <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+              <span className="absolute text-center md:text-start inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
                 {learnHeading}
               </span>
             </button>
@@ -146,18 +146,18 @@ export default function CommunityCard() {
           </div>
 
           {/* Comment bubbles */}
-          <div className="absolute bottom-80 left-[380px] z-10">
+          <div className="absolute bottom-[200px] sm:bottom-80 left-[100px] sm:left-[300px] md:left-[400px] lg:left-[300px] xl:left-[380px] z-10">
             <div
               style={{
                 transform:
                   "perspective(180px) rotateY(-5deg) rotateX(-4deg) translateX(20px)",
               }}
-              className="relative w-[230px] bg-gradient-to-b top-[100px] from-gray-100 to-white p-4 rounded-xl shadow-md max-w-xs mb-3 border-3 border-white"
+              className="relative max-w-[170px] h-[50px] md:h-auto md:w-[230px] bg-gradient-to-b top-[100px] from-gray-100 to-white p-2 md:p-4 rounded-xl shadow-md mb-3 border-3 border-white"
             >
-              <p className="text-sm text-gray-700">
+              <p className="-md:text-md text-xs text-gray-700">
                 This one is slightly better, it has more contrast
               </p>
-              <div className="flex justify-center items-center absolute -bottom-16 -left-9 w-14 h-14 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
+              <div className="flex justify-center items-center absolute md:-bottom-16 -bottom-12 -left-9  md:w-14 md:h-14 w-10 h-10 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
                 <UserRound size={20} color="#949494" />
               </div>
             </div>
@@ -167,12 +167,12 @@ export default function CommunityCard() {
                 transform:
                   "perspective(180px) rotateY(-3deg) rotateX(-6deg) translateX(20px)",
               }}
-              className="relative w-[180px] bg-gradient-to-b left-[30px] top-[150px] from-gray-100 to-white p-4 rounded-xl shadow-md max-w-xs ml-8 border-3 border-white"
+              className="relative md:w-[160px] w-[120px] h-[50px] md:h-auto bg-gradient-to-b left-[30px] top-[150px] from-gray-100 to-white p-2 md:p-4 rounded-xl shadow-md ml-8 border-3 border-white"
             >
-              <p className="text-sm text-gray-700">
+              <p className="md:text-sm text-xs text-gray-700">
                 Do you think this design is better?
               </p>
-              <div className="flex justify-center items-center absolute -bottom-16 -left-9 w-14 h-14 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
+              <div className="flex justify-center items-center absolute md:-bottom-16 -bottom-12 -left-9 md:w-14 md:h-14 h-10 w-10 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
                 <UserRound size={30} color="#949494" />
               </div>{" "}
             </div>
