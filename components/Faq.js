@@ -56,7 +56,7 @@ export const FAQHub = () => {
         </h1>
 
         <div
-          className="bg-white p-6  rounded-4xl w-[380px] md:w-[400px]"
+          className="bg-white p-6  rounded-4xl"
           style={{
             boxShadow:
               "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
