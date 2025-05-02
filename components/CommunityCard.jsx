@@ -119,10 +119,10 @@ export default function CommunityCard() {
             <button
               className={`relative overflow-hidden w-[200px] h-[45px] py-1 px-4 rounded-full text-md transition-colors cursor-pointer group bg-gradient-to-br from-[#7f7e80] to-black text-white `}
             >
-              <span className="absolute text-center md:text-start inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
+              <span className="absolute text-center font-semibold md:text-start inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
                 {learnHeading}
               </span>
-              <span className="absolute text-center md:text-start inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+              <span className="absolute text-center font-semibold md:text-start inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
                 {learnHeading}
               </span>
             </button>
