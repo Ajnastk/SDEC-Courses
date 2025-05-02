@@ -9,12 +9,19 @@ export default function PremiumCourses() {
     contents.PremimuCoursesData;
 
   return (
-    <div id="join" className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
+    <div
+      id="join"
+      className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white "
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex lg:flex-row flex-col items-center justify-between mb-10  lg:gap-0 gap-6">
-          <h1 className="md:text-4xl sm:text-3xl text-2xl font-semibold sm:font-normal text-black">{heading}</h1>
+          <h1 className="md:text-4xl sm:text-3xl text-2xl font-semibold sm:font-normal text-black">
+            {heading}
+          </h1>
           <div className="text-right">
-            <div className="sm:text-xl text-lg text-black text-center">{subheading}</div>
+            <div className="sm:text-xl text-lg text-black text-center">
+              {subheading}
+            </div>
             <div className="flex items-center text-black mt-2">
               {/* {[1, 2, 3, 4, 5].map((star) => (
                 <span key={star} className="text-lg">
@@ -31,8 +38,9 @@ export default function PremiumCourses() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan) => (
             <div
+              style={{ border: "3px solid white" }}
               key={plan.id}
-              className="relative bg-white rounded-3xl lg:px-0 md:px-0 sm:px-6 px-6 shadow-md "
+              className="relative bg-purple-50 rounded-3xl lg:px-0 md:px-0 sm:px-6 px-6 shadow-md "
             >
               {plan.isPopular && (
                 <div className="absolute top-1 md:-left-8 -left-6 z-10 rotate-[-20deg]">
@@ -60,7 +68,9 @@ export default function PremiumCourses() {
                       </span>
                       <span className="text-gray-900 ml-2">/mo</span>
                     </div>
-                    <div className="text-gray-800 md:text-md text-sm mt-1">Billed annually</div>
+                    <div className="text-gray-800 md:text-md text-sm mt-1">
+                      Billed annually
+                    </div>
                   </div>
 
                   <div className="space-y-4 mb-8">

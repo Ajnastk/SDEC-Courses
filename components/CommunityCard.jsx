@@ -31,10 +31,28 @@ export default function CommunityCard() {
           </div>
           <h2 className="text-4xl font-poppins text-black mb-4">{title}</h2>
 
-          <p className="text-gray-700 max-w-lg">{description}</p>
-          {/* CTA BUTTON */}
-          <div className="mb-12">
-            <Now />
+          {/* Text Content */}
+          <div className="space-y-6 flex flex-col items-center lg:items-start">
+            <h1 className="text-2xl md:text-4xl font-semibold text-center lg:text-start text-gray-900">
+              {title}
+            </h1>
+
+            <p className="text-md text-gray-700 text-center lg:text-start w-[80%] md:w-[80%]">{description}</p>
+
+            <button
+              className={`relative overflow-hidden w-[200px] h-[45px] py-1 px-4 rounded-full text-md transition-colors cursor-pointer group bg-gradient-to-br from-[#7f7e80] to-black text-white `}
+            >
+              <span className="absolute text-center font-semibold md:text-start inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
+                {learnHeading}
+              </span>
+              <span className="absolute text-center font-semibold md:text-start inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+                {learnHeading}
+              </span>
+            </button>
+//           <p className="text-gray-700 max-w-lg">{description}</p>
+//           {/* CTA BUTTON */}
+//           <div className="mb-12">
+//             <Now />
           </div>
         </div>
 
