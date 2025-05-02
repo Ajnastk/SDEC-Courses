@@ -60,31 +60,21 @@ export default function Now({
   }
 
   return (
-    <div className={`relative overflow-hidden ${width} group bg-gradient-to-br from-[#7f7e80] to-black group py-0 bg-gray-900 text-white my-4 rounded-full font-medium hover:bg-gray-800 transition cursor-pointer ${className}`}>
+    <div className={`relative overflow-hidden ${width} group bg-gradient-to-br from-[#7f7e80] to-black group py-2 bg-gray-900 text-white my-4 rounded-full font-medium hover:bg-gray-800 transition cursor-pointer ${className}`}>
     <Link
       href="/#join"
       onClick={handleClick}
       id="animated-join-button"
       style={initialOpacity !== 1 || initialScale !== 1 ? animationStyles : {}}
     >
-      {/* <span className="block relative h-10 ">
+      <span className="block relative h-10 ">
         <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 transform group-hover:translate-y-full">
           {buttonText}
         </span>
         <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 transform -translate-y-full group-hover:translate-y-0">
           {buttonText}
         </span>
-      </span> */}
-       <button
-          className={`relative overflow-hidden w-[200px] h-[45px] py-1 px-4 rounded-full text-md transition-colors cursor-pointer group `}
-        >
-          <span className="absolute text-center font-semibold md:text-start inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
-            {buttonText}
-          </span>
-          <span className="absolute text-center font-semibold md:text-start inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
-            {buttonText}
-          </span>
-        </button>
+      </span>
     </Link>
     </div>
   );
