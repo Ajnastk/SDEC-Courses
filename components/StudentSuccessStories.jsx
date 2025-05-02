@@ -65,14 +65,14 @@ const testimonials = [
 
 export default function StudentSuccessStories() {
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white grid md:grid-cols-3 grid-cols-1 gap-8 max-w-7xl mx-[150px] pt-[80px]">
+    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white grid lg:grid-cols-3 grid-cols-1 gap-8 max-w-7xl mx-auto px-10 pt-[80px]">
       {testimonials.map((t, i) => (
         <div
           style={{ border: "3px solid white" }}
           key={i}
-          className={`rounded-3xl shadow-2xl p-6 max-w-[390px] bg-gradient-to-b from-[#fbf7fd] to-[#fefcff] ${
-            i % 2 === 0 ? "h-[230px]" : "h-[300px] mt-[-70px]"
-          }  ${i % 3 === 1 ? "mt-[0px]" : ""}`}
+          className={`rounded-3xl shadow-2xl p-6 lg:max-w-[390px] bg-gradient-to-b from-[#fbf7fd] to-[#fefcff] ${
+            i % 2 === 0 ? "lg:h-[230px] h-[300px]" : "h-[300px] lg:mt-[-70px]"
+          }  ${i % 3 === 1 ? "lg:mt-[0px]" : ""}`}
         >
           <div className="flex justify-between mb-4">
             <div className="flex space-x-1 text-yellow-400">
