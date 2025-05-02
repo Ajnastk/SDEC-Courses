@@ -51,7 +51,7 @@ const testimonials = [
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
-      "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
+      "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
     image: "/user2.jpg",
   },
   {
@@ -65,7 +65,8 @@ const testimonials = [
 
 export default function StudentSuccessStories() {
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white grid lg:grid-cols-3 grid-cols-1 gap-8 max-w-7xl mx-auto px-10 pt-[80px]">
+    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white py-[80px]">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  grid-cols-1 gap-8 max-w-7xl mx-auto px-4 ">
       {testimonials.map((t, i) => (
         <div
           style={{ border: "3px solid white" }}
@@ -131,6 +132,7 @@ export default function StudentSuccessStories() {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }
