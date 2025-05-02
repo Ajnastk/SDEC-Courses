@@ -9,7 +9,8 @@ export default function HeroSessionReviews() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white max-w-7xl mx-auto px-4 py-12 text-center">
+    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white pt-[160px]">
+      <div className="max-w-7xl mx-auto px-4 text-center">
       {/* Navigation */}
       <div className="flex items-center justify-center mb-6 text-gray-600">
         <Link href="/" className="hover:text-gray-900">
@@ -58,6 +59,7 @@ export default function HeroSessionReviews() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
