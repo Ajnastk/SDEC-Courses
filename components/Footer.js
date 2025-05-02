@@ -6,7 +6,7 @@ import Now from './Now';
 
 const Footer = () => {
   return (
-    <div className="bg-gradient-to-r from-white via-[#f6e7ff] to-white pt-20">
+    <div className="bg-gradient-to-r from-white via-[#f6e7ff] to-white pt-16">
       {/* Main Footer Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         {/* Logo */}
@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Path Text with Avatar */}
         <div className="flex items-center mb-12">
           <p className="mr-2 text-black">Your Path to Becoming a Web Wizard</p>
-          <div className="w-8 h-8 rounded-full overflow-hidden">
+          <div className="overflow-hidden">
             <Image 
               src="/Images/rahib.jpg" 
               alt="Avatar" 
