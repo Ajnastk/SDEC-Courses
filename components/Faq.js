@@ -95,9 +95,10 @@ export const FAQHub = () => {
               </div>
               <div className="w-10 h-10 rounded-full bg-green-200 border-2 border-white overflow-hidden relative">
                 <Image
-                  src="/images/user1.jpg"
+                  src="/images/ajnas.jpg"
                   alt="User 1"
-                  layout="fill"
+                  width={29} 
+                  height={10}
                   objectFit="cover"
                 />
               </div>
