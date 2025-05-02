@@ -60,11 +60,11 @@ export default function Now({
   }
 
   return (
+    <div className={`relative overflow-hidden ${width} group bg-gradient-to-br from-[#7f7e80] to-black group py-2 bg-gray-900 text-white my-4 rounded-full font-medium hover:bg-gray-800 transition cursor-pointer ${className}`}>
     <Link
       href="/#join"
       onClick={handleClick}
       id="animated-join-button"
-      className={`relative overflow-hidden ${width} group py-2 bg-gray-900 text-white my-4 rounded-full font-medium hover:bg-gray-800 transition cursor-pointer ${className}`}
       style={initialOpacity !== 1 || initialScale !== 1 ? animationStyles : {}}
     >
       <span className="block relative h-10 ">
@@ -76,5 +76,6 @@ export default function Now({
         </span>
       </span>
     </Link>
+    </div>
   );
 }
