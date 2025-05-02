@@ -1,13 +1,10 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HeroBackground } from "./HeroBackground";
-import StaggeredMenuDemo from "./Navbar";
 import Now from "./Now";
-
+import Link from "next/link";
 export const Hero = () => {
-  const headlineWords = [
+  const HeadLineWords = [
     "Web",
     "Dev",
     "&",
@@ -16,7 +13,7 @@ export const Hero = () => {
     "Simple,",
     "Better.",
   ];
-  const subheadlineWords = [
+  const SubHeadLineWords = [
     "Practical",
     "project-based",
     "courses",
@@ -40,9 +37,9 @@ export const Hero = () => {
     <div className="relative min-h-screen  overflow-hidden text-black">
       {/* Background with floating color orbs */}
       <HeroBackground />
-      
-      <main className="relative container max-w-5xl mx-auto px-4 py-20 text-center z-10">
-                {/* Trusted badge */}
+
+      <main className="relative container max-w-5xl mx-auto px-4 py-16 text-center z-10">
+        {/* Trusted badge */}
         <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-full px-4 py-2 mb-10">
           <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
           <p className="text-sm text-gray-800">
@@ -51,8 +48,8 @@ export const Hero = () => {
         </div>
 
         {/* Animated headline */}
-        <h1 className="md:text-7xl text-6xl font-bold mb-6 leading-tight">
-          {headlineWords.map((word, index) => (
+        <h1 className="md:text-7xl text-5xl font-bold mb-6 leading-tight">
+          {HeadLineWords.map((word, index) => (
             <motion.span
               key={index}
               className="inline-block mr-2"
@@ -69,10 +66,10 @@ export const Hero = () => {
           ))}
         </h1>
 
-        {/* Animated subheadline */}
+        {/* Animated SubHeadLine */}
         <div className="max-w-2xl mx-auto mb-10">
           <p className="text-md">
-            {subheadlineWords.map((word, index) => (
+            {SubHeadLineWords.map((word, index) => (
               <motion.span
                 key={index}
                 className="inline-block mr-1"
@@ -80,7 +77,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{
                   duration: 0.1,
-                  delay: headlineWords.length * 0.1 + index * 0.1,
+                  delay: HeadLineWords.length * 0.1 + index * 0.1,
                   ease: "easeIn",
                 }}
               >
@@ -93,23 +90,29 @@ export const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           <motion.button
-            className="px-6  bg-white/30  py-5 backdrop-blur-sm text-gray-800 rounded-full font-medium hover:bg-white/40 transition cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 2.8 }}
           >
-            View All Courses
+            <Link
+            href="./courses"
+              className="px-6 py-3 rounded-full text-gray/40 font-medium 
+                 bg-gradient-to-b from-white/20 to-white/10 
+                 shadow-inner shadow-white/40
+                 hover:from-white/25 hover:to-white/15
+                 active:from-white/15 active:to-white/5
+                 transition-all duration-200 ease-in-out cursor-pointer"
+            >
+              View All Courses
+            </Link>
           </motion.button>
 
           <motion.button
-            className="relative overflow-hidden group px-3 md:py-1 py-2 bg-white/60 backdrop-blur-sm rounded-full font-medium hover:bg-white/70 transition cursor-pointer border-4 border-orange-100"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 3 }}
           >
-            <span className="block relative md:h-11 w-46">
-            <Now className="text-gray-800" />
-            </span>
+            <Now />
           </motion.button>
         </div>
 

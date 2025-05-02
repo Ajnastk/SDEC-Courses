@@ -100,14 +100,10 @@ export const FAQHub = () => {
                 />
               </div>
             </div>
-
-            {/* <button className="bg-gray-900 text-white px-6 py-2 rounded-full font-medium">
-              Start Learning Now
-            </button> */}
-          <button className="relative overflow-hidden w-52 group py-2 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition cursor-pointer ">
-                  <Now/>
-                  </button>
+            {/* CTA BUTTON */}
+            <Now/>
           </div>
+   
         </div>
       </div>
 

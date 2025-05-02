@@ -7,7 +7,7 @@ export default function FeaturedCourses() {
       description:
         "Master JavaScript with our updated course. Learn core concepts, ES6+, and advanced techniques to build modern web applications.",
       price: 99,
-      image: "/images/rahib.jpg",
+      image: "/images/courses.jpeg",
       level: "Intermediate",
       featured: true,
     },
@@ -17,7 +17,7 @@ export default function FeaturedCourses() {
       description:
         "Master Framer in 2024 with this updated course. Learn to design, prototype, and build interactive interfaces with ease.",
       price: 99,
-      image: "/images/rahib.jpg",
+      image: "/images/courses.jpeg",
       level: "Beginner",
       featured: true,
     },
@@ -27,7 +27,7 @@ export default function FeaturedCourses() {
       description:
         "Master Figma in 2024 with this updated course. Learn to design, prototype, and collaborate on user interfaces.",
       price: 79,
-      image: "/images/rahib.jpg",
+      image: "/images/courses.jpeg",
       level: "Beginner",
       featured: true,
     },
@@ -61,7 +61,7 @@ export default function FeaturedCourses() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ">
           {courses.map((course) => (
-            <div key={course.id} className="bg-white rounded-[22px] shadow-lg overflow-hidden p-6">
+            <div key={course.id} className="bg-white rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]">
               <div className="relative w-full h-50">
                 <Image 
                   src={course.image} 

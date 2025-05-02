@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Users, Calendar, Rocket, Mail } from "lucide-react";
 import contents from "@/Contents";
 import React from "react";
 import Image from "next/image";
@@ -62,21 +61,22 @@ export default function BoostYourSkills() {
   ];
 
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white py-16 flex flex-col px-4 w-full mx-auto relative overflow-hidden">
+    <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
+      <div className="max-w-7xl mx-auto px-4">
       {/* Decorative Elements */}
-      <div className="absolute top-16 left-16 opacity-10">
+      {/* <div className="absolute top-16 left-16 opacity-10">
         <div className="text-purple-300 text-8xl">✳</div>
       </div>
       <div className="absolute bottom-16 right-16 opacity-10">
         <div className="text-purple-300 text-8xl">✳</div>
-      </div>
+      </div> */}
 
       <div className="text-center mb-12">
         <div className="flex items-center justify-center mb-2">
           <div className="bg-purple-50 border-2 border-gray-200 px-0 py-0 rounded-full flex items-center">
-            <div className="text-black font-medium w-[110px] text-sm flex items-center gap-4">
+            <div className="text-black font-medium w-[110px] text-sm flex items-center gap-2">
               <span className="h-6 w-6 bg-purple-300 rounded-full flex items-center justify-center">
-                <span className="text-purple-600">{<Rocket />}</span>
+                <span className="text-purple-600">{}</span>
               </span>
               We Offer
             </div>
@@ -88,12 +88,12 @@ export default function BoostYourSkills() {
       </div>
 
       {/* Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-center gap-6 lg:gap-14 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-15">
         {data.cards.map((card, index) => {
           return (
             <div
               key={index}
-              className="px-8 text-center sm:h-[370px] h-[320px] lg:w-[370px] transition-transform relative rounded-3xl flex flex-col justify-center items-center gap-5"
+              className="px-9 text-center py-16 transition-transform relative rounded-3xl flex flex-col justify-center items-center gap-5"
               style={{
                 border: "3px solid white",
                 boxShadow:
@@ -122,6 +122,7 @@ export default function BoostYourSkills() {
                   <Image
                     width={70}
                     height={50}
+                    alt="icon"
                     priority
                     src={card.icon}
                     className="text-white"
@@ -152,8 +153,8 @@ export default function BoostYourSkills() {
         </div>
 
         <div className="relative overflow-hidden w-full py-8" ref={wrapperRef}>
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#fcfbff] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#fcfbff] to-transparent z-10"></div>
 
           <div className="flex" ref={sliderRef}>
             {[...Array(4)].map((_, cloneIndex) => (
@@ -173,6 +174,7 @@ export default function BoostYourSkills() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export const WhyCourseSite = () => {
         {/* Main Grid Content */}
         <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col">
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-12">
           {/* Left Column */}
           <div className="space-y-8 flex flex-col justify-center items-center">
             {/* Certificate Section */}
