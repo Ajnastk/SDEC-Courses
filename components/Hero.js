@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { HeroBackground } from "./HeroBackground";
-import Now from "./Now";
+import Now from "./ui/Now";
 import Link from "next/link";
 export const Hero = () => {
   const HeadLineWords = [
@@ -40,7 +40,14 @@ export const Hero = () => {
 
       <main className="relative container max-w-5xl mx-auto px-4 py-16 text-center z-10">
         {/* Trusted badge */}
-        <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-full px-4 py-2 mb-10">
+        <div
+          className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-full px-4 py-2 mb-10 text-gray/40 font-medium 
+                 bg-gradient-to-b from-white/20 to-white/10 
+                 shadow-inner shadow-white/40
+                 hover:from-white/25 hover:to-white/15
+                 active:from-white/15 active:to-white/5
+                 transition-all duration-200 ease-in-out cursor-pointer"
+        >
           <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
           <p className="text-sm text-gray-800">
             Trusted by 20,000+ Happy Learners
@@ -95,7 +102,7 @@ export const Hero = () => {
             transition={{ delay: 2.8 }}
           >
             <Link
-            href="./courses"
+              href="./courses"
               className="px-6 py-3 rounded-full text-gray/40 font-medium 
                  bg-gradient-to-b from-white/20 to-white/10 
                  shadow-inner shadow-white/40
@@ -126,8 +133,21 @@ export const Hero = () => {
           {/* Card 1 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">
             {/* Badge */}
-            <div className="absolute top-4 right-4 bg-black text-white rounded-4xl w-[24px] p-1 text-xs">
-              ✔
+            <div className="absolute top-4 right-4 bg-[#0195f7] text-white rounded-full w-6 h-6 flex items-center justify-center">
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 5l-6 6-3-3"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
 
             {/* Icon Circle */}
@@ -146,8 +166,21 @@ export const Hero = () => {
 
           {/* Card 2 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">
-            <div className="absolute top-4 right-4 bg-black w-[24px] text-white rounded-full p-1 text-xs">
-              ✔
+            <div className="absolute top-4 right-4 bg-[#0195f7] text-white rounded-full w-6 h-6 flex items-center justify-center">
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 5l-6 6-3-3"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 mx-auto">
               <div className="w-0 h-0 border-y-8 border-y-transparent border-l-8 border-l-white ml-1"></div>
@@ -162,8 +195,21 @@ export const Hero = () => {
 
           {/* Card 3 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">
-            <div className="absolute top-4 right-4 bg-black text-white rounded-full w-[24px] p-1 text-xs">
-              ✔
+            <div className="absolute top-4 right-4 bg-[#0195f7] text-white rounded-full w-6 h-6 flex items-center justify-center">
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 5l-6 6-3-3"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 mx-auto">
               <div className="w-10 h-10 bg-pink-400 rounded-full"></div>

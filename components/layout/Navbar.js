@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Link from "next/link";
 import { usePathname, useRouter } from 'next/navigation';
 
-export default function StaggeredMenuDemo() {
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -182,7 +182,7 @@ export default function StaggeredMenuDemo() {
           isNavVisible || mobileMenuOpen ? 'translate-y-0' : 'md:-translate-y-full'
         }`}
       >
-        <Link href="#" className="flex items-center text-2xl text-black font-light">
+        <Link href="/" className="flex items-center text-2xl text-black font-light">
           <div className="mr-2 text-green-800">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.5 12.5L12 16.5L4.5 12.5M19.5 8.5L12 12.5L4.5 8.5L12 4.5L19.5 8.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

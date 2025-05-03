@@ -1,4 +1,4 @@
-import ajnas from "../public/Images/ajnas.jpg";
+import ajnas from "../../public/Images/ajnas.jpg";
 import Image from "next/image";
 
 const testimonials = [
@@ -6,7 +6,7 @@ const testimonials = [
     name: "Brendan Wilson",
     title: "Aspiring Web Designer",
     quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: "/user1.jpg",
+    image: ajnas,
   },
   {
     name: "Jane Hosl",
@@ -19,48 +19,47 @@ const testimonials = [
     name: "Brendan Wilson",
     title: "Aspiring Web Designer",
     quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: "/user1.jpg",
+    image: ajnas,
   },
   {
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
       "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-    image: "/user2.jpg",
+      image: ajnas,
   },
   {
     name: "Brendan Wilson",
     title: "Aspiring Web Designer",
     quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: "/user1.jpg",
+    image: ajnas,
   },
   {
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
       "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-    image: "/user2.jpg",
+      image: ajnas,
   },
   {
     name: "Brendan Wilson",
     title: "Aspiring Web Designer",
     quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: "/user1.jpg",
+    image: ajnas,
   },
   {
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
       "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-    image: "/user2.jpg",
+      image: ajnas,
   },
   {
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
       "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-    image: "/user2.jpg",
-  },
+      image: ajnas,}
 ];
 
 export default function StudentSuccessStories() {

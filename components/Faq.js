@@ -5,7 +5,10 @@ import { ChevronUp, ChevronDown, X, Plus } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Now from "./Now";
+import Now from "./ui/Now";
+import Ajnas from "../public/Images/ajnas.jpg"
+import Ziyad from "../public/Images/ziyad.jpg"
+import Rahib from "../public/Images/rahib.jpg"
 export const FAQHub = () => {
   const [openQuestion, setOpenQuestion] = useState(1);
 
@@ -78,28 +81,29 @@ export const FAQHub = () => {
             <div className="flex -space-x-2 mb-4">
               <div className="w-10 h-10 rounded-full bg-red-200 border-2 border-white overflow-hidden relative">
                 <Image
-                  src="/images/rahib.jpg"
-                  alt="User 1"
-                  layout="fill"
-                  objectFit="cover"
+                  src={Rahib} 
+                  alt="rahib"
+                  width={36} 
+                  height={0}
+                 className="object-cover rounded-full"
                 />
               </div>
               <div className="rounded-full w-10 h-10 bg-blue-200 border-2 border-white overflow-hidden relative">
                 <Image
-                  src="/images/ajnas.jpg"
-                  alt="User 1"
-                  width={29} 
+                  src={Ajnas}
+                  alt="ajnas"
+                  width={32} 
                   height={10}
-                  objectFit="cover"
+                 className="object-cover"
                 />
               </div>
               <div className="w-10 h-10 rounded-full bg-green-200 border-2 border-white overflow-hidden relative">
                 <Image
-                  src="/images/ajnas.jpg"
-                  alt="User 1"
-                  width={29} 
-                  height={10}
-                  objectFit="cover"
+                  src={Ziyad}
+                  alt="ziyad"
+                  width={35} 
+                  height={0}
+                  className="object-cover"
                 />
               </div>
             </div>
