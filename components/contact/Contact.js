@@ -218,11 +218,11 @@ export const ContactForm = () => {
             {/* Right side form */}
             <div className="lg:w-1/2">
               <div
-                className="bg-gradient-to-b from-[#fcf9fd] to-[#ffffff] backdrop-blur-sm rounded-3xl shadow-lg p-6  mx-auto relative z-10"
+                className="bg-gradient-to-b bg-white rounded-3xl shadow-lg p-6  mx-auto relative z-10"
                 style={{
                   boxShadow:
                     "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                  border: "3px solid white",
+                  border: "3px solid black",
                 }}
               >
                 {formStatus.submitted && (
