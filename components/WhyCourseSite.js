@@ -1,6 +1,6 @@
 import { Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
-
+import Rasha from "../public/Images/Rasha.jpg"
 export const WhyCourseSite = () => {
   return (
     <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white px-4">
@@ -15,7 +15,7 @@ export const WhyCourseSite = () => {
         </div>
 
           <h2 className="text-4xl  text-black mb-4 relative">
-            But Why CourseSite ?
+            But Why SDEC ?
           </h2>
 
           <p className="text-black max-w-2xl mx-auto">
@@ -114,8 +114,8 @@ export const WhyCourseSite = () => {
                 border: "1px solid rgba(255,255,255,0.2)",
               }}>
                 <Image
-                  src= "/images/Rasha.jpg"
-                  alt="Ajnas"
+                  src= {Rasha}
+                  alt="rasha"
                   fill
                   className="object-cover object-center"
                 />

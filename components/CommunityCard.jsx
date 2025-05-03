@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Rocket } from "lucide-react";
 import contents from "../Contents";
 import { UserRound } from "lucide-react";
-import Now from "./Now";
+import Now from "./ui/Now";
 
 export default function CommunityCard() {
   const {

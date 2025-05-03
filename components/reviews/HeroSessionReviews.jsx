@@ -3,7 +3,7 @@ import { Star, House, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import pen from "../public/Images/pen.png";
+import pen from "../../public/Images/pen.png";
 
 export default function HeroSessionReviews() {
   const [isHovered, setIsHovered] = useState(false);

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ImgCourse from "../public/Images/courses.jpeg"
 export default function FeaturedCourses() {
   const courses = [
     {
@@ -7,7 +8,7 @@ export default function FeaturedCourses() {
       description:
         "Master JavaScript with our updated course. Learn core concepts, ES6+, and advanced techniques to build modern web applications.",
       price: 99,
-      image: "/images/courses.jpeg",
+      image: ImgCourse,
       level: "Intermediate",
       featured: true,
     },
@@ -17,7 +18,7 @@ export default function FeaturedCourses() {
       description:
         "Master Framer in 2024 with this updated course. Learn to design, prototype, and build interactive interfaces with ease.",
       price: 99,
-      image: "/images/courses.jpeg",
+      image: ImgCourse,
       level: "Beginner",
       featured: true,
     },
@@ -27,7 +28,7 @@ export default function FeaturedCourses() {
       description:
         "Master Figma in 2024 with this updated course. Learn to design, prototype, and collaborate on user interfaces.",
       price: 79,
-      image: "/images/courses.jpeg",
+      image: ImgCourse,
       level: "Beginner",
       featured: true,
     },

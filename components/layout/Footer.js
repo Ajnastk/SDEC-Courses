@@ -3,8 +3,9 @@ import { useState, useCallback, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import "../app/globals.css";
-import Now from './Now';
+import "../../app/globals.css";
+import Ziyad from "../../public/Images/ziyad.jpg"
+import Now from '../ui/Now';
 
 const Footer = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -111,14 +112,14 @@ const Footer = () => {
         {/* Path Text with Avatar */}
         <div className="flex items-center mb-12">
           <p className="mr-2 text-black">Your Path to Becoming a Web Wizard</p>
-          <div className="overflow-hidden">
+          <div className="rounded-full w-10 h-10 bg-blue-200 border-2  border-white object-cover overflow-hidden relative">
             <Image 
-              src="/Images/rahib.jpg" 
+              src={Ziyad}
               alt="Avatar" 
-              width={32} 
-              height={32}
-              className="rounded-full"
-            />
+              width={38} 
+              height={3}
+              className="rounded-full "
+            /> 
           </div>
         </div>
         

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Now from "./Now";
+import Now from "./ui/Now";
+import Ajnas from "../public/Images/ajnas.jpg"
 export default function TestimonialsSection() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -32,7 +33,7 @@ export default function TestimonialsSection() {
         "The courses are top-notch, providing in-depth knowledge that's easy to apply. Each lesson is structured to ensure you fully grasp the material.",
       name: "Brendan Wilson",
       role: "Aspiring Web Designer",
-      image: "/api/placeholder/48/48",
+      image: Ajnas,
     },
     {
       id: 2,
@@ -40,7 +41,7 @@ export default function TestimonialsSection() {
         "The courses are excellent, delivering practical insights with ease. Each module is designed to help you fully understand and apply the knowledge.",
       name: "Rock Lee",
       role: "Web Designer",
-      image: "/api/placeholder/48/48",
+      image: Ajnas,
     },
     {
       id: 3,
@@ -48,7 +49,7 @@ export default function TestimonialsSection() {
         "These courses are exceptional, offering detailed content that's easy to implement. Every lesson is carefully crafted to deepen your understanding.",
       name: "Sakura",
       role: "Web Developer",
-      image: "/api/placeholder/48/48",
+      image: Ajnas,
     },
   ];
 

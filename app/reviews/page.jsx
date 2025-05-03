@@ -1,7 +1,7 @@
 import CommunityCard from "@/components/CommunityCard";
 import { FAQHub } from "@/components/Faq";
-import HeroSessionReviews from "@/components/HeroSessionReviews";
-import StudentSuccessStories from "@/components/StudentSuccessStories";
+import HeroSessionReviews from "@/components/reviews/HeroSessionReviews";
+import StudentSuccessStories from "@/components/reviews/StudentSuccessStories";
 import React from "react";
 
 const page = () => {
