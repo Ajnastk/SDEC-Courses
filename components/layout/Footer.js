@@ -116,7 +116,7 @@ const Footer = () => {
             <Image 
               src={Ziyad}
               alt="Avatar" 
-              width={38} 
+              width={1000} 
               height={3}
               className="rounded-full "
             /> 
