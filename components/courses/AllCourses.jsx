@@ -1,16 +1,16 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { House, ChevronRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import ImgCourse from "../../public/Images/courses.jpeg"
+import ImgCourse from "../../public/Images/courses.jpeg";
 
 export default function AllCourses() {
   const [filter, setFilter] = useState("All");
   const [visibleCourses, setVisibleCourses] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(9);
-  
+
   const courses = [
     {
       id: 1,
@@ -147,37 +147,34 @@ export default function AllCourses() {
 
     // Set initial value
     handleResize();
-    
+
     // Add resize listener
-    window.addEventListener('resize', handleResize);
-    
+    window.addEventListener("resize", handleResize);
+
     // Clean up
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Update visible courses whenever filter or cardsToShow changes
   useEffect(() => {
-    const filtered = filter === "All" 
-      ? courses 
-      : courses.filter(course => course.featured);
-    
+    const filtered =
+      filter === "All" ? courses : courses.filter((course) => course.featured);
+
     setVisibleCourses(filtered.slice(0, cardsToShow));
   }, [filter, cardsToShow]);
 
   const loadMoreCourses = () => {
-    const filtered = filter === "All" 
-      ? courses 
-      : courses.filter(course => course.featured);
-    
+    const filtered =
+      filter === "All" ? courses : courses.filter((course) => course.featured);
+
     // Show all remaining courses
     setVisibleCourses(filtered);
   };
 
   // Check if we need to show the load more button
-  const filteredCourses = filter === "All" 
-    ? courses 
-    : courses.filter(course => course.featured);
-  
+  const filteredCourses =
+    filter === "All" ? courses : courses.filter((course) => course.featured);
+
   const hasMoreToLoad = visibleCourses.length < filteredCourses.length;
 
   return (
@@ -195,7 +192,7 @@ export default function AllCourses() {
         </div>
 
         {/* Heading */}
-        
+
         <div className="flex flex-col items-center">
           <h1 className="lg:text-5xl text-3xl text-center lg:font-medium font-semibold lg:w-[65%] md:w-[80%] mb-6 text-gray-900">
             All Online Courses
@@ -209,9 +206,9 @@ export default function AllCourses() {
 
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl  text-black">All Courses</h1>
-          
+
           <div className="relative">
-            <button 
+            <button
               className="px-4 py-2 rounded-lg shadow-2xl text-lg bg-white flex items-center  text-black gap-2"
               onClick={() => setShowDropdown(!showDropdown)}
             >
@@ -219,7 +216,7 @@ export default function AllCourses() {
             </button>
             {showDropdown && (
               <div className="absolute right-0 top-full mt-1 bg-white shadow-2xl rounded-lg z-10">
-                <button 
+                <button
                   className="block w-full text-left px-4 py-2 text-black hover:bg-gray-50"
                   onClick={() => {
                     setFilter("All");
@@ -228,7 +225,7 @@ export default function AllCourses() {
                 >
                   All
                 </button>
-                <button 
+                <button
                   className="block w-full text-left px-4 py-2 hover:bg-gray-50  text-black"
                   onClick={() => {
                     setFilter("Featured");
@@ -241,13 +238,17 @@ export default function AllCourses() {
             )}
           </div>
         </div>
-   
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
           {visibleCourses.map((course) => (
-            <div key={course.id} className="bg-white rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]">
+            <div
+              style={{ border: "3px solid white" }}
+              key={course.id}
+              className="bg-gradient-to-b from-[#f9f1fe] to-[#ffffff] rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]"
+            >
               <div className="relative w-full h-48">
-                <Image 
-                  src={course.image} 
+                <Image
+                  src={course.image}
                   alt={course.title}
                   fill
                   className="object-cover rounded-[22px]"
@@ -255,10 +256,16 @@ export default function AllCourses() {
               </div>
               <div>
                 <div className="flex justify-end items-center py-3">
-                  <span className="text-xl text-right text-black">${course.price}</span>
+                  <span className="text-xl text-right text-black">
+                    ${course.price}
+                  </span>
                 </div>
-                <h3 className="text-xl text-black mb-2 truncate">{course.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">{course.description}</p>
+                <h3 className="text-xl text-black mb-2 truncate">
+                  {course.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {course.description}
+                </p>
                 <div className="flex justify-between items-center">
                   {course.featured && (
                     <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
@@ -276,7 +283,7 @@ export default function AllCourses() {
         {/* Load More button */}
         {hasMoreToLoad && (
           <div className="flex justify-center pb-12">
-            <button 
+            <button
               onClick={loadMoreCourses}
               className="px-8 py-3 border border-black rounded-full text-gray-700 hover:bg-black hover:text-white transition shadow"
             >

@@ -40,55 +40,55 @@ export default function CommunityCard() {
 
         {/* Image Section */}
         <div className="relative w-full">
-  {/* Earth image with rounded bottom */}
-  <div className="rounded-b-[4rem] overflow-hidden">
-    <Image
-      src={image}
-      alt="Creative community illustration"
-      width={800}
-      height={100}
-      className="w-full object-contain"
-      priority
-    />
-  </div>
+          {/* Earth image with rounded bottom */}
+          <div className="rounded-b-[4rem] overflow-hidden">
+            <Image
+              src={image}
+              alt="Creative community illustration"
+              width={800}
+              height={100}
+              className="w-full object-contain"
+              priority
+            />
+          </div>
 
-  {/* Comment bubbles container - using flex for better positioning */}
-  <div className="absolute w-full h-full bottom-[150px] flex  justify-center  transform translate-y-1/2 z-10">
-    <div className="flex flex-col md:gap-12 gap-5 ">
-      {/* First comment bubble */}
-      <div 
-        style={{
-          transform: "perspective(180px) rotateY(-5deg) rotateX(-4deg)"
-        }}
-        className="relative w-[140px] md:w-[230px] bg-gradient-to-b from-gray-100 to-white p-2 rounded-xl shadow-md border-3 border-white mt-6 md:mt-0 ml-22 md:ml-0"
-      >
-        <p className="text-xs md:text-sm text-gray-700">
-          This one is slightly better, it has more contrast
-        </p>
-        <div className="flex justify-center items-center absolute -bottom-16 -left-9 w-14 h-14 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
-          <UserRound size={20} color="#949494" />
-        </div>
-      </div>
+          {/* Comment bubbles container - using flex for better positioning */}
+          <div className="absolute w-full h-full bottom-[150px] flex  justify-center  transform translate-y-1/2 z-10">
+            <div className="flex flex-col md:gap-12 gap-5 ">
+              {/* First comment bubble */}
+              <div
+                style={{
+                  transform: "perspective(180px) rotateY(-5deg) rotateX(-4deg)",
+                }}
+                className="relative w-[140px] md:w-[230px] bg-gradient-to-b from-gray-100 to-white p-2 rounded-xl shadow-md border-3 border-white mt-6 md:mt-0 ml-22 md:ml-0"
+              >
+                <p className="text-xs md:text-sm text-gray-700">
+                  This one is slightly better, it has more contrast
+                </p>
+                <div className="flex justify-center items-center absolute -bottom-16 -left-9 w-14 h-14 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
+                  <UserRound size={20} color="#949494" />
+                </div>
+              </div>
 
-      {/* Second comment bubble */}
-      <div 
-        style={{
-          transform: "perspective(180px) rotateY(-3deg) rotateX(-6deg)"
-        }}
-        className="relative w-[140px] md:w-[180px] bg-gradient-to-b from-gray-100 to-white p-2 rounded-xl shadow-md border-3 border-white ml-35 md:ml-12"
-      >
-        <p className="text-xs md:text-sm text-gray-700">
-          Do you think this design is better?
-        </p>
-        <div className="flex justify-center items-center absolute -bottom-16 -left-9 w-14 h-14 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
-        <UserRound size={20} color="#949494" />
+              {/* Second comment bubble */}
+              <div
+                style={{
+                  transform: "perspective(180px) rotateY(-3deg) rotateX(-6deg)",
+                }}
+                className="relative w-[140px] md:w-[180px] bg-gradient-to-b from-gray-100 to-white p-2 rounded-xl shadow-md border-3 border-white ml-35 md:ml-12"
+              >
+                <p className="text-xs md:text-sm text-gray-700">
+                  Do you think this design is better?
+                </p>
+                <div className="flex justify-center items-center absolute -bottom-16 -left-9 w-14 h-14 rounded-full bg-gradient-to-b from-gray-100 to-white border-3 border-white shadow-xl">
+                  <UserRound size={20} color="#949494" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent  rounded-b-[4rem] shadow-[0_60px_80px_-20px_rgba(0,0,0,0.1)]"></div>
       </div>
- </div>
-);
+    </div>
+  );
 }

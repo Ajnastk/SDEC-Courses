@@ -35,7 +35,7 @@ export default function PremiumCourses() {
             <div
               style={{ border: "3px solid white" }}
               key={plan.id}
-              className="relative bg-purple-50 rounded-3xl lg:px-0 md:px-0 sm:px-6 px-6 shadow-md "
+              className="relative bg-gradient-to-b from-[#f9f6fb] to-[#fefcff] rounded-3xl lg:px-0 md:px-0 sm:px-6 px-6 shadow-md "
             >
               {plan.isPopular && (
                 <div className="absolute top-1 md:-left-8 -left-6 z-10 rotate-[-20deg]">
