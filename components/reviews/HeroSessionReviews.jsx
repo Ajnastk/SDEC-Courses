@@ -9,7 +9,7 @@ export default function HeroSessionReviews() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white pt-[160px]">
+    <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white pt-[150px]">
       <div className="max-w-7xl mx-auto px-4 text-center">
       {/* Navigation */}
       <div className="flex items-center justify-center mb-6 text-gray-600">

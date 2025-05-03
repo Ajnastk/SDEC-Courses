@@ -1,3 +1,4 @@
+import AllCourses from '@/components/courses/AllCourses'
 import BenefitsSection from '@/components/BenefitsSection'
 import { CourseTopics } from '@/components/CourseTopics'
 import { FAQHub } from '@/components/Faq'
@@ -5,7 +6,8 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="bg-white pt-20">
+    <div className="bg-white">
+      <AllCourses/>
         <BenefitsSection/>
         <FAQHub/>
         <div className='relative'>

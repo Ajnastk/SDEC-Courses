@@ -93,8 +93,8 @@ export const ContactForm = () => {
       }
     }
   return (
-    <div className="bg-gray-50 min-h-screen py-24 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-r  from-white via-[#f6e7ff] to-white py-16 pt-[100px] ">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Breadcrumb navigation */}
         <div className="w-full">
           <nav className="flex py-10 items-center">
@@ -107,7 +107,7 @@ export const ContactForm = () => {
         <span className="text-gray-600 font-medium">Contact Us</span>
           </nav>
   
-          <div className="flex flex-col lg:flex-row justify-between gap-12">
+          <div className="flex flex-col lg:flex-row gap-12 justify-between">
             {/* Left side content */}
             <div className="lg:w-1/2">
               <h1 className="text-4xl md:text-5xl font-semibold text-black mb-6">
