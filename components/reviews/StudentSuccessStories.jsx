@@ -1,4 +1,7 @@
 import ajnas from "../../public/Images/ajnas.jpg";
+import ziyad from "../../public/Images/ziyad.jpg"
+import rahib from "../../public/Images/rahib.jpg"
+import rasha from "../../public/Images/Rasha.jpg"
 import Image from "next/image";
 
 const testimonials = [
@@ -6,20 +9,46 @@ const testimonials = [
     name: "Brendan Wilson",
     title: "Aspiring Web Designer",
     quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: ajnas,
+    image: ziyad,
   },
   {
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
       "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-    image: ajnas,
+    image: rasha,
   },
   {
     name: "Brendan Wilson",
     title: "Aspiring Web Designer",
     quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: ajnas,
+    image: rahib,
+  },
+  {
+    name: "Jane Hosl",
+    title: "Web Designer",
+    quote:
+      "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
+      image: ziyad,
+  },
+  {
+    name: "Brendan Wilson",
+    title: "Aspiring Web Designer",
+    quote: "Engaging and insightful! I’ve learned so much more than expected.",
+    image: rasha,
+  },
+  {
+    name: "Jane Hosl",
+    title: "Web Designer",
+    quote:
+      "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
+      image: ziyad,
+  },
+  {
+    name: "Brendan Wilson",
+    title: "Aspiring Web Designer",
+    quote: "Engaging and insightful! I’ve learned so much more than expected.",
+    image: rahib,
   },
   {
     name: "Jane Hosl",
@@ -29,37 +58,11 @@ const testimonials = [
       image: ajnas,
   },
   {
-    name: "Brendan Wilson",
-    title: "Aspiring Web Designer",
-    quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: ajnas,
-  },
-  {
     name: "Jane Hosl",
     title: "Web Designer",
     quote:
       "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-      image: ajnas,
-  },
-  {
-    name: "Brendan Wilson",
-    title: "Aspiring Web Designer",
-    quote: "Engaging and insightful! I’ve learned so much more than expected.",
-    image: ajnas,
-  },
-  {
-    name: "Jane Hosl",
-    title: "Web Designer",
-    quote:
-      "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-      image: ajnas,
-  },
-  {
-    name: "Jane Hosl",
-    title: "Web Designer",
-    quote:
-      "Absolutely worth it! The structure, depth, and hands-on approach make learning a breeze.",
-      image: ajnas,}
+      image: ziyad,}
 ];
 
 export default function StudentSuccessStories() {

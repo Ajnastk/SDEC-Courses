@@ -83,7 +83,7 @@ export const FAQHub = () => {
                 <Image
                   src={Rahib} 
                   alt="rahib"
-                  width={36} 
+                  width={1000} 
                   height={0}
                  className="object-cover rounded-full"
                 />
@@ -92,7 +92,7 @@ export const FAQHub = () => {
                 <Image
                   src={Ajnas}
                   alt="ajnas"
-                  width={32} 
+                  width={1000} 
                   height={10}
                  className="object-cover"
                 />
@@ -101,8 +101,8 @@ export const FAQHub = () => {
                 <Image
                   src={Ziyad}
                   alt="ziyad"
-                  width={35} 
-                  height={0}
+                  width={1000} 
+                  height={1000}
                   className="object-cover"
                 />
               </div>
