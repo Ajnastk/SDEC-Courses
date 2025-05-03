@@ -1,6 +1,6 @@
 import React from 'react'
 import { FAQHub } from '@/components/Faq'
-import { ContactForm } from '@/components/Contact'
+import { ContactForm } from '@/components/contact/Contact'
 
 export default function Contact(){
   return (
