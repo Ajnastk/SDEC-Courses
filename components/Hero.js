@@ -34,7 +34,7 @@ export const Hero = () => {
     "learning.",
   ];
   return (
-    <div className="relative min-h-screen  overflow-hidden text-black">
+    <div className="relative min-h-screen  overflow-hidden text-black pt-20">
       {/* Background with floating color orbs */}
       <HeroBackground />
 

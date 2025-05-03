@@ -1,11 +1,16 @@
 "use client"
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Link from "next/link";
 import { usePathname, useRouter } from 'next/navigation';
 
 export default function StaggeredMenuDemo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const navRef = useRef(null);
+
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === '/' || pathname === '/#';
@@ -17,6 +22,77 @@ export default function StaggeredMenuDemo() {
     { name: "Contact", type:  "link", id: "contact", path: "/contact", delay: "delay-400" },
     { name: "Join Now", type: isHomePage ? "scroll" : "link", id: "join", path: "/#join", delay: "delay-500" }
   ], [isHomePage]); // Only recompute when isHomePage changes
+
+  // Handle scroll behavior - only applies hide/show behavior on medium screens and up
+  const handleScroll = useCallback(() => {
+    // Skip scroll handling when mobile menu is open
+    if (mobileMenuOpen) return;
+    
+    const currentScrollY = window.scrollY;
+    const isMobileView = window.innerWidth < 768; // Standard md breakpoint in Tailwind
+    
+    // On mobile, always keep the navbar visible
+    if (isMobileView) {
+      setIsNavVisible(true);
+      setLastScrollY(currentScrollY);
+      return;
+    }
+    
+    // For larger screens, apply the hide/show behavior
+    const isScrollingDown = currentScrollY > lastScrollY;
+    
+    // Only hide navbar after scrolling past a threshold (e.g., 100px)
+    if (currentScrollY < 100) {
+      setIsNavVisible(true);
+    } else {
+      // Show on scroll up, hide on scroll down
+      if (isScrollingDown !== isScrollingUp) {
+        setIsScrollingUp(!isScrollingDown);
+      }
+      
+      // Small threshold to prevent navbar flickering on small scroll movements
+      if (Math.abs(currentScrollY - lastScrollY) > 10) {
+        setIsNavVisible(!isScrollingDown);
+      }
+    }
+    
+    setLastScrollY(currentScrollY);
+  }, [lastScrollY, isScrollingUp, mobileMenuOpen]);
+
+  // Debounce scroll event listener and also watch for resize events
+  useEffect(() => {
+    let scrollTimer;
+    
+    const debouncedHandleScroll = () => {
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+      scrollTimer = setTimeout(handleScroll, 10);
+    };
+    
+    window.addEventListener('scroll', debouncedHandleScroll);
+    window.addEventListener('resize', debouncedHandleScroll); // Handle viewport size changes
+    
+    return () => {
+      window.removeEventListener('scroll', debouncedHandleScroll);
+      window.removeEventListener('resize', debouncedHandleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, [handleScroll]);
+
+  // When mobile menu is open, always show navbar but DON'T prevent scrolling
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      setIsNavVisible(true);
+      // We're removing this line to allow scrolling even when menu is open
+      // document.body.style.overflow = 'hidden';
+    } 
+    // Also remove the else case to avoid changing overflow on close
+    
+    return () => {
+      // Clean up but don't change overflow here
+    };
+  }, [mobileMenuOpen]);
 
   const toggleMobileMenu = useCallback(() => {
     setMobileMenuOpen(prev => !prev);
@@ -98,9 +174,14 @@ export default function StaggeredMenuDemo() {
   }, [isHomePage, navLinks]); // Now navLinks is memoized and won't cause unnecessary re-renders
 
   return (
-    <div className="relative"> 
-      {/* Desktop Navbar */}
-      <nav className="flex Lg:justify-around sm:justify-between md:justify-between justify-between px-8 py-5 bg-[#fffefe] z-30 relative">
+    <div className="relative">
+      {/* Desktop Navbar with scroll-aware behavior */}
+      <nav 
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 flex Lg:justify-around md:bg-white/0 md:backdrop-blur-lg bg-white sm:justify-between md:justify-between justify-between px-8 py-5 z-30 transition-transform duration-300 ease-in-out ${
+          isNavVisible || mobileMenuOpen ? 'translate-y-0' : 'md:-translate-y-full'
+        }`}
+      >
         <Link href="#" className="flex items-center text-2xl text-black font-light">
           <div className="mr-2 text-green-800">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +208,9 @@ export default function StaggeredMenuDemo() {
                     scrollToSection(item.id);
                     handleLinkClick(item.id);
                   }}
-                  className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100"
+                  className={`text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100 ${
+                    isActive ? 'font-medium' : ''
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -136,7 +219,9 @@ export default function StaggeredMenuDemo() {
                   key={item.name}
                   href={item.path}
                   onClick={() => handleLinkClick(item.id)}
-                  className="text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100"
+                  className={`text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100 ${
+                    isActive ? 'font-medium' : ''
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -187,12 +272,14 @@ export default function StaggeredMenuDemo() {
         </button>
       </nav>
       
+      {/* Spacer to prevent content from being hidden under fixed navbar */}
+    
+      
       {/* Mobile Menu - Container that slides down */}
       <div 
-        className={`absolute left-0 right-0 bg-[#fffefe] shadow-lg z-20 transform transition-all duration-300 ease-in-out overflow-hidden ${
-          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        className={`fixed top-18 left-0 right-0 bg-[#fffefe] shadow-lg z-20 transform transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
-        
       >
         <div className="p-4">
           <div className="flex flex-col text-black">
@@ -201,7 +288,7 @@ export default function StaggeredMenuDemo() {
                 <Link
                   key={index}
                   href={`#${item.id}`}
-                  className={`py-4 border-b-[0.2px] border-b-gray-400 text-lg transform transition-all duration-500 ${item.delay} ${
+                  className={`py-4 text-lg transform transition-all duration-500 ${item.delay} ${
                     mobileMenuOpen
                       ? 'translate-y-0 opacity-100'
                       : '-translate-y-8 opacity-0'
@@ -235,7 +322,7 @@ export default function StaggeredMenuDemo() {
       
       {/* Backdrop overlay when menu is open */}
       <div 
-        className={`absolute inset-0 bg-black z-10 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black z-10 transition-opacity duration-300 ${
           mobileMenuOpen ? 'opacity-30' : 'opacity-0 pointer-events-none'
         }`}
         onClick={toggleMobileMenu}

@@ -42,7 +42,8 @@ export const FAQHub = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row max-w-7xl text-black mx-auto p-4 gap-8 py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white">
+    <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white">
+    <div className="flex flex-col md:flex-row max-w-7xl text-black mx-auto p-4 gap-8 ">
       {/* Left Side */}
       <div className="w-full md:w-1/2">
         <div className="text-black font-medium w-[110px] text-sm flex items-center gap-3 bg-purple-50 border-2 border-gray-200  rounded-full mb-4">
@@ -83,19 +84,21 @@ export const FAQHub = () => {
                   objectFit="cover"
                 />
               </div>
-              <div className="w-10 h-10 rounded-full bg-blue-200 border-2 border-white overflow-hidden relative">
+              <div className="rounded-full w-10 h-10 bg-blue-200 border-2 border-white overflow-hidden relative">
                 <Image
                   src="/images/ajnas.jpg"
                   alt="User 1"
-                  layout="fill"
+                  width={29} 
+                  height={10}
                   objectFit="cover"
                 />
               </div>
               <div className="w-10 h-10 rounded-full bg-green-200 border-2 border-white overflow-hidden relative">
                 <Image
-                  src="/images/user1.jpg"
+                  src="/images/ajnas.jpg"
                   alt="User 1"
-                  layout="fill"
+                  width={29} 
+                  height={10}
                   objectFit="cover"
                 />
               </div>
@@ -173,6 +176,7 @@ export const FAQHub = () => {
           // </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
