@@ -89,6 +89,6 @@ export default function CommunityCard() {
 </div>
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent  rounded-b-[4rem] shadow-[0_60px_80px_-20px_rgba(0,0,0,0.1)]"></div>
       </div>
-    </div>
-  );
+ </div>
+);
 }
