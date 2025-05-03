@@ -233,7 +233,7 @@ export const ContactForm = () => {
                       name="message"
                       placeholder="How Can We Help?"
                       rows="8"
-                      className="w-full px-5 py-3 bg-[#f0f4f9] rounded-2xl text-black placeholder-gray-400 outline-none  resize-none"
+                      className="w-full px-5 py-3 min-h-[216] bg-[#f0f4f9] rounded-2xl text-black placeholder-gray-400 outline-none  resize-y"
                       onChange={handleChange}
                       value={formData.message}
                       required
