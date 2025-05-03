@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ImgCourse from "../public/Images/courses.jpeg"
 export default function FeaturedCourses() {
   const courses = [
@@ -88,9 +89,11 @@ export default function FeaturedCourses() {
 
         {/* View Courses button */}
         <div className="flex justify-center">
+          <Link href="/courses">
           <button className="px-8 py-3 border border-black rounded-full text-gray-700  hover:bg-black hover:text-white transition shadow">
             View Courses
           </button>
+          </Link>
         </div>
       </div>
     </div>

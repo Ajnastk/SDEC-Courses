@@ -23,11 +23,6 @@ export default function PremiumCourses() {
               {subheading}
             </div>
             <div className="flex items-center text-black mt-2">
-              {/* {[1, 2, 3, 4, 5].map((star) => (
-                <span key={star} className="text-lg">
-                  ⭐
-                </span>
-              ))} */}
               <span className="ml-2">{rating}/5</span>
               <span className="mx-2">•</span>
               <span>{reviews.toLocaleString()} Reviews</span>
