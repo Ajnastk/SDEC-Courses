@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ImgCourse from "../public/Images/courses.jpeg"
+import ImgCourse from "../public/Images/courses.jpeg";
 export default function FeaturedCourses() {
   const courses = [
     {
@@ -39,7 +39,6 @@ export default function FeaturedCourses() {
     <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
       <div className="max-w-7xl mx-auto px-4">
         {/* Decorative elements */}
-     
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -63,10 +62,14 @@ export default function FeaturedCourses() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ">
           {courses.map((course) => (
-            <div key={course.id} className="bg-white rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]">
+            <div
+              style={{ border: "3px solid white" }}
+              key={course.id}
+              className="bg-gradient-to-b from-[#f6f2f8] to-[#ffffff] rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]"
+            >
               <div className="relative w-full h-50">
-                <Image 
-                  src={course.image} 
+                <Image
+                  src={course.image}
                   alt={course.title}
                   fill
                   className="object-cover rounded-[22px]"
@@ -74,12 +77,20 @@ export default function FeaturedCourses() {
               </div>
               <div>
                 <div className="flex justify-end items-center py-3">
-                  <span className="text-xl text-right text-black">${course.price}</span>
+                  <span className="text-xl text-right text-black">
+                    ${course.price}
+                  </span>
                 </div>
-                <h3 className="text-xl text-black mb-2 truncate">{course.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">{course.description}</p>
+                <h3 className="text-xl text-black mb-2 truncate">
+                  {course.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {course.description}
+                </p>
                 <div className="flex justify-between items-center">
-                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Featured</span>
+                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
+                    Featured
+                  </span>
                   <span className="text-gray-600 text-sm">{course.level}</span>
                 </div>
               </div>
@@ -90,9 +101,9 @@ export default function FeaturedCourses() {
         {/* View Courses button */}
         <div className="flex justify-center">
           <Link href="/courses">
-          <button className="px-8 py-3 border border-black rounded-full text-gray-700  hover:bg-black hover:text-white transition shadow">
-            View Courses
-          </button>
+            <button className="px-8 py-3 border border-black rounded-full text-gray-700  hover:bg-black hover:text-white transition shadow">
+              View Courses
+            </button>
           </Link>
         </div>
       </div>

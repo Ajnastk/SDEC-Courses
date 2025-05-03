@@ -51,11 +51,11 @@ export const CourseTopics = () => {
           {topics.slice(0, 7).map((topic, index) => (
             <div
               key={index}
-              className="bg-white rounded-[20px] py-4 px-4 shadow-sm flex items-center gap-2"
+              className="bg-gradient-to-b from-[#fbf4ff] to-[#ffffff] rounded-[20px] py-4 px-4 shadow-sm flex items-center gap-2"
               style={{
                 boxShadow:
                   "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                border: "1px solid rgba(255,255,255,0.2)",
+                border: "3px solid white",
               }}
             >
               <span className="text-purple-200">

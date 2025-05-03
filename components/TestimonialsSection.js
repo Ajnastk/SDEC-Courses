@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Now from "./ui/Now";
-import Ajnas from "../public/Images/ajnas.jpg"
+import Ajnas from "../public/Images/ajnas.jpg";
 export default function TestimonialsSection() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -72,20 +72,19 @@ export default function TestimonialsSection() {
         </p>
         {/* CTA BUTTON */}
         <div className="mb-12">
-        <Now />
+          <Now />
         </div>
-        
 
         {/* Grid that changes from 3 columns to 2 columns based on screen size */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-15">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white p-6 rounded-3xl h-72 flex flex-col justify-between backdrop-blur-sm transition-transform relative"
+              className="bg-gradient-to-b from-[#f6effa] to-[#ffffff] p-6 rounded-3xl h-72 flex flex-col justify-between backdrop-blur-sm transition-transform relative"
               style={{
                 boxShadow:
                   "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                border: "1px solid rgba(255,255,255,0.2)",
+                border: "3px solid white",
                 ...(isLargeScreen && {
                   transform:
                     testimonial.id === 1
