@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Rocket } from "lucide-react";
 import contents from "../Contents";
 import { UserRound } from "lucide-react";
 import Now from "./ui/Now";
@@ -21,7 +20,7 @@ export default function CommunityCard() {
 
   return (
     <div className="relative bg-gradient-to-r from-white via-[#f6e7ff] to-white pt-16 rounded-b-[4rem] shadow-[0_60px_80px_-20px_rgba(150,100,250,0.3)]">
-      <div className=" max-w-7xl mx-auto flex  lg:flex-row md:flex-col sm:flex-col flex-col px-4 ">
+      <div className=" max-w-7xl mx-auto flex  lg:flex-row md:flex-col sm:flex-col flex-col px-6 ">
         <div className="z-10 flex flex-col items-center text-center md:items-center md:text-center sm:items-center sm:text-center lg:items-start lg:text-start ">
           <div className="text-black font-medium w-30   text-sm flex gap-2  bg-purple-50 border-2 border-gray-200 rounded-full mb-4">
             <span className="h-5 w-5 bg-purple-300 rounded-full flex items-center justify-center">
@@ -29,7 +28,7 @@ export default function CommunityCard() {
             </span>
             {badgeText}
           </div>
-          <h2 className="text-4xl font-poppins text-black mb-4">{title}</h2>
+          <h2 className="md:text-4xl text-3xl font-poppins text-black mb-4">{title}</h2>
 
           <p className="text-gray-700 max-w-lg">{description}</p>
           {/* CTA BUTTON */}

@@ -37,7 +37,7 @@ export default function FeaturedCourses() {
 
   return (
     <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Decorative elements */}
 
         {/* Header */}
@@ -52,7 +52,7 @@ export default function FeaturedCourses() {
               </div>
             </div>
           </div>
-          <h2 className="text-4xl text-black mb-4">Featured Courses</h2>
+          <h2 className="md:text-4xl text-3xl text-black mb-4">Featured Courses</h2>
           <p className="text-black max-w-xl mx-auto">
             From critical skills to technical topics, we support your
             professional development with courses that help you grow and

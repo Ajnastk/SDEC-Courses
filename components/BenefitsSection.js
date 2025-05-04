@@ -70,7 +70,7 @@ const BenefitsSection = () => {
         </svg>
       </div>
 
-      <div className="container max-w-7xl mx-auto px-4">
+      <div className="container max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-2">
@@ -84,7 +84,7 @@ const BenefitsSection = () => {
             </div>
           </div>
 
-          <h2 className="text-4xl text-black mb-4">Key Benefits of Courses</h2>
+          <h2 className="md:text-4xl text-3xl text-black mb-4">Key Benefits of Courses</h2>
           <p className="text-black max-w-xl mx-auto">
             Explore the incredible advantages of enrolling in our courses and
             enhancing your skills for the ultimate career success.

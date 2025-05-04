@@ -13,11 +13,11 @@ export default function PremiumCourses() {
       id="join"
       className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white "
     >
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex lg:flex-row flex-col items-center justify-between mb-10  lg:gap-0 gap-6">
-          <h1 className="md:text-4xl sm:text-3xl text-2xl font-semibold sm:font-normal text-black">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex lg:flex-row flex-col md:text-start text-center items-center justify-between mb-10  lg:gap-0 gap-6">
+          <h2 className="md:text-4xl text-3xl font-poppins text-black md:mb-4 mb-0">
             {heading}
-          </h1>
+          </h2>
           <div className="text-right">
             <div className="sm:text-xl text-lg text-black text-center">
               {subheading}
