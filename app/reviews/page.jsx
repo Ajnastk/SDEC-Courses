@@ -1,18 +1,16 @@
 import CommunityCard from "@/components/CommunityCard";
 import { FAQHub } from "@/components/Faq";
-import HeroSessionReviews from "@/components/reviews/HeroSessionReviews";
-import StudentSuccessStories from "@/components/reviews/StudentSuccessStories";
+import AllReviews from "@/components/reviews/AllReviews";
 import React from "react";
 
-const page = () => {
+const Reviews = () => {
   return (
     <div className="bg-white">
-      <HeroSessionReviews />
-      <StudentSuccessStories />
+      <AllReviews />
       <FAQHub />
       <CommunityCard />
     </div>
   );
 };
 
-export default page;
+export default Reviews;

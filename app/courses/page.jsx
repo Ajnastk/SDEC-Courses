@@ -4,7 +4,7 @@ import { CourseTopics } from "@/components/CourseTopics";
 import { FAQHub } from "@/components/Faq";
 import React from "react";
 
-const page = () => {
+export default function Courses() {
   return (
     <div className="bg-white">
       <AllCourses />
@@ -18,4 +18,3 @@ const page = () => {
   );
 };
 
-export default page;

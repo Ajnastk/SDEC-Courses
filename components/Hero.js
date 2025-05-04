@@ -38,7 +38,7 @@ export const Hero = () => {
       {/* Background with floating color orbs */}
       <HeroBackground />
 
-      <main className="relative container max-w-5xl mx-auto px-4 py-16 text-center z-10">
+      <main className="relative container max-w-5xl mx-auto px-6 py-16 text-center z-10">
         {/* Trusted badge */}
         <div
           className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-full px-4 py-2 mb-10 text-gray/40 font-medium 
@@ -55,22 +55,22 @@ export const Hero = () => {
         </div>
 
         {/* Animated headline */}
-        <h1 className="md:text-7xl text-5xl font-bold mb-6 leading-tight">
-          {HeadLineWords.map((word, index) => (
-            <motion.span
-              key={index}
-              className="inline-block mr-2"
-              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{
-                duration: 0.3,
-                delay: index * 0.1,
-                ease: "easeOut",
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
+        <h1 className="lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold mb-6 leading-tight">
+        {HeadLineWords.map((word, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block mr-2"
+                    initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.1,
+                      ease: "easeOut",
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
         </h1>
 
         {/* Animated SubHeadLine */}
@@ -84,7 +84,7 @@ export const Hero = () => {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{
                   duration: 0.1,
-                  delay: HeadLineWords.length * 0.1 + index * 0.1,
+                  delay: HeadLineWords.length * 0 + index * 0.1,
                   ease: "easeIn",
                 }}
               >
@@ -99,7 +99,7 @@ export const Hero = () => {
           <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 2.8 }}
+            transition={{ delay: 1.8}}
           >
             <Link
               href="./courses"
@@ -117,7 +117,7 @@ export const Hero = () => {
           <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 3 }}
+            transition={{ delay: 2 }}
           >
             <Now />
           </motion.button>
@@ -128,7 +128,7 @@ export const Hero = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3.2, duration: 0.6 }}
+          transition={{ delay: 2.2, duration: 0.6 }}
         >
           {/* Card 1 */}
           <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-lg transition hover:scale-105 duration-300 text-white">

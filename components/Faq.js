@@ -49,7 +49,7 @@ export const FAQHub = () => {
 
   return (
     <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white">
-      <div className="flex flex-col md:flex-row max-w-7xl text-black mx-auto p-4 gap-8 ">
+      <div className="flex flex-col md:flex-row max-w-7xl text-black mx-auto px-6 gap-8 ">
         {/* Left Side */}
         <div className="w-full md:w-1/2">
           <div className="text-black font-medium w-[110px] text-sm flex items-center gap-3 bg-purple-50 border-2 border-gray-200  rounded-full mb-4">
@@ -58,19 +58,19 @@ export const FAQHub = () => {
             </span>
             Faq Hub
           </div>
-          <h1 className=" text-3xl md:text-4xl  mb-8">
+          <h2 className=" md:text-4xl text-3xl  mb-8">
             Frequently Asked Questions!
-          </h1>
+          </h2>
 
           <div
-            className="bg-gradient-to-b from-[#faf0ff] to-[#ffffff] p-6  rounded-4xl"
+            className="bg-gradient-to-t from-[#faf0ff] to-[#ffffff] p-6  rounded-4xl"
             style={{
               boxShadow:
                 "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
               border: "3px solid white",
             }}
           >
-            <div className="bg-gradient-to-b from-[#faf0ff] to-[#ffffff] p-6  rounded-4xl">
+            <div className="bg-gradient-to-t from-[#faf0ff] to-[#ffffff] p-6  rounded-4xl">
               <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
               <p className="mb-4">
                 <span className="font-semibold">
@@ -123,7 +123,7 @@ export const FAQHub = () => {
               <button
                 style={{ border: "3px solid white" }}
                 onClick={() => toggleQuestion(faq.id)}
-                className="w-full flex flex-col bg-gradient-to-b from-[#faf0ff] to-[#ffffff] rounded-xl shadow-xl text-left py-6 px-6 transition-all duration-300"
+                className="w-full flex flex-col bg-[#f4f8ff] rounded-xl shadow-xl text-left py-6 px-6 transition-all duration-300"
               >
                 <div className="flex justify-between items-center">
                   <span className="text-md font-medium text-gray-700">
