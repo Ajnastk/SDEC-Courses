@@ -240,8 +240,8 @@ export default function AllCourses() {
           </p>
         </div>
 
-        <motion.div 
-        className="flex justify-between items-center mb-4"
+        {/* <motion.div 
+        className="flex justify-between items-center mb-4 z-50"
          initial={{ opacity: 0, filter: "blur(8px)" }}
          animate={{ opacity: 1, filter: "blur(0px)" }}
          transition={{ delay: 0.4 }}
@@ -250,7 +250,7 @@ export default function AllCourses() {
 
           <div className="relative">
             <button
-              className="px-4 py-2 rounded-lg shadow-2xl text-lg bg-white flex items-center  text-black gap-2"
+              className="px-4 py-2 rounded-lg shadow-2xl text-lg bg-white flex items-center  text-black gap-2 z-30"
               onClick={() => setShowDropdown(!showDropdown)}
             >
               {filter} <ChevronDown size={16} />
@@ -278,9 +278,9 @@ export default function AllCourses() {
               </div>
             )}
           </div>
-        </motion.div>
+        </motion.div> */}
         <motion.div
-         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12"
+         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 pb-12 z-0"
          initial={{ opacity: 0, filter: "blur(8px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ delay: 0.4 }}
