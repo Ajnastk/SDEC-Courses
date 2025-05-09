@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Now from "./ui/Now";
-import Ajnas from "../public/Images/ajnas.jpg";
+import ziyad from "../public/Images/ziyad.jpg";
+import rahib from "../public/Images/rahib.jpg";
+import rasha from "../public/Images/Rasha.jpg";
 export default function TestimonialsSection() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -33,7 +35,7 @@ export default function TestimonialsSection() {
         "The courses are top-notch, providing in-depth knowledge that's easy to apply. Each lesson is structured to ensure you fully grasp the material.",
       name: "Brendan Wilson",
       role: "Aspiring Web Designer",
-      image: Ajnas,
+      image: ziyad,
     },
     {
       id: 2,
@@ -41,7 +43,7 @@ export default function TestimonialsSection() {
         "The courses are excellent, delivering practical insights with ease. Each module is designed to help you fully understand and apply the knowledge.",
       name: "Rock Lee",
       role: "Web Designer",
-      image: Ajnas,
+      image: rahib,
     },
     {
       id: 3,
@@ -49,7 +51,7 @@ export default function TestimonialsSection() {
         "These courses are exceptional, offering detailed content that's easy to implement. Every lesson is carefully crafted to deepen your understanding.",
       name: "Sakura",
       role: "Web Developer",
-      image: Ajnas,
+      image: rasha,
     },
   ];
 
@@ -80,7 +82,7 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-gradient-to-b from-[#f6effa] to-[#ffffff] p-6 rounded-3xl h-72 flex flex-col justify-between backdrop-blur-sm transition-transform relative"
+              className="bg-gradient-to-b from-[#f6effa] to-[#ffffff] lg:p-4 md:p-6 sm:p-6 p-6 rounded-3xl h-72 flex flex-col justify-between backdrop-blur-sm transition-transform relative"
               style={{
                 boxShadow:
                   "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
@@ -95,7 +97,7 @@ export default function TestimonialsSection() {
                 }),
               }}
             >
-               <div className="flex justify-between mb-4">
+               <div className="flex justify-between ">
               <div className="flex space-x-1 text-yellow-400">
                 {Array(5)
                   .fill()
@@ -127,7 +129,7 @@ export default function TestimonialsSection() {
                 </svg>
               </div>
             </div>
-              <p className="text-gray-700 italic mt-6">
+              <p className="text-gray-700 italic mt-3 ">
                 &quot;{testimonial.quote}&quot;
               </p>
 

@@ -2,11 +2,12 @@
 import { Check, X } from "lucide-react";
 import { useState } from "react";
 import contents from "@/Contents"; // adjust this import path based on your file structure
+import { Hourglass } from "lucide-react";
 
 export default function PremiumCourses() {
   const [selectedPlan, setSelectedPlan] = useState("pro");
   const { heading, subheading, rating, reviews, plans } =
-    contents.PremimuCoursesData;
+    contents.PremiumCoursesData;
 
   return (
     <div
@@ -59,13 +60,13 @@ export default function PremiumCourses() {
                   >
                     <div className="flex text-center items-baseline">
                       <span className="md:text-2xl text-lg font-semibold text-black">
-                        ${plan.price}
+                        ₹{plan.price}
                       </span>
-                      <span className="text-gray-900 ml-2">/mo</span>
+                      {/* <span className="text-gray-900 ml-2">/mo</span> */}
                     </div>
-                    <div className="text-gray-800 md:text-md text-sm mt-1">
-                      Billed annually
-                    </div>
+                    <span className="text-gray-800 md:text-md text-sm mt-1">
+                    {plan.duration}
+                    </span>
                   </div>
 
                   <div className="space-y-4 mb-8">
