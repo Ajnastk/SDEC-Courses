@@ -19,14 +19,14 @@ const contents = {
       },
       {
         value: "15+",
-        label: "Courses",
+        label: "Courses in LMS",
         gradientFrom: "from-blue-300",
         gradientTo: "to-blue-400",
         icon: Mail,
       },
       {
-        value: "20k+",
-        label: "Students",
+        value: "20+",
+        label: "Software engineers",
         gradientFrom: "from-purple-300",
         gradientTo: "to-purple-400",
         icon: Users,
@@ -34,7 +34,7 @@ const contents = {
     ],
   },
 
-  PremimuCoursesData: {
+  PremiumCoursesData: {
     heading: "Join Our Premium Courses",
     subheading: "Trusted by 70k+ students",
     rating: 4.8,
@@ -43,21 +43,24 @@ const contents = {
       {
         id: "starter",
         name: "Starter plan",
-        price: "50.90",
+        price: "5,000",
         isPopular: false,
+        duration:"7 days",
         features: [
           { name: "Limited Access to the platform", included: true },
           { name: "10 Free Courses", included: true },
           { name: "Limited Benefits", included: true },
           { name: "Agent", included: false },
           { name: "Live Chat Support", included: false },
+          
         ],
       },
       {
         id: "pro",
         name: "Pro plan",
-        price: "70.90",
+        price: "80,000",
         isPopular: true,
+        duration:"7 months",
         features: [
           { name: "Full Access to the platform", included: true },
           { name: "20 Free Courses", included: true },
@@ -69,7 +72,7 @@ const contents = {
       {
         id: "business",
         name: "Business plan",
-        price: "99.90",
+        price: "200,000",
         isPopular: false,
         features: [
           { name: "Full Access to the platform", included: true },
