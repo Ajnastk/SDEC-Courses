@@ -3,7 +3,17 @@ import { useState, useEffect } from "react";
 import { House, ChevronRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import ImgCourse from "../../public/Images/courses.jpeg";
+
+import course1 from "../../public/Images/course1.jpg"
+import course2 from "../../public/Images/course2.jpg"
+import course3 from "../../public/Images/course3.jpg"
+import course4 from "../../public/Images/course4.jpg"
+import startup from "../../public/Images/startup.jpg"
+import backend from "../../public/Images/backend.jpg"
+import digital from "../../public/Images/ditalmarket.jpg"
+import front from "../../public/Images/front-end.jpg"
+import frontend from "../../public/Images/front.jpg"
+
 import { motion } from "framer-motion";
 
 export default function AllCourses() {
@@ -22,7 +32,7 @@ export default function AllCourses() {
       description:
         " Kickstart your journey in tech with the foundational skills needed for a successful career.",
       price: "5,000",
-      image: ImgCourse,
+      image: course1,
       level: "Intermediate",
       featured: true,
     },
@@ -32,7 +42,7 @@ export default function AllCourses() {
       description:
         "Learn the key technologies used to build interactive and user-friendly websites.",
       price: "45,000",
-      image: ImgCourse,
+      image: frontend,
       level: "Intermediate",
       featured: false,
     },
@@ -42,7 +52,7 @@ export default function AllCourses() {
       description:
         " Master server-side development and databases to build dynamic web applications.",
       price: "50,000",
-      image: ImgCourse,
+      image: backend,
       level: "Intermediate",
       featured: false,
     },
@@ -52,7 +62,7 @@ export default function AllCourses() {
       description:
         "Become proficient in both front-end and back-end development to build end-to-end web applications.",
       price: "80,000",
-      image: ImgCourse,
+      image: course4,
       level: "Intermediate",
       featured: true,
     },
@@ -62,7 +72,7 @@ export default function AllCourses() {
       description:
         "Equip yourself with the skills needed to successfully work as a freelancer in the tech world.",
       price: "50,000",
-      image: ImgCourse,
+      image: course3,
       level: "Intermediate",
       featured: true,
     },
@@ -72,7 +82,7 @@ export default function AllCourses() {
       description:
         "Learn how to build and scale your own tech startup.",
       price: "100,000",
-      image: ImgCourse,
+      image: startup,
       level: "Intermediate",
       featured: true,
     },
@@ -82,7 +92,7 @@ export default function AllCourses() {
       description:
         "Access to all the above courses and more, with in-depth mentorship and personalized guidance.",
       price: "200,000",
-      image: ImgCourse,
+      image: course2,
       level: "Advanced",
       featured: true,
     },
@@ -92,7 +102,7 @@ export default function AllCourses() {
       description:
         " Gain comprehensive skills in digital marketing to help businesses grow online.",
       price: "38,000",
-      image: ImgCourse,
+      image: digital,
       level: "Intermediate",
       featured: true,
     },

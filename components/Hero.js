@@ -156,10 +156,10 @@ export const Hero = () => {
             </div>
 
             {/* Title & Text */}
-            <h3 className="text-xl font-semibold text-center mb-2">
+            <h3 className="text-xl font-semibold text-center text-black mb-2">
               Earn & Grow
             </h3>
-            <p className="text-sm text-center text-white/80">
+            <p className="text-sm text-center text-black">
               Work on projects and start earning.
             </p>
           </div>
@@ -202,10 +202,10 @@ export const Hero = () => {
               </div>
             </div>
             {/* Title & Text */}
-            <h3 className="text-xl font-semibold text-center mb-2">
+            <h3 className="text-xl font-semibold text-center text-black mb-2">
               Expert Mentorship
             </h3>
-            <p className="text-sm text-center text-white/80">
+            <p className="text-sm text-center text-black">
               Guidance from industry leaders, always.
             </p>
           </div>
@@ -246,10 +246,10 @@ export const Hero = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-xl font-semibold text-center mb-2">
+            <h3 className="text-xl font-semibold text-center text-black mb-2">
               Get Certified
             </h3>
-            <p className="text-sm text-center text-white/80">
+            <p className="text-sm text-center text-black">
               Official certificates to boost your career.
             </p>
           </div>
