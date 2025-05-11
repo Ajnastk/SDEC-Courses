@@ -1,39 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
-import ImgCourse from "../public/Images/courses.jpeg";
+import course4 from '../public/Images/course4.jpg'
+import course3 from '../public/Images/course3.jpg'
+import startup from "../public/Images/startup.jpg"
+
 export default function FeaturedCourses() {
   const courses = [
   {
         id: 1,
-        title: "Career Foundation Course",
-        description:
-          " Kickstart your journey in tech with the foundational skills needed for a successful career.",
-        price: "5,000",
-        image: ImgCourse,
-        level: "Intermediate",
-        featured: true,
-      },
-      {
-        id: 4,
         title: "Full Stack Developer Course",
         description:
           "Become proficient in both front-end and back-end development to build end-to-end web applications.",
         price: "80,000",
-        image: ImgCourse,
+        image: course4,
         level: "Intermediate",
         featured: true,
       },
-      
       {
-        id: 7,
-        title: "Aspiring Engineers Program ",
+        id: 2,
+        title: "Freelance Master Course",
         description:
-          "Access to all the above courses and more, with in-depth mentorship and personalized guidance.",
-        price: "200,000",
-        image: ImgCourse,
-        level: "Advanced",
+          "Equip yourself with the skills needed to successfully work as a freelancer in the tech world.",
+        price: "50,000",
+        image: course3,
+        level: "Intermediate",
         featured: true,
-      },,
+      },
+      {
+        id: 3,
+        title: "Entrepreneur Course",
+        description:
+          "Learn how to build and scale your own tech startup.",
+        price: "100,000",
+        image: startup,
+        level: "Intermediate",
+        featured: true,
+      },
   ];
 
   return (

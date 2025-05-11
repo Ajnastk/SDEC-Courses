@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import "../../app/globals.css";
 import Shahi from "../../public/Images/shahi.png";
 import Now from "../ui/Now";
+import Logo from "../../public/Images/favicon.ico";
 
 const Footer = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -104,24 +105,14 @@ const Footer = () => {
         <div className="mb-8">
           <Link href="/">
             <div className="flex items-center">
-              <div className="mr-2 text-green-800">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.5 12.5L12 16.5L4.5 12.5M19.5 8.5L12 12.5L4.5 8.5L12 4.5L19.5 8.5Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="text-xl font-medium text-black">SDEC</span>
+               <Image
+                                     src={Logo}
+                                     alt="Avatar"
+                                     width={57}
+                                     height={20}
+                                     className="rounded-full "
+                                   />
+              <span className="text-xl font-medium text-black"></span>
             </div>
           </Link>
         </div>
