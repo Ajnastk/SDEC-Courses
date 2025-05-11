@@ -3,36 +3,37 @@ import Link from "next/link";
 import ImgCourse from "../public/Images/courses.jpeg";
 export default function FeaturedCourses() {
   const courses = [
-    {
-      id: 1,
-      title: "JavaScript Full Mastery 2024",
-      description:
-        "Master JavaScript with our updated course. Learn core concepts, ES6+, and advanced techniques to build modern web applications.",
-      price: 99,
-      image: ImgCourse,
-      level: "Intermediate",
-      featured: true,
-    },
-    {
-      id: 2,
-      title: "Framer Full Mastery & More 2024",
-      description:
-        "Master Framer in 2024 with this updated course. Learn to design, prototype, and build interactive interfaces with ease.",
-      price: 99,
-      image: ImgCourse,
-      level: "Beginner",
-      featured: true,
-    },
-    {
-      id: 3,
-      title: "Figma Full Mastery 2024 Edition",
-      description:
-        "Master Figma in 2024 with this updated course. Learn to design, prototype, and collaborate on user interfaces.",
-      price: 79,
-      image: ImgCourse,
-      level: "Beginner",
-      featured: true,
-    },
+  {
+        id: 1,
+        title: "Career Foundation Course",
+        description:
+          " Kickstart your journey in tech with the foundational skills needed for a successful career.",
+        price: "5,000",
+        image: ImgCourse,
+        level: "Intermediate",
+        featured: true,
+      },
+      {
+        id: 4,
+        title: "Full Stack Developer Course",
+        description:
+          "Become proficient in both front-end and back-end development to build end-to-end web applications.",
+        price: "80,000",
+        image: ImgCourse,
+        level: "Intermediate",
+        featured: true,
+      },
+      
+      {
+        id: 7,
+        title: "Aspiring Engineers Program ",
+        description:
+          "Access to all the above courses and more, with in-depth mentorship and personalized guidance.",
+        price: "200,000",
+        image: ImgCourse,
+        level: "Advanced",
+        featured: true,
+      },,
   ];
 
   return (
@@ -78,7 +79,7 @@ export default function FeaturedCourses() {
               <div>
                 <div className="flex justify-end items-center py-3">
                   <span className="text-xl text-right text-black">
-                    ${course.price}
+                    {course.price} ₹
                   </span>
                 </div>
                 <h3 className="text-xl text-black mb-2 truncate">

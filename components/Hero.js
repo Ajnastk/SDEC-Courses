@@ -5,33 +5,26 @@ import Now from "./ui/Now";
 import Link from "next/link";
 export const Hero = () => {
   const HeadLineWords = [
-    "Web",
-    "Dev",
-    "&",
-    "Design",
-    "made",
-    "Simple,",
-    "Better.",
+    "Become",
+    "a",
+    "Software",
+    "Engineer!",
+   
   ];
   const SubHeadLineWords = [
-    "Practical",
-    "project-based",
-    "courses",
-    "that",
-    "are",
-    "easy",
-    "to",
-    "understand,",
-    "straight",
-    "to",
-    "the",
-    "point,",
+    "Unlock",
+    "High-paying",
+    "career",
+    "Opportunities",
     "and",
-    "distractions",
-    "while",
-    "ensuring",
-    "comprehensive",
-    "learning.",
+    "secure",
+    "your",
+    "financial",
+    "future.",
+    "start",
+    "your",
+    "journey",
+    "today.",
   ];
   return (
     <div className="relative min-h-screen  overflow-hidden text-black pt-20">
@@ -50,7 +43,7 @@ export const Hero = () => {
         >
           <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
           <p className="text-sm text-gray-800">
-            Trusted by 20,000+ Happy Learners
+            Want to Earn ₹1 Lakh/Month?
           </p>
         </div>
 
@@ -157,10 +150,10 @@ export const Hero = () => {
 
             {/* Title & Text */}
             <h3 className="text-xl font-semibold text-center mb-2">
-              Design Tools
+              Earn & Grow
             </h3>
             <p className="text-sm text-center text-white/80">
-              Master Figma and modern design systems.
+              Work on projects and start earning.
             </p>
           </div>
 
@@ -186,10 +179,10 @@ export const Hero = () => {
               <div className="w-0 h-0 border-y-8 border-y-transparent border-l-8 border-l-white ml-1"></div>
             </div>
             <h3 className="text-xl font-semibold text-center mb-2">
-              Video Lessons
+              Expert Mentorship
             </h3>
             <p className="text-sm text-center text-white/80">
-              Learn with visual and easy-to-follow videos.
+            Guidance from industry leaders, always.
             </p>
           </div>
 
@@ -215,10 +208,10 @@ export const Hero = () => {
               <div className="w-10 h-10 bg-pink-400 rounded-full"></div>
             </div>
             <h3 className="text-xl font-semibold text-center mb-2">
-              Certified
+            Get Certified
             </h3>
             <p className="text-sm text-center text-white/80">
-              Earn official certifications after course completion.
+            Official certificates to boost your career.
             </p>
           </div>
         </motion.div>

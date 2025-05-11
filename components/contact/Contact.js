@@ -103,16 +103,36 @@ export const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
+
+  const redirectToWhatsApp = () => {
+    // The phone number should be in international format without any symbols
+    const phoneNumber = "+918086158928"; // Replace with your actual WhatsApp 
+    
+    const email = formData.email;
+
+    // Create a pre-filled message using the form data
+    const message = `Hello, my name is ${formData.name}. I'd like to inquire about joining a software development program. ${formData.message}`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // Create the WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="bg-gradient-to-r  from-white via-[#f6e7ff] to-white pb-16 pt-[150px] ">
       <div className="max-w-7xl mx-auto px-6">
         {/* Breadcrumb navigation */}
         <div className="w-full">
-          <motion.nav 
-          className="flex mb-6 items-center"
-          initial={{ opacity: 0, filter: "blur(8px)" }}
-         animate={{ opacity: 1, filter: "blur(0px)" }}
-         transition={{ delay: 0.4 }}
+          <motion.nav
+            className="flex mb-6 items-center"
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ delay: 0.4 }}
           >
             <Link href="/" className="hover:text-gray-900">
               <House color="#454545" size={20} strokeWidth={1.25} />
@@ -162,11 +182,11 @@ export const ContactForm = () => {
               </p>
 
               {/* Contact methods */}
-              <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8"
-              initial={{ opacity: 0, filter: "blur(8px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ delay: 0.4 }}
-              
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ delay: 0.4 }}
               >
                 {/* Message Us section */}
                 <div>
@@ -188,10 +208,10 @@ export const ContactForm = () => {
                   </p>
                   <div className="h-px bg-gray-200 my-4 w-full"></div>
                   <Link
-                    href="mailto:coursesite@support.com"
+                    href="mailto:contact@sdec.info?subject=Hello&body=I%20want%20to%20contact%20you."
                     className="text-gray-900 underline"
                   >
-                    coursesite@support.com
+                    contact@sdec.info
                   </Link>
                 </div>
 
@@ -211,32 +231,32 @@ export const ContactForm = () => {
                     Call Us
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Let&pos;s chat - nothing better than talking to another
-                    human being.
+                    Let’s chat — nothing better than talking to another human
+                    being.
                   </p>
                   <div className="h-px bg-gray-200 my-4 w-full"></div>
                   <Link
-                    href="tel:+1234567890"
+                    href="tel:+917356190621"
                     className="text-gray-900 underline"
                   >
-                    +1234567890
+                    +91 7356190621
                   </Link>
                 </div>
               </motion.div>
             </div>
 
             {/* Right side form */}
-            <motion.div className="lg:w-1/2"
-          initial={{ opacity: 0,  scale:0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
+            <motion.div
+              className="lg:w-1/2"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.8, bounce: 0.2 },
-            }}
+              }}
             >
               <div
                 className="bg-gradient-to-b from-[#faf0ff] to-[#ffffff] backdrop-blur-sm rounded-3xl shadow-lg p-6  mx-auto relative z-10"
-
                 style={{
                   boxShadow:
                     "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
@@ -309,13 +329,31 @@ export const ContactForm = () => {
                       Subscribe to Newsletter
                     </label>
                   </div>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full group bg-gradient-to-br from-[#7f7e80] to-black text-white font-medium py-3 px-4 rounded-xl cursor-pointer"
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </button>
+                  <div className="flex justify-between">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-[48%] group bg-gradient-to-br from-[#7f7e80] to-black text-white font-medium py-3 px-4 rounded-xl cursor-pointer"
+                    >
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </button>
+                    <button
+                      onClick={redirectToWhatsApp}
+                      type="button"
+                      className="w-[48%] flex justify-center group bg-gradient-to-br from-[#323232] to-black text-white font-medium py-3 px-4 rounded-xl cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-2 hidden sm:block"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+              
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                      </svg>
+                      Chat on Whatsapp
+                    </button>
+                  </div>
                 </form>
               </div>
             </motion.div>

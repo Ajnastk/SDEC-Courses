@@ -131,8 +131,8 @@ export const WhyCourseSite = () => {
                     I started my journey:
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    in web-design and development in 2010 at the age of 24. I
-                    transitioned into a full-time instructor and mentor in 2018.
+                    in web-design and development in 2024 at the age of 17. I
+                    transitioned into a full-time instructor and mentor in 2025.
                   </p>
 
                   <h3 className="font-semibold text-black mb-1">
