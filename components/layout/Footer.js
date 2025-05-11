@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import "../../app/globals.css";
-import Ziyad from "../../public/Images/ziyad.jpg";
+import Shahi from "../../public/Images/shahi.png";
 import Now from "../ui/Now";
 
 const Footer = () => {
@@ -29,7 +29,7 @@ const Footer = () => {
         name: "Join Our news Letter",
         type: "link",
         id: "newsletter",
-        path: "/newsletter",
+        path: "/#",
       },
     ],
     [isHomePage]
@@ -143,7 +143,7 @@ const Footer = () => {
           <p className="text-black">Your Path to Becoming a Web Wizard</p>
           <div className="rounded-full w-10 h-10 bg-blue-200 border-2  border-white object-cover overflow-hidden relative">
             <Image
-              src={Ziyad}
+              src={Shahi}
               alt="Avatar"
               width={1000}
               height={3}
