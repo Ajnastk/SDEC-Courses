@@ -181,13 +181,13 @@ const Footer = () => {
           )}
 
           {/* Notify Me Button */}
-          <Link
-            href="/notify"
+          <button
+            
             className="border border-black rounded-full  text-gray-700  py-2 px-4    hover:bg-black hover:text-white"
             onClick={() => handleLinkClick("notify")}
           >
             Notify Me
-          </Link>
+          </button>
         </nav>
       </div>
 

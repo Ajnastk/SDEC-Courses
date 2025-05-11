@@ -18,124 +18,85 @@ export default function AllCourses() {
   const courses = [
     {
       id: 1,
-      title: "JavaScript Full Mastery 2024",
+      title: "Career Foundation Course",
       description:
-        "Master JavaScript with our updated course. Learn core concepts, ES6+, and advanced techniques to build modern web applications.",
-      price: 99,
+        " Kickstart your journey in tech with the foundational skills needed for a successful career.",
+      price: "5,000",
       image: ImgCourse,
       level: "Intermediate",
       featured: true,
     },
     {
       id: 2,
-      title: "How To Become Web Developer In 2024",
+      title: "Front-End Developer Course ",
       description:
-        "Become a web developer in 2024 with our step-by-step course. Master HTML, CSS, JavaScript, and modern frameworks.",
-      price: 59,
+        "Purpose: Learn the key technologies used to build interactive and user-friendly websites.",
+      price: "45,000",
       image: ImgCourse,
       level: "Intermediate",
       featured: false,
     },
     {
       id: 3,
-      title: "Node JS & React JS Full Mastery",
+      title: "Back-End Developer Course",
       description:
-        "Master Node.js and React.js with this all-in-one course. Learn to build fast, scalable server-side applications and interactive UIs.",
-      price: 79,
+        " Master server-side development and databases to build dynamic web applications.",
+      price: "50,000",
       image: ImgCourse,
-      level: "Advanced",
-      featured: true,
+      level: "Intermediate",
+      featured: false,
     },
     {
       id: 4,
-      title: "Python for Data Science & ML",
+      title: "Full Stack Developer Course",
       description:
-        "Learn Python programming for data science and machine learning. Master pandas, numpy, matplotlib, and scikit-learn.",
-      price: 89,
+        "Become proficient in both front-end and back-end development to build end-to-end web applications.",
+      price: "80,000",
       image: ImgCourse,
       level: "Intermediate",
       featured: true,
     },
     {
       id: 5,
-      title: "UI/UX Design Masterclass",
+      title: "Freelance Master Course",
       description:
-        "Comprehensive UI/UX design course covering user research, wireframing, prototyping, and design systems using Figma.",
-      price: 69,
+        "Equip yourself with the skills needed to successfully work as a freelancer in the tech world.",
+      price: "50,000",
       image: ImgCourse,
-      level: "Beginner",
+      level: "Intermediate",
       featured: true,
     },
     {
       id: 6,
-      title: "Flutter Mobile App Development",
+      title: "Entrepreneur Course",
       description:
-        "Build beautiful, native mobile apps for iOS and Android from a single codebase using Flutter and Dart.",
-      price: 79,
+        "Learn how to build and scale your own tech startup.",
+      price: "100,000",
       image: ImgCourse,
       level: "Intermediate",
-      featured: false,
+      featured: true,
     },
     {
       id: 7,
-      title: "AWS Cloud Certification",
+      title: "Aspiring Engineers Program ",
       description:
-        "Prepare for AWS certification exams with this comprehensive course covering all major AWS services and cloud architecture.",
-      price: 109,
+        "Access to all the above courses and more, with in-depth mentorship and personalized guidance.",
+      price: "200,000",
       image: ImgCourse,
       level: "Advanced",
       featured: true,
     },
     {
       id: 8,
-      title: "GraphQL API Development",
+      title: "Digital Marketing Mastery",
       description:
-        "Master GraphQL API development with Node.js. Learn to build efficient, flexible APIs that clients love.",
-      price: 69,
+        " Gain comprehensive skills in digital marketing to help businesses grow online.",
+      price: "38,000",
       image: ImgCourse,
       level: "Intermediate",
       featured: false,
     },
-    {
-      id: 9,
-      title: "Next.js Full Stack Development",
-      description:
-        "Build modern web applications with Next.js. Master server-side rendering, static generation, and API routes.",
-      price: 89,
-      image: ImgCourse,
-      level: "Advanced",
-      featured: true,
-    },
-    {
-      id: 10,
-      title: "Blockchain & Web3 Development",
-      description:
-        "Enter the world of blockchain and Web3 development. Learn to build decentralized applications with Ethereum and Solidity.",
-      price: 99,
-      image: ImgCourse,
-      level: "Advanced",
-      featured: true,
-    },
-    {
-      id: 11,
-      title: "DevOps Engineering Fundamentals",
-      description:
-        "Learn essential DevOps practices, tools, and methodologies. Master CI/CD pipelines, Docker, Kubernetes, and more.",
-      price: 89,
-      image: ImgCourse,
-      level: "Intermediate",
-      featured: false,
-    },
-    {
-      id: 12,
-      title: "TypeScript for Modern Development",
-      description:
-        "Master TypeScript for modern web development. Learn type systems, interfaces, generics, and integration with popular frameworks.",
-      price: 69,
-      image: ImgCourse,
-      level: "Intermediate",
-      featured: true,
-    },
+    
   ];
 
   // Determine how many cards to show initially based on screen size
@@ -302,7 +263,7 @@ export default function AllCourses() {
               <div>
                 <div className="flex justify-end items-center py-3">
                   <span className="text-xl text-right text-black">
-                    ${course.price}
+                    {course.price} ₹
                   </span>
                 </div>
                 <h1 className="text-xl text-black mb-2 truncate">

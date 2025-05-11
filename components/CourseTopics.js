@@ -1,14 +1,44 @@
 export const CourseTopics = () => {
   const topics = [
     "Web Development",
-    "Java Script",
-    "Framer",
+    "JavaScript",
+    "TypeScript",
     "Web Design",
     "Webflow",
     "CSS",
+    "Tailwind",
+    "Bootstrap",
     "UI/UX Design",
+    "Figma",
     "Angular",
     "React",
+    "Vue.js",
+    "Next.js",
+    "Nuxt.js",
+    "Node.js",
+    "Express.js",
+    "Nest.js",
+    "Git",
+    "GitHub",
+    "REST APIs",
+    "GraphQL",
+    "MongoDB",
+    "MySQL",
+    "PostgreSQL",
+    "Prisma",
+    "Firebase",
+    "Docker",
+    "CI/CD",
+    "Jest",
+    "Cypress",
+    "Web Accessibility (a11y)",
+    "Progressive Web Apps (PWA)",
+    "JAMstack",
+    "Headless CMS",
+    "SEO Optimization",
+    "Vite",
+    "Webpack",
+    "Microservices",
   ];
 
   return (
@@ -48,7 +78,7 @@ export const CourseTopics = () => {
 
         {/* Topic buttons - arranged in 2 rows */}
         <div className="flex flex-wrap justify-center gap-5">
-          {topics.slice(0, 7).map((topic, index) => (
+          {topics.map((topic, index) => (
             <div
               key={index}
               className="bg-gradient-to-b from-[#fbf4ff] to-[#ffffff] rounded-[20px] py-4 px-4 shadow-sm flex items-center gap-2"
@@ -56,41 +86,6 @@ export const CourseTopics = () => {
                 boxShadow:
                   "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
                 border: "3px solid white",
-              }}
-            >
-              <span className="text-purple-200">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  fill="#444444"
-                >
-                  <path d="M12,2 L12,22 M2,12 L22,12 M4.93,4.93 L19.07,19.07 M4.93,19.07 L19.07,4.93" />
-                  <path
-                    d="M12,2 L12,22 M2,12 L22,12 M4.93,4.93 L19.07,19.07 M4.93,19.07 L19.07,4.93"
-                    fill="none"
-                    stroke="#ebe0ff"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-              <span className="font-medium text-gray-800">{topic}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Second row (for Angular and React) */}
-        <div className="flex justify-center gap-5 mt-4">
-          {topics.slice(7).map((topic, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-[20px] py-4 px-4 shadow-sm flex items-center gap-2"
-              style={{
-                boxShadow:
-                  "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                border: "1px solid rgba(255,255,255,0.2)",
               }}
             >
               <span className="text-purple-200">
