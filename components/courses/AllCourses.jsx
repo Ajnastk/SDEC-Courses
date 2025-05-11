@@ -30,7 +30,7 @@ export default function AllCourses() {
       id: 2,
       title: "Front-End Developer Course ",
       description:
-        "Purpose: Learn the key technologies used to build interactive and user-friendly websites.",
+        "Learn the key technologies used to build interactive and user-friendly websites.",
       price: "45,000",
       image: ImgCourse,
       level: "Intermediate",
@@ -94,7 +94,7 @@ export default function AllCourses() {
       price: "38,000",
       image: ImgCourse,
       level: "Intermediate",
-      featured: false,
+      featured: true,
     },
     
   ];
