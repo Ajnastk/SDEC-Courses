@@ -106,7 +106,7 @@ export const ContactForm = () => {
 
   const redirectToWhatsApp = () => {
     // The phone number should be in international format without any symbols
-    const phoneNumber = "+918086158928"; // Replace with your actual WhatsApp 
+    const phoneNumber = "+916282551125"; // Replace with your actual WhatsApp 
     
     const email = formData.email;
 

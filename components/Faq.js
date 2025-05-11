@@ -19,7 +19,7 @@ export const FAQHub = () => {
   const faqQuestions = [
     {
       id: 1,
-      question: "What is Course Site?",
+      question: "What is SDEC?",
       answer:
         "CourseSite is an innovative platform designed to empower learners and professionals with the skills and knowledge they need to excel in today's fast-paced world.",
       isOpen: false,
@@ -54,7 +54,10 @@ export const FAQHub = () => {
         <div className="w-full md:w-1/2">
           <div className="text-black font-medium w-[110px] text-sm flex items-center gap-3 bg-purple-50 border-2 border-gray-200  rounded-full mb-4">
             <span className="h-6 w-6 bg-purple-300 rounded-full flex items-center justify-center">
-              <span className="text-purple-600">?</span>
+              <span className="text-purple-600"><svg xmlns="http://www.w3.org/2000/svg" fill="#976dff" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+</svg>
+</span>
             </span>
             Faq Hub
           </div>
