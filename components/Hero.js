@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { HeroBackground } from "./HeroBackground";
 import Now from "./ui/Now";
 import Link from "next/link";
+import Image from "next/image";
+import Earn from "../public/icons/growth-7.svg"
+import Mentor from "../public/icons/teacher-management-2.svg"
 export const Hero = () => {
   const HeadLineWords = [
     "Become",
@@ -145,7 +148,14 @@ export const Hero = () => {
 
             {/* Icon Circle */}
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 mx-auto">
-              <div className="w-8 h-8 bg-orange-400 rounded-lg"></div>
+              <div className="w-10 h-10">
+                <Image 
+                 src={Earn}
+                  alt="growth"
+                  width={48}
+                  height={48}
+                />
+              </div>
             </div>
 
             {/* Title & Text */}
@@ -175,9 +185,21 @@ export const Hero = () => {
                 />
               </svg>
             </div>
+             {/* Icon Circle */}
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 mx-auto">
-              <div className="w-0 h-0 border-y-8 border-y-transparent border-l-8 border-l-white ml-1"></div>
+          
+              <div className="w-10 h-10">
+                 <Image 
+                 src={Mentor}
+                  alt="growth"
+                  width={48}
+                  height={48}
+                />
+              </div>
+             
+             
             </div>
+             {/* Title & Text */}
             <h3 className="text-xl font-semibold text-center mb-2">
               Expert Mentorship
             </h3>
