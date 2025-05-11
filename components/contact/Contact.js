@@ -104,11 +104,16 @@ export const ContactForm = () => {
     }
   };
   return (
-    <div className="bg-gradient-to-r  from-white via-[#f6e7ff] to-white py-16 pt-[100px] ">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <div className="bg-gradient-to-r  from-white via-[#f6e7ff] to-white pb-16 pt-[150px] ">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Breadcrumb navigation */}
         <div className="w-full">
-          <nav className="flex py-10 items-center">
+          <motion.nav 
+          className="flex mb-6 items-center"
+          initial={{ opacity: 0, filter: "blur(8px)" }}
+         animate={{ opacity: 1, filter: "blur(0px)" }}
+         transition={{ delay: 0.4 }}
+          >
             <Link href="/" className="hover:text-gray-900">
               <House color="#454545" size={20} strokeWidth={1.25} />
             </Link>
@@ -116,12 +121,12 @@ export const ContactForm = () => {
               <ChevronRight color="#454545" strokeWidth={1.25} />
             </span>
             <span className="text-gray-600 font-medium">Contact Us</span>
-          </nav>
+          </motion.nav>
 
           <div className="flex flex-col lg:flex-row gap-12 justify-between">
             {/* Left side content */}
             <div className="lg:w-1/2">
-              <h1 className="text-4xl md:text-5xl font-semibold text-black mb-6">
+              <h1 className="lg:text-5xl md:text-4xl sm:text-4xl text-3xl font-semibold text-black mb-6">
                 {contactHeadLine.map((word, index) => (
                   <motion.span
                     key={index}
@@ -157,7 +162,12 @@ export const ContactForm = () => {
               </p>
 
               {/* Contact methods */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: 0.4 }}
+              
+              >
                 {/* Message Us section */}
                 <div>
                   <div
@@ -212,17 +222,25 @@ export const ContactForm = () => {
                     +1234567890
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Right side form */}
-            <div className="lg:w-1/2">
+            <motion.div className="lg:w-1/2"
+          initial={{ opacity: 0,  scale:0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.8, bounce: 0.2 },
+            }}
+            >
               <div
                 className="bg-gradient-to-b from-[#faf0ff] to-[#ffffff] backdrop-blur-sm rounded-3xl shadow-lg p-6  mx-auto relative z-10"
+
                 style={{
                   boxShadow:
                     "0 15px 30px rgba(0,0,0,0.1), -20px 0 30px rgba(0,0,0,0.05)",
-                  border: "3px solid white",
+                  border: "3px solid black",
                 }}
               >
                 {formStatus.submitted && (
@@ -300,7 +318,7 @@ export const ContactForm = () => {
                   </button>
                 </form>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

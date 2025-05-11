@@ -4,12 +4,16 @@ import { House, ChevronRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ImgCourse from "../../public/Images/courses.jpeg";
+import { motion } from "framer-motion";
 
 export default function AllCourses() {
   const [filter, setFilter] = useState("All");
   const [visibleCourses, setVisibleCourses] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(9);
+
+  const CoursesHeadLine = ["All", "Online" ,"Courses"]
+  const CourseSubHeadline = [ "Find" ,"what" ,"fascinates" ,"you" ,"as" ,"you", "explore" ,"these" ,"online", "courses."]
 
   const courses = [
     {
@@ -179,9 +183,13 @@ export default function AllCourses() {
 
   return (
     <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white pt-[150px]">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-6 text-center">
         {/* Navigation */}
-        <div className="flex items-center justify-center mb-6 text-gray-600">
+        <motion.div className="flex items-center justify-center mb-6 text-gray-600"
+         initial={{ opacity: 0, filter: "blur(8px)" }}
+         animate={{ opacity: 1, filter: "blur(0px)" }}
+         transition={{ delay: 0.4 }}
+        >
           <Link href="/" className="hover:text-gray-900">
             <House color="#454545" size={20} strokeWidth={1.25} />
           </Link>
@@ -189,27 +197,60 @@ export default function AllCourses() {
             <ChevronRight color="#454545" strokeWidth={1.25} />
           </span>
           <span className="text-gray-600 font-medium">All courses</span>
-        </div>
+        </motion.div>
 
         {/* Heading */}
 
         <div className="flex flex-col items-center">
-          <h1 className="lg:text-5xl text-3xl text-center lg:font-medium font-semibold lg:w-[65%] md:w-[80%] mb-6 text-gray-900">
-            All Online Courses
+          <h1 className="lg:text-5xl md:text-4xl sm:text-4xl text-3xl text-center lg:font-medium font-semibold lg:w-[65%] md:w-[80%] mb-6 text-gray-900">
+          {CoursesHeadLine.map((word, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block mr-2"
+                    initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{
+                      duration: 0.3,
+                      delay: index * 0.1,
+                      ease: "easeOut",
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
           </h1>
 
           {/* Subheading */}
-          <p className="text-md text-gray-700 mb-16 max-w-3xl mx-auto">
-            Find what fascinates you as you explore these online courses.
+          <p className="text-md text-gray-700 mb-8 max-w-3xl mx-auto">
+          {CourseSubHeadline.map((word, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block mr-2"
+                    initial={{ opacity: 0, filter: "blur(8px)" }}
+                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                    transition={{
+                      duration: 0.1,
+                      delay: CourseSubHeadline.length * 0.0 + index * 0.1,
+                      ease: "easeIn",
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
           </p>
         </div>
 
-        <div className="flex justify-between items-center mb-4">
+        {/* <motion.div 
+        className="flex justify-between items-center mb-4 z-50"
+         initial={{ opacity: 0, filter: "blur(8px)" }}
+         animate={{ opacity: 1, filter: "blur(0px)" }}
+         transition={{ delay: 0.4 }}
+        >
           <h1 className="text-xl  text-black">All Courses</h1>
 
           <div className="relative">
             <button
-              className="px-4 py-2 rounded-lg shadow-2xl text-lg bg-white flex items-center  text-black gap-2"
+              className="px-4 py-2 rounded-lg shadow-2xl text-lg bg-white flex items-center  text-black gap-2 z-30"
               onClick={() => setShowDropdown(!showDropdown)}
             >
               {filter} <ChevronDown size={16} />
@@ -237,9 +278,13 @@ export default function AllCourses() {
               </div>
             )}
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
+        </motion.div> */}
+        <motion.div
+         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 pb-12 z-0"
+         initial={{ opacity: 0, filter: "blur(8px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ delay: 0.4 }}
+        >
           {visibleCourses.map((course) => (
             <div
               style={{ border: "3px solid white" }}
@@ -260,9 +305,9 @@ export default function AllCourses() {
                     ${course.price}
                   </span>
                 </div>
-                <h3 className="text-xl text-black mb-2 truncate">
+                <h1 className="text-xl text-black mb-2 truncate">
                   {course.title}
-                </h3>
+                </h1>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                   {course.description}
                 </p>
@@ -278,18 +323,23 @@ export default function AllCourses() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Load More button */}
         {hasMoreToLoad && (
-          <div className="flex justify-center pb-12">
+        <motion.div
+          className="flex justify-center pb-12"
+           initial={{ opacity: 0, y: 0 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: 0.5, duration: 0.6 }}
+         > 
             <button
               onClick={loadMoreCourses}
               className="px-8 py-3 border border-black rounded-full text-gray-700 hover:bg-black hover:text-white transition shadow"
             >
               Load More
             </button>
-          </div>
+          </motion.div>
         )}
       </div>
     </div>

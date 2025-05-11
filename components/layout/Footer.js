@@ -99,7 +99,7 @@ const Footer = () => {
   return (
     <div className="bg-gradient-to-r from-white via-[#f6e7ff] to-white pt-16">
       {/* Main Footer Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col items-center">
         {/* Logo */}
         <div className="mb-8">
           <Link href="/">
@@ -127,10 +127,10 @@ const Footer = () => {
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl font-poppins text-center text-black">
+        <h2 className="md:text-4xl text-2xl font-poppins text-center text-black">
           Boost your Learning & Knowledge with
           <br />
-          CourseSite Now
+          SDEC Now
         </h2>
 
         {/* CTA Button */}
@@ -139,8 +139,8 @@ const Footer = () => {
         </div>
 
         {/* Path Text with Avatar */}
-        <div className="flex items-center mb-12">
-          <p className="mr-2 text-black">Your Path to Becoming a Web Wizard</p>
+        <div className="flex items-center gap-4 lg:text-start md:text-start sm:text-start text-center">
+          <p className="text-black">Your Path to Becoming a Web Wizard</p>
           <div className="rounded-full w-10 h-10 bg-blue-200 border-2  border-white object-cover overflow-hidden relative">
             <Image
               src={Ziyad}
@@ -153,13 +153,13 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links - Enhanced with smooth scrolling */}
-        <nav className="flex flex-wrap justify-center gap-8 mb-1 text-black">
+        <nav className="flex flex-wrap justify-center gap-2 mt-6 mb-1  text-black">
           {footerLinks.map((item, index) =>
             item.type === "scroll" ? (
               <Link
                 key={index}
                 href={item.path}
-                className="hover:underline"
+                className="rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-200"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection(item.id);
@@ -172,7 +172,7 @@ const Footer = () => {
               <Link
                 key={index}
                 href={item.path}
-                className="hover:underline"
+                className="rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-200"
                 onClick={() => handleLinkClick(item.id)}
               >
                 {item.name}
@@ -183,7 +183,7 @@ const Footer = () => {
           {/* Notify Me Button */}
           <Link
             href="/notify"
-            className="border border-black rounded-full my-[-8px] text-gray-700 px-4 py-2 hover:bg-black hover:text-white"
+            className="border border-black rounded-full  text-gray-700  py-2 px-4    hover:bg-black hover:text-white"
             onClick={() => handleLinkClick("notify")}
           >
             Notify Me

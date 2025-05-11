@@ -62,15 +62,7 @@ export default function BoostYourSkills() {
 
   return (
     <div className="py-16 bg-gradient-to-r  from-white via-[#f6e7ff] to-white ">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Decorative Elements */}
-        {/* <div className="absolute top-16 left-16 opacity-10">
-        <div className="text-purple-300 text-8xl">✳</div>
-      </div>
-      <div className="absolute bottom-16 right-16 opacity-10">
-        <div className="text-purple-300 text-8xl">✳</div>
-      </div> */}
-
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-2">
             <div className="bg-purple-50 border-2 border-gray-200 px-0 py-0 rounded-full flex items-center">
@@ -83,7 +75,7 @@ export default function BoostYourSkills() {
             </div>
           </div>
 
-          <h2 className="text-4xl text-black mb-4">{data.title}</h2>
+          <h2 className="md:text-4xl text-3xl text-black mb-4">{data.title}</h2>
           <p className="text-black max-w-xl mx-auto">{data.description}</p>
         </div>
 

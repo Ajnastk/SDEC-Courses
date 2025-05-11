@@ -3,8 +3,8 @@ import Image from "next/image";
 import Rasha from "../public/Images/Rasha.jpg";
 export const WhyCourseSite = () => {
   return (
-    <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white px-4">
-      <div className="max-w-7xl mx-auto flex flex-col">
+    <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white">
+      <div className="max-w-7xl mx-auto flex flex-col px-6">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="text-black inline-flex  w-[110px] text-sm  items-center gap-2 bg-purple-50 border-2 border-gray-200  rounded-full mb-5">
@@ -14,7 +14,7 @@ export const WhyCourseSite = () => {
             About me
           </div>
 
-          <h2 className="text-4xl  text-black mb-4 relative">But Why SDEC ?</h2>
+          <h2 className="md:text-4xl text-3xl  text-black mb-4 relative">But Why SDEC ?</h2>
 
           <p className="text-black max-w-2xl mx-auto">
             Explore the incredible advantages of enrolling in our courses and
@@ -23,13 +23,13 @@ export const WhyCourseSite = () => {
         </div>
 
         {/* Main Grid Content */}
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="flex flex-col">
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-12">
               {/* Left Column */}
               <div className="space-y-8 flex flex-col justify-center items-center">
                 {/* Certificate Section */}
-                <div className="px-4">
+                <div >
                   <div className="flex flex-col  gap-3 mb-3">
                     <div
                       className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
@@ -65,7 +65,7 @@ export const WhyCourseSite = () => {
                 </div>
 
                 {/* Networking Section */}
-                <div className="px-4">
+                <div>
                   <div className="flex flex-col  gap-3 mb-3">
                     <div
                       className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
@@ -186,7 +186,7 @@ export const WhyCourseSite = () => {
               {/* Right Column */}
               <div className="space-y-8 flex flex-col justify-center items-center">
                 {/* Curriculum Section */}
-                <div className="px-4">
+                <div>
                   <div className="flex flex-col  gap-3 mb-3">
                     <div
                       className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
@@ -222,7 +222,7 @@ export const WhyCourseSite = () => {
                 </div>
 
                 {/* Expert Guidance Section */}
-                <div className="px-4">
+                <div >
                   <div className="flex flex-col  gap-3 mb-3">
                     <div
                       className="flex text-gray-400  w-12 rounded-md bg-white justify-center"
