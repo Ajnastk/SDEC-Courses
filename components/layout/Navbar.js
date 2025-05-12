@@ -233,7 +233,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-black">
+        <div className="hidden md:flex items-center lg:space-x-8 md:space-x-4 text-black">
           {navLinks.slice(0, 3).map((item) => {
             const isActive =
               item.type === "scroll"
@@ -249,7 +249,7 @@ export default function Navbar() {
                   scrollToSection(item.id);
                   handleLinkClick(item.id);
                 }}
-                className={`text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100 ${
+                className={`text-lg rounded-[10px] px-6 py-2  transition-colors duration-700  hover:bg-purple-200 ${
                   isActive ? "font-medium" : ""
                 }`}
               >
@@ -260,7 +260,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.path}
                 onClick={() => handleLinkClick(item.id)}
-                className={`text-lg rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100 ${
+                className={`text-lg rounded-[10px] px-6 py-2 transition-colors duration-700  hover:bg-purple-200 ${
                   isActive ? "font-medium" : ""
                 }`}
               >
@@ -271,16 +271,19 @@ export default function Navbar() {
         </div>
 
         {/* Join Now button for desktop - Modified for smooth scrolling */}
-        {navLinks.slice(-1).map((item) => (
+        <div className=" text-black items-center mt-[6.5]">
+          {navLinks.slice(-1).map((item) => (
           <Link
             key={item.name}
             href={`#${item.id}`}
-            className="hidden md:block text-lg text-black rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-100"
+            className="hidden md:block text-lg  rounded-[10px] px-6 py-2 transition-colors duration-700 hover:bg-purple-200"
             onClick={handleJoinNowClick}
           >
             {item.name}
           </Link>
         ))}
+        </div>
+        
 
         {/* Mobile Menu Button with Animation */}
         <button
