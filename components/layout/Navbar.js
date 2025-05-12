@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import Logo from "../../public/Images/favicon.ico"
+import Logo from "../../public/Images/logo.png"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -213,7 +213,7 @@ export default function Navbar() {
       {/* Desktop Navbar with scroll-aware behavior */}
       <nav
         ref={navRef}
-        className={`fixed top-0 left-0 right-0 flex Lg:justify-around md:bg-white/0 md:backdrop-blur-lg bg-white sm:justify-between md:justify-between justify-between px-8 py-5 z-30 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 flex Lg:justify-around md:bg-white/0 md:backdrop-blur-lg bg-white sm:justify-between md:justify-between justify-between px-8 md:py-5 py-3 z-30 transition-transform duration-300 ease-in-out ${
           isNavVisible || mobileMenuOpen
             ? "translate-y-0"
             : "md:-translate-y-full"
@@ -225,10 +225,9 @@ export default function Navbar() {
         >
           <Image
                         src={Logo}
-                        alt="Avatar"
-                        width={57}
-                        height={20}
-                        className="rounded-full "
+                        alt="Logo"
+                        width={88}
+                        className="rounded-[8px]"
                       />
         </Link>
 
@@ -319,7 +318,7 @@ export default function Navbar() {
 
       {/* Mobile Menu - Container that slides down */}
       <div
-        className={`fixed top-18 left-0 right-0 bg-[#fffefe] shadow-lg z-20 transform transition-all duration-300 ease-in-out ${
+        className={`fixed top-15 left-0 right-0 bg-[#fffefe] shadow-lg z-20 transform transition-all duration-300 ease-in-out ${
           mobileMenuOpen
             ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 pointer-events-none"

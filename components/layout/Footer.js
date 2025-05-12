@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import "../../app/globals.css";
 import Shahi from "../../public/Images/shahi.png";
 import Now from "../ui/Now";
-import Logo from "../../public/Images/favicon.ico";
+import Logo from "../../public/Images/logo.png";
 
 const Footer = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -107,10 +107,9 @@ const Footer = () => {
             <div className="flex items-center">
                <Image
                                      src={Logo}
-                                     alt="Avatar"
-                                     width={57}
-                                     height={20}
-                                     className="rounded-full "
+                                     alt="Logo"
+                                     width={88}
+                                     className="rounded-[8px] "
                                    />
               <span className="text-xl font-medium text-black"></span>
             </div>

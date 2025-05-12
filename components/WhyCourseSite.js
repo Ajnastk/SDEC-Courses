@@ -1,6 +1,6 @@
 import { Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
-import Rasha from "../public/Images/Rasha.jpg";
+import Group from "../public/Images/group.jpg";
 export const WhyCourseSite = () => {
   return (
     <div className="py-16 bg-gradient-to-r from-white via-[#f6e7ff] to-white">
@@ -123,28 +123,26 @@ export const WhyCourseSite = () => {
                     }}
                   >
                     <Image
-                      src={Rasha}
-                      alt="rasha"
+                      src={Group}
+                      alt="group-photo"
                       fill
                       className="object-cover object-center"
                     />
                   </div>
 
-                  <h3 className=" text-black font-semibold mb-1">
-                    I started my journey:
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    in web-design and development in 2024 at the age of 17. I
-                    transitioned into a full-time instructor and mentor in 2025.
-                  </p>
+                <h3 className="text-black font-semibold mb-1">
+  We started our journey:
+</h3>
+<p className="text-gray-600 text-sm mb-4">
+  in web-design and development in 2024 with a team of young, passionate creators. We transitioned into a full-time training and mentorship collective in 2025.
+</p>
 
-                  <h3 className="font-semibold text-black mb-1">
-                    Through hands-on:
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-6">
-                    project-based courses, I simplify challenging topics and
-                    make them accessible to everyone.
-                  </p>
+<h3 className="font-semibold text-black mb-1">
+  Through hands-on:
+</h3>
+<p className="text-gray-600 text-sm mb-6">
+  project-based courses, our team simplifies challenging topics and makes them accessible to everyone.
+</p>
                 </div>
 
                 {/* Social Media Icons */}

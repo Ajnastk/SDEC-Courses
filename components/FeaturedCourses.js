@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import course4 from '../public/Images/course4.jpg'
 import course3 from '../public/Images/course3.jpg'
-import startup from "../public/Images/startup.jpg"
+import startup from "../public/Images/startup1.jpg"
 
 export default function FeaturedCourses() {
   const courses = [
