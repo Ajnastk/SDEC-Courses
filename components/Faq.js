@@ -17,34 +17,30 @@ export const FAQHub = () => {
   };
 
   const faqQuestions = [
-    {
-      id: 1,
-      question: "What is SDEC?",
-      answer:
-        "CourseSite is an innovative platform designed to empower learners and professionals with the skills and knowledge they need to excel in today's fast-paced world.",
-      isOpen: false,
-    },
-    {
-      id: 2,
-      question: "Do you have refund policy?",
-      answer:
-        "Our Purchases happen through Whop. Whop has its own refund policy, which you can find on their website. We recommend reviewing their policy before making a purchase.",
-      isOpen: true,
-    },
-    {
-      id: 3,
-      question: "Is the community supportive?",
-      answer:
-        "Absolutely! We believe in creating a positive and encouraging environment where everyone can learn and grow together.",
-      isOpen: false,
-    },
-    {
-      id: 4,
-      question: "Are there live classes or just recorded content?",
-      answer:
-        "We offer a mix of both. You can access a library of recorded content and attend live classes or Q&A sessions hosted by expert instructors.",
-      isOpen: false,
-    },
+    {  
+  id: 1,  
+  question: "What is SDEC?",  
+  answer: "SDEC is an innovative platform designed to empower learners and professionals with the skills and knowledge they need to excel in today's fast-paced world.",  
+  isOpen: false,  
+},  
+{  
+  id: 2,  
+  question: "How long will I have access to the courses?",  
+  answer: "Once you enroll, you’ll have lifetime access to the course materials, including future updates, so you can learn at your own pace.",  
+  isOpen: true,  
+},  
+{  
+  id: 3,  
+  question: "Is the community supportive?",  
+  answer: "Absolutely! We believe in creating a positive and encouraging environment where everyone can learn and grow together.",  
+  isOpen: false,  
+},  
+{  
+  id: 4,  
+  question: "Are there live classes or just recorded content?",  
+  answer: "We offer a mix of both. You can access a library of recorded content and attend live classes or Q&A sessions hosted by expert instructors.",  
+  isOpen: false,  
+}
   ];
 
   return (
