@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import contents from "@/Contents";
 import React from "react";
 import Image from "next/image";
+import CountUp from "../components/ui/CountUp";
 
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
@@ -253,7 +254,15 @@ export default function BoostYourSkills() {
                   </div>
                 </div>
                 <h3 className="text-5xl font-extrabold text-black mb-1">
-                  {card.value}
+                  <CountUp
+                    from={0}
+                    to={card.value}
+                    suffix="+"
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
                 </h3>
                 <p className="text-gray-600 text-xs tracking-widest uppercase">
                   {card.label}
