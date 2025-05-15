@@ -8,6 +8,8 @@ import ziyad from "../public/Images/ziyad.jpg";
 import rahib from "../public/Images/rahib.jpg";
 import rasha from "../public/Images/Rasha.jpg";
 import user from "../public/Images/user.png"
+import { FadeInOnScroll } from "./FadeInOnScroll";
+
 export default function TestimonialsSection() {
   const [windowWidth, setWindowWidth] = useState(0);
 
@@ -74,20 +76,27 @@ export default function TestimonialsSection() {
           </span>
           Testimonials
         </div>
+        <FadeInOnScroll direction="up" delay={0.1}>
         <h2 className="md:text-4xl text-3xl font-poppins text-black mb-4">
           Our Students feedback
         </h2>
+        </FadeInOnScroll>
 
+         <FadeInOnScroll direction="up" delay={0.2}>
         <p className="text-gray-700 max-w-lg">
           Explore the incredible advantages of enrolling in our courses and
           enhancing your skills.
         </p>
+        </FadeInOnScroll>
         {/* CTA BUTTON */}
+         <FadeInOnScroll direction="up" delay={0.3}>
         <div className="mb-12">
           <Now />
         </div>
+        </FadeInOnScroll>
 
         {/* Grid that changes from 3 columns to 2 columns based on screen size */}
+         <FadeInOnScroll direction="up" delay={0.4}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-15">
           {testimonials.map((testimonial) => (
             <div
@@ -168,6 +177,7 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
+        </FadeInOnScroll>
       </div>
     </div>
   );

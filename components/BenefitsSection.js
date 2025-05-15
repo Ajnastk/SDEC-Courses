@@ -1,5 +1,6 @@
 // BenefitsSection.jsx
 import React from "react";
+import { FadeInOnScroll } from "./FadeInOnScroll";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -114,15 +115,19 @@ const BenefitsSection = () => {
               </div>
             </div>
           </div>
-
+          <FadeInOnScroll direction="up" delay={0.1}>
           <h2 className="md:text-4xl text-3xl text-black mb-4">Key Benefits of Courses</h2>
+          </FadeInOnScroll>
+           <FadeInOnScroll direction="up" delay={0.2}>
           <p className="text-black max-w-xl mx-auto">
             Explore the incredible advantages of enrolling in our courses and
             enhancing your skills for the ultimate career success.
           </p>
+          </FadeInOnScroll>
         </div>
 
         {/* Benefits Grid */}
+          <FadeInOnScroll direction="up" delay={0.3}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <div
@@ -130,6 +135,7 @@ const BenefitsSection = () => {
               key={index}
               className="bg-gradient-to-b from-[#f9f6fb] to-[#ffffff] rounded-[30px] shadow-lg p-8 relative"
             >
+               <FadeInOnScroll direction="up" delay={0.4}>
               <div className="w-10 h-10  text-gray-400 p-[3px] rounded-md bg-white mb-6"
               style={{
                         boxShadow:
@@ -141,9 +147,13 @@ const BenefitsSection = () => {
                 {benefit.title}
               </h3>
               <p className="text-gray-600">{benefit.description}</p>
+                </FadeInOnScroll>
             </div>
+           
           ))}
         </div>
+        </FadeInOnScroll>
+       
       </div>
     </div>
   );
