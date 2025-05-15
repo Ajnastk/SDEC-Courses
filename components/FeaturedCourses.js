@@ -3,6 +3,7 @@ import Link from "next/link";
 import course4 from '../public/Images/course4.jpg'
 import course3 from '../public/Images/course3.jpg'
 import startup from "../public/Images/startup1.jpg"
+import { FadeInOnScroll } from "./FadeInOnScroll";
 
 export default function FeaturedCourses() {
   const courses = [
@@ -57,14 +58,19 @@ export default function FeaturedCourses() {
               </div>
             </div>
           </div>
+          <FadeInOnScroll direction="up" delay={0.1}>
           <h2 className="md:text-4xl text-3xl text-black mb-4">Featured Courses</h2>
+          </FadeInOnScroll>
+          <FadeInOnScroll direction="up" delay={0.2}>
           <p className="text-black max-w-xl mx-auto">
             From critical skills to technical topics, we support your
             professional development with courses that help you grow and
             succeed.
           </p>
+          </FadeInOnScroll>
         </div>
 
+        <FadeInOnScroll direction="up" delay={0.3}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 ">
           {courses.map((course) => (
             <div
@@ -102,8 +108,10 @@ export default function FeaturedCourses() {
             </div>
           ))}
         </div>
+        </FadeInOnScroll>
 
         {/* View Courses button */}
+        <FadeInOnScroll direction="up" delay={0.4}>
         <div className="flex justify-center">
           <Link href="/courses">
             <button className="px-8 py-3 border border-black rounded-full text-gray-700  hover:bg-black hover:text-white transition shadow">
@@ -111,6 +119,7 @@ export default function FeaturedCourses() {
             </button>
           </Link>
         </div>
+        </FadeInOnScroll>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { Check, X } from "lucide-react";
 import { useState } from "react";
+import { FadeInOnScroll } from "./FadeInOnScroll";
 
 // For demonstration purposes, I'm including the data here
 // In your actual implementation, you'd import it from @/Contents

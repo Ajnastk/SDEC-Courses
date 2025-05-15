@@ -5,6 +5,7 @@ import contents from "@/Contents";
 import React from "react";
 import Image from "next/image";
 import CountUp from "../components/ui/CountUp";
+import { FadeInOnScroll } from "./FadeInOnScroll";
 
 export default function BoostYourSkills() {
   const data = contents.BoostyourSkillsData;
@@ -206,12 +207,16 @@ export default function BoostYourSkills() {
               </div>
             </div>
           </div>
-
+          <FadeInOnScroll direction="up" delay={0.1}>
           <h2 className="md:text-4xl text-3xl text-black mb-4">{data.title}</h2>
+          </FadeInOnScroll>
+          <FadeInOnScroll direction="up" delay={0.2}>
           <p className="text-black max-w-xl mx-auto">{data.description}</p>
+          </FadeInOnScroll>
         </div>
 
         {/* Responsive Grid */}
+        <FadeInOnScroll direction="up" delay={0.3}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-15">
           {data.cards.map((card, index) => {
             return (
@@ -271,15 +276,18 @@ export default function BoostYourSkills() {
             );
           })}
         </div>
+        </FadeInOnScroll>
 
         {/* Infinite Scrolling Companies */}
         <div className="mt-10 max-w-7xl mx-auto  flex flex-col items-center justify-center">
           <div className="flex flex-row items-center  justify-center w-full mb-[-20px]">
             <div className="hidden md:block flex-1 max-w-[310px] border-t border-gray-400"></div>
             <div className="text-center mx-4">
+                <FadeInOnScroll direction="up" delay={0.4}>
               <h3 className="text-gray-500 mt-5 text-sm font-light mb-6">
                 Mastered by top developers with expertise in
               </h3>
+              </FadeInOnScroll>
             </div>
             <div className="hidden md:block flex-1 max-w-[310px] border-t border-gray-400"></div>
           </div>
@@ -309,6 +317,7 @@ export default function BoostYourSkills() {
               ))}
             </div>
           </div>
+        
         </div>
       </div>
     </div>
