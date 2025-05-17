@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MessageSquare, House, Phone, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FadeInOnScroll } from "../FadeInOnScroll";
 
 export const ContactForm = () => {
   const contactHeadLine = ["Get", "in", "touch", "with", "us", "today!"];
@@ -111,8 +112,7 @@ export const ContactForm = () => {
     const email = formData.email;
 
     // Create a pre-filled message using the form data
-    const message = `Hello, my name is ${formData.name}. I'd like to inquire about joining a software development program. ${formData.message}`;
-
+const message = `Hello, my name is ${formData.name}. I'm from ${formData.place} and I hold a qualification in ${formData.qualification}. I'd like to inquire about joining the software development program. ${formData.message}`;
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
 
@@ -190,6 +190,7 @@ export const ContactForm = () => {
               >
                 {/* Message Us section */}
                 <div>
+                  <FadeInOnScroll direction="up" delay={0.1}>
                   <div
                     className="bg-white w-10 h-10 rounded-lg flex items-center justify-center mb-4"
                     style={{
@@ -200,23 +201,31 @@ export const ContactForm = () => {
                   >
                     <MessageSquare className="w-5 h-5 text-gray-500" />
                   </div>
+                  </FadeInOnScroll>
+                    <FadeInOnScroll direction="up" delay={0.2}>
                   <h3 className="text-2xl font-medium text-black mb-3">
                     Message Us
                   </h3>
+                  </FadeInOnScroll>
+                    <FadeInOnScroll direction="up" delay={0.3}>
                   <p className="text-gray-600 text-sm mb-4">
                     Use our online chat system to message us and get support.
                   </p>
+                  </FadeInOnScroll>
                   <div className="h-px bg-gray-200 my-4 w-full"></div>
+                    <FadeInOnScroll direction="up" delay={0.4}>
                   <Link
                     href="mailto:contact@sdec.info?subject=Hello&body=I%20want%20to%20contact%20you."
                     className="text-gray-900 underline"
                   >
                     contact@sdec.info
                   </Link>
+                  </FadeInOnScroll>
                 </div>
 
                 {/* Call Us section */}
                 <div>
+                    <FadeInOnScroll direction="up" delay={0.1}>
                   <div
                     className="bg-white w-10 h-10 rounded-lg flex items-center justify-center mb-4"
                     style={{
@@ -227,20 +236,27 @@ export const ContactForm = () => {
                   >
                     <Phone className="w-5 h-5 text-gray-500" />
                   </div>
+                  </FadeInOnScroll>
+                    <FadeInOnScroll direction="up" delay={0.2}>
                   <h3 className="text-2xl font-medium text-gray-900 mb-3">
                     Call Us
                   </h3>
+                  </FadeInOnScroll>
+                    <FadeInOnScroll direction="up" delay={0.3}>
                   <p className="text-gray-600 text-sm mb-4">
                     Let’s chat — nothing better than talking to another human
                     being.
                   </p>
+                  </FadeInOnScroll>
                   <div className="h-px bg-gray-200 my-4 w-full"></div>
+                  <FadeInOnScroll direction="up" delay={0.4}>
                   <Link
                     href="tel:+917356190621"
                     className="text-gray-900 underline"
                   >
                     +91 7356190621
                   </Link>
+                  </FadeInOnScroll>
                 </div>
               </motion.div>
             </div>
@@ -300,6 +316,30 @@ export const ContactForm = () => {
                       />
                     </div>
                   </div>
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <input
+                        type="text"
+                        name="place"
+                        placeholder="Your Place"
+                        className="w-full px-4 py-2 bg-[#f0f4f9] rounded-2xl text-black placeholder-gray-400 outline-none"
+                        onChange={handleChange}
+                        value={formData.place}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="qualification"
+                        placeholder="Your Qualification"
+                        className="w-full px-4 py-2 bg-[#f0f4f9] rounded-2xl  placeholder-gray-400  text-black outline-none"
+                        onChange={handleChange}
+                        value={formData.qualification}
+                        required
+                      />
+                    </div>
+                  </div>
                   <div className="mb-5">
                     <textarea
                       name="message"
@@ -329,14 +369,14 @@ export const ContactForm = () => {
                       Subscribe to Newsletter
                     </label>
                   </div>
-                  <div className="flex justify-between">
-                    <button
+                  <div className="flex justify-center">
+                    {/* <button
                       type="submit"
                       disabled={isSubmitting}
                       className="w-[48%] group bg-gradient-to-br from-[#7f7e80] to-black text-white font-medium py-3 px-4 rounded-xl cursor-pointer"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
+                    </button> */}
                     <button
                       onClick={redirectToWhatsApp}
                       type="button"

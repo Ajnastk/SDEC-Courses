@@ -112,15 +112,13 @@ export default function PremiumCourses() {
 
                 <div>
                   <div className="py-7 md:px-6">
-                    <FadeInOnScroll direction="up" delay={0.3}>
-                      <h3
-                        className={`text-lg sm:text-xl md:text-md p-3 mb-2 text-center font-semibold ${
-                          plan.id === "pro" ? "text-purple-700" : "text-black"
-                        }`}
-                      >
-                        {plan.name}
-                      </h3>
-                    </FadeInOnScroll>
+                    <h3
+                      className={`text-lg sm:text-xl md:text-md p-3 mb-2 text-center font-semibold ${
+                        plan.id === "pro" ? "text-purple-700" : "text-black"
+                      }`}
+                    >
+                      {plan.name}
+                    </h3>
 
                     <div
                       className={`flex flex-col justify-center items-center rounded-2xl p-6 mb-6 ${
@@ -130,24 +128,18 @@ export default function PremiumCourses() {
                         boxShadow: "inset 1px 1px 2px 1px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <FadeInOnScroll direction="up" delay={0.4}>
-                        <div className="flex text-center items-baseline">
-                          <span
-                            className={`md:text-2xl text-lg font-semibold ${
-                              plan.id === "pro"
-                                ? "text-purple-800"
-                                : "text-black"
-                            }`}
-                          >
-                            ₹{plan.price}
-                          </span>
-                        </div>
-                      </FadeInOnScroll>
-                      <FadeInOnScroll direction="up" delay={0.5}>
-                        <span className="text-gray-800 md:text-md text-sm mt-1">
-                          {plan.duration}
+                      <div className="flex text-center items-baseline">
+                        <span
+                          className={`md:text-2xl text-lg font-semibold ${
+                            plan.id === "pro" ? "text-purple-800" : "text-black"
+                          }`}
+                        >
+                          ₹{plan.price}
                         </span>
-                      </FadeInOnScroll>
+                      </div>
+                      <span className="text-gray-800 md:text-md text-sm mt-1">
+                        {plan.duration}
+                      </span>
                     </div>
 
                     <div className="space-y-4 mb-8">
@@ -164,19 +156,17 @@ export default function PremiumCourses() {
                           ) : (
                             <X className="h-5 w-5 text-gray-400 mr-3" />
                           )}
-                          <FadeInOnScroll direction="up" delay={0.4}>
-                            <span
-                              className={`text-sm ${
-                                feature.included
-                                  ? plan.id === "pro"
-                                    ? "text-purple-800"
-                                    : "text-gray-800"
-                                  : "text-gray-400"
-                              }`}
-                            >
-                              {feature.name}
-                            </span>
-                          </FadeInOnScroll>
+                          <span
+                            className={`text-sm ${
+                              feature.included
+                                ? plan.id === "pro"
+                                  ? "text-purple-800"
+                                  : "text-gray-800"
+                                : "text-gray-400"
+                            }`}
+                          >
+                            {feature.name}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -191,23 +181,21 @@ export default function PremiumCourses() {
                           : ""
                       }`}
                     >
-                      <FadeInOnScroll direction="up" delay={0.6}>
-                        <button
-                          className={`relative overflow-hidden w-full h-[45px] py-1 px-4 rounded-full text-md transition-colors cursor-pointer group ${
-                            plan.id === "pro"
-                              ? "bg-gradient-to-br from-purple-500 to-purple-900 text-white"
-                              : "bg-white text-black border border-black hover:bg-gray-50"
-                          }`}
-                          onClick={() => setSelectedPlan(plan.id)}
-                        >
-                          <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
-                            Get Started
-                          </span>
-                          <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
-                            Get Started
-                          </span>
-                        </button>
-                      </FadeInOnScroll>
+                      <button
+                        className={`relative overflow-hidden w-full h-[45px] py-1 px-4 rounded-full text-md transition-colors cursor-pointer group ${
+                          plan.id === "pro"
+                            ? "bg-gradient-to-br from-purple-500 to-purple-900 text-white"
+                            : "bg-white text-black border border-black hover:bg-gray-50"
+                        }`}
+                        onClick={() => setSelectedPlan(plan.id)}
+                      >
+                        <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:-translate-y-full">
+                          Get Started
+                        </span>
+                        <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+                          Get Started
+                        </span>
+                      </button>
                     </div>
                   </div>
                 </div>
