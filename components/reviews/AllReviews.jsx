@@ -4,12 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FadeInOnScroll } from "../FadeInOnScroll";
 import pen from "../../public/Images/pen.png";
 import ajnas from "../../public/Images/ajnas.jpg";
-import ziyad from "../../public/Images/ziyad.jpg";
+import Shareef from "../../public/Images/ShareefImage.jpg";
 import rahib from "../../public/Images/rahib.jpg";
 import rasha from "../../public/Images/Rasha.jpg";
-import user from "../../public/Images/user.png"
+import user from "../../public/Images/user.png";
+import Marshook from "../../public/Images/MarshookImage.jpg";
+import Fayas from "../../public/Images/FayasImage.jpg";
+
 
 const testimonials = [
   {
@@ -17,7 +21,7 @@ const testimonials = [
     title: "MERN Stack Developer",
     quote:
       "Working on real-world projects pushed my skills beyond the classroom. It was a game-changer for my confidence and experience!",
-    image: user,
+    image: Shareef,
     linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
   },
   {
@@ -26,23 +30,23 @@ const testimonials = [
     quote:
       "The hands-on exposure to live projects helped me connect theory with practice. I now feel ready for real tech challenges!",
     image: rasha,
-    linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
+    linkedin: "https://www.linkedin.com/in/rasha-k-p-768815340/",
   },
   {
     name: "Marshook Ali",
     title: "MERN Stack Developer",
     quote:
       "Contributing to actual projects gave me a huge learning boost. Every task felt like a step toward becoming a pro developer.",
-    image: user,
-    linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
+    image: Marshook,
+    linkedin: "https://www.linkedin.com/in/marshook-ali-76091431b/",
   },
   {
     name: "Fayas Rahman",
     title: "MERN Stack Developer",
     quote:
       "The project experience helped me understand team dynamics, deadlines, and real-world code—far better than any tutorial.",
-    image: user,
-    linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
+    image: Fayas,
+    linkedin: "https://www.linkedin.com/in/fayas-rahman-05a14b366/",
   },
   {
     name: "Ajnas",
@@ -50,7 +54,7 @@ const testimonials = [
     quote:
       "Being part of live projects gave me practical knowledge and teamwork experience that no tutorial could offer. It was a big leap in my journey.",
     image: ajnas,
-    linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
+    linkedin: "/",
   },
   {
     name: "Rahib",
@@ -58,7 +62,7 @@ const testimonials = [
     quote:
       "From writing backend APIs to deploying full-stack apps, the live project experience sharpened my skills and made learning exciting.",
     image: rahib,
-    linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
+    linkedin: "https://www.linkedin.com/in/abdul-rahib-kp-51043928a/",
   },
 ];
 
@@ -153,7 +157,9 @@ export default function AllReviews() {
             <div className="mr-2 text-purple-500">
               <Star className="w-6 h-6 fill-purple-500" />
             </div>
-            <span className="font-medium">rated 4/5 by over 70k+ students</span>
+              <span className="font-medium">
+                rated 4/5 by over 70k+ students
+              </span>
           </motion.div>
 
           {/* Pen Icon (Top Right) */}
@@ -181,89 +187,89 @@ export default function AllReviews() {
             </div>
           </motion.div>
 
-          <motion.div
-            className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  grid-cols-1 pt-7 gap-8 max-w-7xl mx-auto"
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ delay: 0.4 }}
-          >
-            {testimonials.map((t, i) => (
-              <div
-                style={{ border: "3px solid white" }}
-                key={i}
-                className={`rounded-3xl shadow-2xl p-6 lg:max-w-[390px] bg-gradient-to-b from-[#fbf7fd] to-[#fefcff] ${
-                  i % 2 === 0
-                    ? "lg:h-[230px] h-[300px]"
-                    : "h-[300px] lg:mt-[-70px]"
-                }  ${i % 3 === 1 ? "lg:mt-[0px]" : ""}`}
-              >
-                <div className="flex justify-between mb-4">
-                  {/* Star icon  */}
-                  <div className="flex space-x-1 text-yellow-400">
-                    {Array(5)
-                      .fill()
-                      .map((_, i) => (
-                        <span key={i}>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 256 256"
-                            focusable="false"
-                            className="w-4 h-4 inline-block fill-yellow-400"
-                          >
-                            <g>
-                              <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" />
-                            </g>
-                          </svg>
-                        </span>
-                      ))}
-                  </div>
-                  {/* Linked in icon */}
-                  <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={t.linkedin}
-                    className="cursor-pointer"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 256"
-                      focusable="false"
-                      className="w-8 h-8 fill-[#A0AABB]"
-                    >
-                      <g>
-                        <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z" />
-                      </g>
-                    </svg>
-                  </Link>
-                </div>
-                <p
-                  className={`ext-sm overflow-hidden ${
-                    i % 2 === 0 ? "h-[40%]" : "h-[55%]"
-                  }  text-gray-700 italic mb-4`}
+            <motion.div
+              className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  grid-cols-1 pt-7 gap-8 max-w-7xl mx-auto"
+              initial={{ opacity: 0, filter: "blur(8px)" }}
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              transition={{ delay: 0.4 }}
+            >
+              {testimonials.map((t, i) => (
+                <div
+                  style={{ border: "3px solid white" }}
+                  key={i}
+                  className={`rounded-3xl shadow-2xl p-6 lg:max-w-[390px] bg-gradient-to-b from-[#fbf7fd] to-[#fefcff] ${
+                    i % 2 === 0
+                      ? "lg:h-[230px] h-[300px]"
+                      : "h-[300px] lg:mt-[-70px]"
+                  }  ${i % 3 === 1 ? "lg:mt-[0px]" : ""}`}
                 >
-                  "{t.quote}"
-                </p>
-                <div className="flex items-center space-x-3">
-                  <div className="rounded-full p-0.5 bg-gray-200 bg-opacity-50">
-                    <Image
-                      priority
-                      width={1000}
-                      height={1000}
-                      src={t.image}
-                      alt={t.name}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className=" text-black text-start text-md font-semibold">
-                      {t.name}
+                    <div className="flex justify-between mb-4">
+                      {/* Star icon  */}
+                      <div className="flex space-x-1 text-yellow-400">
+                        {Array(5)
+                          .fill()
+                          .map((_, i) => (
+                            <span key={i}>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 256 256"
+                                focusable="false"
+                                className="w-4 h-4 inline-block fill-yellow-400"
+                              >
+                                <g>
+                                  <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" />
+                                </g>
+                              </svg>
+                            </span>
+                          ))}
+                      </div>
+                      {/* Linked in icon */}
+                      <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={t.linkedin}
+                        className="cursor-pointer"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 256 256"
+                          focusable="false"
+                          className="w-8 h-8 fill-[#A0AABB]"
+                        >
+                          <g>
+                            <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24ZM96,176a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0ZM88,96a12,12,0,1,1,12-12A12,12,0,0,1,88,96Zm96,80a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140Z" />
+                          </g>
+                        </svg>
+                      </Link>
+                    </div>
+                    <p
+                      className={`ext-sm overflow-hidden ${
+                        i % 2 === 0 ? "h-[40%]" : "h-[55%]"
+                      }  text-gray-700 italic mb-4`}
+                    >
+                      "{t.quote}"
                     </p>
-                    <p className="text-xs text-gray-700">{t.title}</p>
-                  </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="rounded-full p-0.5 bg-gray-200 bg-opacity-50">
+                        <Image
+                          priority
+                          width={1000}
+                          height={1000}
+                          src={t.image}
+                          alt={t.name}
+                          className="w-10 h-10 rounded-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className=" text-black text-start text-md font-semibold">
+                          {t.name}
+                        </p>
+                        <p className="text-xs text-gray-700">{t.title}</p>
+                      </div>
+                    </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
         </div>
       </div>
     </div>

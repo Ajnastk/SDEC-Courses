@@ -3,16 +3,17 @@ import { useState, useEffect } from "react";
 import { House, ChevronRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { FadeInOnScroll } from "../FadeInOnScroll";
 
-import course1 from "../../public/Images/course1.jpg"
-import course2 from "../../public/Images/course2.jpg"
-import course3 from "../../public/Images/course3.jpg"
-import course4 from "../../public/Images/course4.jpg"
-import startup from "../../public/Images/startup1.jpg"
-import backend from "../../public/Images/backend.jpg"
-import digital from "../../public/Images/ditalmarket.jpg"
-import front from "../../public/Images/front-end.jpg"
-import frontend from "../../public/Images/front.jpg"
+import course1 from "../../public/Images/course1.jpg";
+import course2 from "../../public/Images/course2.jpg";
+import course3 from "../../public/Images/course3.jpg";
+import course4 from "../../public/Images/course4.jpg";
+import startup from "../../public/Images/startup1.jpg";
+import backend from "../../public/Images/backend.jpg";
+import digital from "../../public/Images/ditalmarket.jpg";
+import front from "../../public/Images/front-end.jpg";
+import frontend from "../../public/Images/front.jpg";
 
 import { motion } from "framer-motion";
 
@@ -22,8 +23,19 @@ export default function AllCourses() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(9);
 
-  const CoursesHeadLine = ["All", "Online" ,"Courses"]
-  const CourseSubHeadline = [ "Find" ,"what" ,"fascinates" ,"you" ,"as" ,"you", "explore" ,"these" ,"online", "courses."]
+  const CoursesHeadLine = ["All", "Online", "Courses"];
+  const CourseSubHeadline = [
+    "Find",
+    "what",
+    "fascinates",
+    "you",
+    "as",
+    "you",
+    "explore",
+    "these",
+    "online",
+    "courses.",
+  ];
 
   const courses = [
     {
@@ -79,8 +91,7 @@ export default function AllCourses() {
     {
       id: 6,
       title: "Entrepreneur Course",
-      description:
-        "Learn how to build and scale your own tech startup.",
+      description: "Learn how to build and scale your own tech startup.",
       price: "100,000",
       image: startup,
       level: "Intermediate",
@@ -106,7 +117,6 @@ export default function AllCourses() {
       level: "Intermediate",
       featured: true,
     },
-    
   ];
 
   // Determine how many cards to show initially based on screen size
@@ -156,10 +166,11 @@ export default function AllCourses() {
     <div className="bg-gradient-to-l from-white via-[#f7eafe] to-white pt-[150px]">
       <div className="max-w-7xl mx-auto px-6 md:px-6 text-center">
         {/* Navigation */}
-        <motion.div className="flex items-center justify-center mb-6 text-gray-600"
-         initial={{ opacity: 0, filter: "blur(8px)" }}
-         animate={{ opacity: 1, filter: "blur(0px)" }}
-         transition={{ delay: 0.4 }}
+        <motion.div
+          className="flex items-center justify-center mb-6 text-gray-600"
+          initial={{ opacity: 0, filter: "blur(8px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ delay: 0.4 }}
         >
           <Link href="/" className="hover:text-gray-900">
             <House color="#454545" size={20} strokeWidth={1.25} />
@@ -174,40 +185,40 @@ export default function AllCourses() {
 
         <div className="flex flex-col items-center">
           <h1 className="lg:text-5xl md:text-4xl sm:text-4xl text-3xl text-center lg:font-medium font-semibold lg:w-[65%] md:w-[80%] mb-6 text-gray-900">
-          {CoursesHeadLine.map((word, index) => (
-                  <motion.span
-                    key={index}
-                    className="inline-block mr-2"
-                    initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.1,
-                      ease: "easeOut",
-                    }}
-                  >
-                    {word}
-                  </motion.span>
-                ))}
+            {CoursesHeadLine.map((word, index) => (
+              <motion.span
+                key={index}
+                className="inline-block mr-2"
+                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
           </h1>
 
           {/* Subheading */}
           <p className="text-md text-gray-700 mb-8 max-w-3xl mx-auto">
-          {CourseSubHeadline.map((word, index) => (
-                  <motion.span
-                    key={index}
-                    className="inline-block mr-2"
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    animate={{ opacity: 1, filter: "blur(0px)" }}
-                    transition={{
-                      duration: 0.1,
-                      delay: CourseSubHeadline.length * 0.0 + index * 0.1,
-                      ease: "easeIn",
-                    }}
-                  >
-                    {word}
-                  </motion.span>
-                ))}
+            {CourseSubHeadline.map((word, index) => (
+              <motion.span
+                key={index}
+                className="inline-block mr-2"
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{
+                  duration: 0.1,
+                  delay: CourseSubHeadline.length * 0.0 + index * 0.1,
+                  ease: "easeIn",
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
           </p>
         </div>
 
@@ -250,60 +261,66 @@ export default function AllCourses() {
             )}
           </div>
         </motion.div> */}
-        <motion.div
-         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 pb-12 z-0"
-         initial={{ opacity: 0, filter: "blur(8px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ delay: 0.4 }}
-        >
-          {visibleCourses.map((course) => (
-            <div
-              style={{ border: "3px solid white" }}
-              key={course.id}
-              className="bg-gradient-to-b from-[#f9f1fe] to-[#ffffff] rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]"
-            >
-              <div className="relative w-full h-48">
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  fill
-                  className="object-cover rounded-[22px]"
-                />
+        <FadeInOnScroll direction="up" delay={0.1}>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 pb-12 z-0"
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ delay: 0.4 }}
+          >
+            {visibleCourses.map((course) => (
+              <div
+                style={{ border: "3px solid white" }}
+                key={course.id}
+                className="bg-gradient-to-b from-[#f9f1fe] to-[#ffffff] rounded-[22px] shadow-lg overflow-hidden p-6 transition-transform duration-300 ease-in-out transform-gpu hover:translate-x-[0px] hover:[transform:perspective(160px)_rotateY(-3deg)_rotateX(0deg)_rotate(-0deg)]"
+              >
+                <FadeInOnScroll direction="up" delay={0.2}>
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      fill
+                      className="object-cover rounded-[22px]"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex justify-end items-center py-3">
+                      <span className="text-xl text-right text-black">
+                        {course.price} ₹
+                      </span>
+                    </div>
+                    <h1 className="text-xl text-black mb-2 truncate">
+                      {course.title}
+                    </h1>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                      {course.description}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      {course.featured && (
+                        <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
+                          Featured
+                        </span>
+                      )}
+                      {!course.featured && <span></span>}
+                      <span className="text-gray-600 text-sm">
+                        {course.level}
+                      </span>
+                    </div>
+                  </div>
+                </FadeInOnScroll>
               </div>
-              <div>
-                <div className="flex justify-end items-center py-3">
-                  <span className="text-xl text-right text-black">
-                    {course.price} ₹
-                  </span>
-                </div>
-                <h1 className="text-xl text-black mb-2 truncate">
-                  {course.title}
-                </h1>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {course.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  {course.featured && (
-                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
-                      Featured
-                    </span>
-                  )}
-                  {!course.featured && <span></span>}
-                  <span className="text-gray-600 text-sm">{course.level}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </FadeInOnScroll>
 
         {/* Load More button */}
         {hasMoreToLoad && (
-        <motion.div
-          className="flex justify-center pb-12"
-           initial={{ opacity: 0, y: 0 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.5, duration: 0.6 }}
-         > 
+          <motion.div
+            className="flex justify-center pb-12"
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
             <button
               onClick={loadMoreCourses}
               className="px-8 py-3 border border-black rounded-full text-gray-700 hover:bg-black hover:text-white transition shadow"

@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Now from "./ui/Now";
-import ziyad from "../public/Images/ziyad.jpg";
-import rahib from "../public/Images/rahib.jpg";
 import rasha from "../public/Images/Rasha.jpg";
 import user from "../public/Images/user.png"
+import Marshook from "./../public/Images/MarshookImage.jpg";
+import Shareef from "./../public/Images/ShareefImage.jpg";
 import { FadeInOnScroll } from "./FadeInOnScroll";
 
 export default function TestimonialsSection() {
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
       title: "MERN Stack Developer",
       quote:
         "Working on real-world projects pushed my skills beyond the classroom. It was a game-changer for my confidence and experience!",
-      image: user,
+      image: Shareef,
       linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
     },
     {
@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
       title: "MERN Stack Developer",
       quote:
         "Contributing to actual projects gave me a huge learning boost. Every task felt like a step toward becoming a pro developer.",
-      image: user,
+      image: Marshook,
       linkedin: "https://www.linkedin.com/in/ziyad-mangalasseri-249a522ab/",
     },
   ];
