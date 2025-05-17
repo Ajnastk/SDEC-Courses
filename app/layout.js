@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/Whatsapp";
 
 // Import Inter from Google Fonts
 import { Inter } from "next/font/google";
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

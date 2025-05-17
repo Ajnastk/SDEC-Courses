@@ -53,7 +53,7 @@ export const ContactForm = () => {
     setFormData({
       ...formData,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }); 
   };
 
   const handleSubmit = async (e) => {
@@ -380,7 +380,7 @@ const message = `Hello, my name is ${formData.name}. I'm from ${formData.place} 
                     <button
                       onClick={redirectToWhatsApp}
                       type="button"
-                      className="w-[48%] flex justify-center group bg-gradient-to-br from-[#323232] to-black text-white font-medium py-3 px-4 rounded-xl cursor-pointer"
+                      className="w-[68%] flex justify-center group bg-gradient-to-br from-[#323232] to-black text-white font-medium py-3 px-4 rounded-xl cursor-pointer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
