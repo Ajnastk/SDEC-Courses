@@ -12,8 +12,8 @@ import Ceo from "@/components/Ceo";
 export default function Home() {
   return (
     <div className="bg-[#fffefe]">
-      <Ceo/>
-      {/* <Hero />
+      {/* <Ceo/> */}
+      <Hero />
       <BoostYourSkills />
       <FeaturedCourses />
       <TestimonialsSection />
@@ -22,7 +22,7 @@ export default function Home() {
       <WhyCourseSite />
       <FAQHub />
       <CourseTopics />
-      <CommunityCard /> */}
+      <CommunityCard />
     </div>
   );
 }
