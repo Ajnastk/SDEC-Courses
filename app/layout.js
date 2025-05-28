@@ -66,10 +66,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} ${inter.variable} font-poppins antialiased`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
-        <WhatsAppButton />
-        <Footer />
+        {/* <WhatsAppButton />
+        <Footer /> */}
       </body>
     </html>
   );

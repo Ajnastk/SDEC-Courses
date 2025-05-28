@@ -36,6 +36,8 @@ export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    place: "",
+    qualification: "",
     message: "",
     newsletter: false,
   });
@@ -345,7 +347,7 @@ const message = `Hello, my name is ${formData.name}. I'm from ${formData.place} 
                       name="message"
                       placeholder="How Can We Help?"
                       rows="8"
-                      className="w-full px-5 py-3 min-h-[216] bg-[#f0f4f9] rounded-2xl text-black placeholder-gray-400 outline-none  resize-y"
+                      className="w-full px-5 py-3 h-[170px] bg-[#f0f4f9] rounded-2xl text-black placeholder-gray-400 outline-none  resize-y"
                       onChange={handleChange}
                       value={formData.message}
                       required
