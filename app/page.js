@@ -8,11 +8,12 @@ import { CourseTopics } from "@/components/CourseTopics";
 import { WhyCourseSite } from "@/components/WhyCourseSite";
 import CommunityCard from "@/components/CommunityCard";
 import FeaturedCourses from "@/components/FeaturedCourses";
-
+import Ceo from "@/components/Ceo";
 export default function Home() {
   return (
     <div className="bg-[#fffefe]">
-      <Hero />
+      <Ceo/>
+      {/* <Hero />
       <BoostYourSkills />
       <FeaturedCourses />
       <TestimonialsSection />
@@ -21,7 +22,7 @@ export default function Home() {
       <WhyCourseSite />
       <FAQHub />
       <CourseTopics />
-      <CommunityCard />
+      <CommunityCard /> */}
     </div>
   );
 }
