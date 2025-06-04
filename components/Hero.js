@@ -41,7 +41,7 @@ export const Hero = () => {
         </div>
 
         {/* Animated headline */}
-        <h1 className="lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold mb-6 leading-tight">
+        <h1 className="lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-semibold mb-6 leading-tight">
           {HeadLineWords.map((word, index) => (
             <motion.span
               key={index}
@@ -61,7 +61,7 @@ export const Hero = () => {
 
         {/* Animated SubHeadLine */}
         <div className="max-w-2xl mx-auto mb-10">
-          <p className="text-md">
+          <p className="text-md md:text-lg">
             {SubHeadLineWords.map((word, index) => (
               <motion.span
                 key={index}
