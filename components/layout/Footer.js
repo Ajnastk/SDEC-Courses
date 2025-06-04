@@ -7,7 +7,7 @@ import "../../app/globals.css";
 import Shahi from "../../public/Images/shahi.png";
 import Now from "../ui/Now";
 import Logo from "../../public/Images/logo.png";
-import { FadeInOnScroll } from "../FadeInOnScroll";
+// import { FadeInOnScroll } from "../FadeInOnScroll";
 
 const Footer = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -103,7 +103,7 @@ const Footer = () => {
       {/* Main Footer Section */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col items-center">
         {/* Logo */}
-        <FadeInOnScroll direction="up" delay={0.1}>
+        {/* <FadeInOnScroll direction="up" delay={0.1}> */}
           <div className="mb-8">
             <Link href="/">
               <div className="flex items-center">
@@ -117,26 +117,26 @@ const Footer = () => {
               </div>
             </Link>
           </div>
-        </FadeInOnScroll>
+        {/* </FadeInOnScroll> */}
 
         {/* Headline */}
-        <FadeInOnScroll direction="up" delay={0.2}>
+        {/* <FadeInOnScroll direction="up" delay={0.2}> */}
           <h2 className="md:text-4xl text-2xl font-poppins text-center text-black">
             Boost your Learning & Knowledge with
             <br />
             SDEC Now
           </h2>
-        </FadeInOnScroll>
+        {/* </FadeInOnScroll> */}
 
         {/* CTA Button */}
-        <FadeInOnScroll direction="up" delay={0.3}>
+        {/* <FadeInOnScroll direction="up" delay={0.3}> */}
           <div className="my-4">
             <Now />
           </div>
-        </FadeInOnScroll>
+        {/* </FadeInOnScroll> */}
 
         {/* Path Text with Avatar */}
-        <FadeInOnScroll direction="up" delay={0.4}>
+        {/* <FadeInOnScroll direction="up" delay={0.4}> */}
           <div className="flex items-center gap-4 lg:text-start md:text-start sm:text-start text-center">
             <p className="text-black">Your Path to Becoming a Web Wizard</p>
             <div className="rounded-full w-10 h-10 bg-blue-200 border-2  border-white object-cover overflow-hidden relative">
@@ -149,10 +149,10 @@ const Footer = () => {
               />
             </div>
           </div>
-        </FadeInOnScroll>
+        {/* </FadeInOnScroll> */}
 
         {/* Navigation Links - Enhanced with smooth scrolling */}
-        <FadeInOnScroll direction="up" delay={0.5}>
+        {/* <FadeInOnScroll direction="up" delay={0.5}> */}
           <nav className="flex flex-wrap justify-center gap-2 mt-6 mb-1  text-black">
             {footerLinks.map((item, index) =>
               item.type === "scroll" ? (
@@ -188,15 +188,15 @@ const Footer = () => {
               Notify Me
             </button>
           </nav>
-        </FadeInOnScroll>
+        {/* </FadeInOnScroll> */}
       </div>
 
       {/* Bottom Bar with Copyright*/}
       <div className="mt-8 pt-[20px] border-t border-gray-400 mx-[24px]">
         <div className="text-center pb-10">
-          <FadeInOnScroll direction="up" delay={0.6}>
+          {/* <FadeInOnScroll direction="up" delay={0.6}> */}
             <p className="text-gray-600">SDEC © 2025. Designed by SDEC</p>
-          </FadeInOnScroll>
+          {/* </FadeInOnScroll> */}
         </div>
       </div>
     </div>
