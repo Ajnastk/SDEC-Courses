@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/Whatsapp";
+import SmoothScroll from "@/components/SmoothScroll";
 
 // Import Inter from Google Fonts
 import { Inter } from "next/font/google";
@@ -63,14 +64,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
+     
+         <body
         className={`${poppins.variable} ${inter.variable} font-poppins antialiased`}
       >
+         <SmoothScroll>
         <Navbar />
         {children}
         <WhatsAppButton />
         <Footer />
+        </SmoothScroll>
       </body>
+     
+     
     </html>
   );
 }

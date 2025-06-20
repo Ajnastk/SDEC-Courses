@@ -59,3 +59,23 @@ body {
   animation: scaleIn 0.7s ease-out forwards;
   animation-delay: 2.5s;
 }
+
+html,body {
+  scroll-behavior: auto !important;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html.lenis {
+  height: auto !important;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-scroller] {
+  will-change: transform;
+  min-height: 100vh;
+  display: block;
+}
